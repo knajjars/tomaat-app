@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0; }
@@ -6,13 +7,22 @@ body {
 a {
   color: #00b7ff; }
 
-body #lp {
-  background-image: url("/images/speculative/choppingboard-lp");
-  background-size: cover; }
-
 .login-form {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
   background-size: cover; }
+
+#lp {
+  height: 100vh;
+  background-image: url("../images/speculative/choppingboard-lp.jpg");
+  background-size: cover; }
+
+body {
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: contain; } }
 
 /*# sourceMappingURL=style.css.map */
