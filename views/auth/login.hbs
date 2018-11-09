@@ -11,7 +11,7 @@
                 <h3 class="mb-0">Login</h3>
               </div>
               <div class="card-body">
-                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="auth/login">
+                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="/auth/login">
                   <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email" required="">
@@ -35,7 +35,9 @@
             </div>
             <!-- /form card login -->
             {{#if message }}
-            <div class="error-message">{{ message }}</div>
+            <div class="alert alert-warning" role="alert">
+              {{ message }}
+            </div>
             {{/if}}
           </div>
 
