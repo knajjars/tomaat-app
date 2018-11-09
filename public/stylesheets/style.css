@@ -22,7 +22,7 @@ body {
   background-repeat: no-repeat; }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-size: contain; } }
+  #lp {
+    background-size: cover; } }
 
 /*# sourceMappingURL=style.css.map */
