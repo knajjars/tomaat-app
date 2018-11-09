@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
+
+#lp {
+  width: 100%; }
+
+body {
+  background-image: url("../images/speculative/choppingboard-lp.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 /*# sourceMappingURL=style.css.map */
