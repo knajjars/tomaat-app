@@ -9,10 +9,19 @@ a {
   color: #00b7ff;
 }
 
+.navbar {
+  width: 100%;
+  position: fixed;
+}
+
 .login-form {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
   background-size: cover;
+}
+
+.pt-5, .py-5 {
+  padding-top: 6rem!important;
 }
 
 #lp {
