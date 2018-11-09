@@ -1,3 +1,7 @@
+$main-color: #f95428;
+$alternative-color: #90bc42;
+$error-color: #e51b51;
+
 body {
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -20,8 +24,9 @@ a {
   background-size: cover;
 }
 
-.pt-5, .py-5 {
-  padding-top: 6rem!important;
+.pt-5,
+.py-5 {
+  padding-top: 6rem !important;
 }
 
 #lp {
@@ -32,6 +37,14 @@ a {
 body {
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.error-message {
+  background-color: $error-color;
+  color: white;
+  margin-top: 8px;
+  padding: 4px;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 600px) {

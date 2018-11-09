@@ -16,7 +16,8 @@ a {
   background: url("/images/speculative/login-background.jpg");
   background-size: cover; }
 
-.pt-5, .py-5 {
+.pt-5,
+.py-5 {
   padding-top: 6rem !important; }
 
 #lp {
@@ -27,6 +28,13 @@ a {
 body {
   background-size: contain;
   background-repeat: no-repeat; }
+
+.error-message {
+  background-color: #e51b51;
+  color: white;
+  margin-top: 8px;
+  padding: 4px;
+  box-sizing: border-box; }
 
 @media only screen and (max-width: 600px) {
   #lp {
