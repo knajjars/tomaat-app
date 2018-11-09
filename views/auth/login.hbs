@@ -1,25 +1,52 @@
+<div class="login-form">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
 
-<h2>Login</h2>
+            <!-- form card login -->
+            <div class="card rounded-0">
+              <div class="card-header">
+                <h3 class="mb-0">Login</h3>
+              </div>
+              <div class="card-body">
+                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="auth/login">
+                  <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email" required="">
+                  </div>
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required=""
+                      autocomplete="new-password" name="password">
+                  </div>
+                  <div>
+                    <label class="custom-control">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description small text-dark"><a href="/auth/signup">Don't have an
+                          account?</a></span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+                </form>
+              </div>
+              <!--/card-block-->
+            </div>
+            <!-- /form card login -->
+            {{#if message }}
+            <div class="error-message">{{ message }}</div>
+            {{/if}}
+          </div>
 
-<form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
 
-  <br><br>
+        </div>
+        <!--/row-->
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br><br>
-
-  <button>Login</button>
-
-  <p class="account-message">
-    Don't have an account yet?
-    <a href="/auth/signup">Signup</a>
-  </p>
-</form>
+      </div>
+      <!--/col-->
+    </div>
+    <!--/row-->
+  </div>
+  <!--/container-->
+</div>
