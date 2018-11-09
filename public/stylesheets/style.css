@@ -10,7 +10,7 @@ a {
 
 body {
   background-image: url("../images/speculative/choppingboard-lp.jpg");
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat; }
 
 /*# sourceMappingURL=style.css.map */

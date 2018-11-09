@@ -12,6 +12,13 @@ a {
 }
 body {
   background-image: url('../images/speculative/choppingboard-lp.jpg');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+
+    background-size: contain;
+  }
 }
