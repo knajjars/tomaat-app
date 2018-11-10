@@ -70,7 +70,6 @@ body {
   padding: 5px; }
 
 .preferences-page {
-  height: 100vh;
   margin: 0;
   padding: 0;
   background: url("/images/speculative/preferences-background.jpg");
