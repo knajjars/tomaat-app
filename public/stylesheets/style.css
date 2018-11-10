@@ -1,17 +1,12 @@
 body {
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0;
   padding: 0; }
-
-a {
-  color: #00b7ff; }
 
 .navbar {
   width: 100%;
   position: fixed; }
 
-.login-form {
+.login-page {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
   background-size: cover; }
