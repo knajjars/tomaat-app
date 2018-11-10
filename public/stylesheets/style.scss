@@ -3,6 +3,7 @@ $alternative-color: #90bc42;
 $error-color: #e51b51;
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
+$roadmove-src: ('');
 
 body {
   margin: 0;
@@ -12,6 +13,7 @@ body {
 
 #lp #title {
   font-family: "roadmovie";
+  src: url('../Font/roadmovie.ttf');
   margin: 0 auto;
   text-align: center;
   font-size: 7rem;

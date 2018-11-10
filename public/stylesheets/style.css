@@ -3,7 +3,8 @@ body {
   padding: 0; }
 
 #lp #title {
-  font-family: 'roadmovie';
+  font-family: "roadmovie";
+  src: url("../Font/roadmovie.ttf");
   margin: 0 auto;
   text-align: center;
   font-size: 7rem; }
@@ -33,25 +34,22 @@ body {
 .py-5 {
   padding-top: 6rem !important; }
 
-<<<<<<< HEAD
 .capitalize {
   text-transform: capitalize; }
 
 .bold {
   font-weight: bolder; }
 
-#lp {
-  height: 100vh;
-  background-image: url("../images/speculative/whitechopboard-lp.jpg");
-  background-size: cover; }
-
-=======
->>>>>>> 2045cc4add1940c5eb01cacfdd9447b1565229bf
 .error-message {
   background-color: #e51b51;
   color: white;
   text-align: center;
   padding: 5px; }
+
+.preferences-page {
+  height: 100vh;
+  margin: 0;
+  padding: 0; }
 
 @media only screen and (max-width: 600px) {
   #lp {
@@ -65,10 +63,5 @@ body {
     height: calc(100vh - 64px);
     background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover; } }
-
-.preferences-page {
-  height: 100vh;
-  margin: 0;
-  padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
