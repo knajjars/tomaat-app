@@ -79,6 +79,12 @@ app.use(
 );
 app.use(flash());
 require("./passport")(app);
+app.use((req, res, next) => {
+  if (req.user) {
+    res.locals.loggedUser = req.user;
+  }
+  next();
+});
 
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
