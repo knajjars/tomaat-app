@@ -91,15 +91,22 @@ body {
 }
 
 .preferences-page {
-  height: 100vh;
   margin: 0;
   padding: 0;
+  background: url("/images/speculative/preferences-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
-.collapsible-body span{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-color: white;
+.collapsible-body span {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
 }
 
 // MOBILE SECTION
@@ -120,11 +127,11 @@ color: white;
     // height: calc(100vh);
     background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover;
-    padding: 45px
+    padding: 45px;
   }
 
   .collapsible {
     margin: 0 auto;
-    width: 50%
+    width: 50%;
   }
 }
