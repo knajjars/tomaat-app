@@ -2,7 +2,6 @@ $main-color: #26a69a;
 $alternative-color: #90bc42;
 $error-color: #e51b51;
 
-
 body {
   margin: 0;
   padding: 0;
@@ -39,6 +38,14 @@ body {
   padding-top: 6rem !important;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
 #lp {
   height: 100vh;
   background-image: url("../images/speculative/whitechopboard-lp.jpg");
@@ -54,9 +61,15 @@ body {
 
 @media only screen and (max-width: 600px) {
   #lp {
-    background-image: url('../images/speculative/veg-lp_M.jpg');
-    background-image: url('../images/speculative/sandwich-lp_M.jpg');
+    background-image: url("../images/speculative/veg-lp_M.jpg");
+    background-image: url("../images/speculative/sandwich-lp_M.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
+}
+
+.preferences-page {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
