@@ -46,11 +46,22 @@ router.post("/signup", (req, res, next) => {
       password: hashPass,
       email
     })
-      .then(res.redirect("/auth/login"))
+      .then(user => {
+        req.login(user, function(err) {
+          if (err) {
+            return res.redirect("/auth/signup");
+          }
+          return res.redirect("/auth/preferences");
+        });
+      })
       .catch(err => {
         res.render("auth/signup", { message: "Something went wrong" });
       });
   });
+});
+
+router.get("/preferences", (req, res) => {
+  res.render("auth/preferences");
 });
 
 router.get("/logout", (req, res) => {
