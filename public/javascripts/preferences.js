@@ -14,8 +14,20 @@ $(".chips-autocomplete").chips({
   }
 });
 
-$(".chips").change(e => {
-  console.log("chip added!");
-  const elems = document.querySelectorAll(".chips");
-  const instances = M.Chips.init(elems, options);
+$("#preferences-submit-btn").click(() => {
+  const preferedCuisines = $(".chips")
+    .text()
+    .split("close");
+  preferedCuisines.pop();
+
+  axios({
+    method: "POST",
+    url: "http://localhost:3000/auth/preferences",
+    headers: { "X-Requested-With": "XMLHttpRequest" },
+    data: {
+      preferedCuisines: preferedCuisines
+    }
+  })
+    .then(ok => console.log(ok))
+    .catch(err => console.log(err));
 });

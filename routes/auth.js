@@ -64,6 +64,15 @@ router.get("/preferences", (req, res) => {
   res.render("auth/preferences");
 });
 
+router.post("/preferences", (req, res) => {
+  const { preferedCuisines } = req.body;
+  User.findByIdAndUpdate(req.user._id, {
+    preferedCuisines: preferedCuisines
+  }).then(user => {
+    res.redirect("/");
+  });
+});
+
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
