@@ -2,6 +2,7 @@ $main-color: #26a69a;
 $alternative-color: #90bc42;
 $error-color: #e51b51;
 
+
 body {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@ body {
 .navbar {
   width: 100%;
   position: fixed;
+  background-color: $main-color;
 }
 
 .main-color {
@@ -42,10 +44,6 @@ body {
   background-image: url("../images/speculative/whitechopboard-lp.jpg");
   background-size: cover;
 }
-body {
-  background-size: contain;
-  background-repeat: no-repeat;
-}
 
 .error-message {
   background-color: $error-color;
@@ -56,6 +54,9 @@ body {
 
 @media only screen and (max-width: 600px) {
   #lp {
+    background-image: url('../images/speculative/veg-lp_M.jpg');
+    background-image: url('../images/speculative/sandwich-lp_M.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
   }
 }
