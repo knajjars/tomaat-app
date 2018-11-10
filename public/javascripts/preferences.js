@@ -13,3 +13,21 @@ $(".chips-autocomplete").chips({
     minLength: 1
   }
 });
+
+$("#preferences-submit-btn").click(() => {
+  const preferedCuisines = $(".chips")
+    .text()
+    .split("close");
+  preferedCuisines.pop();
+
+  axios({
+    method: "POST",
+    url: "http://localhost:3000/auth/preferences",
+    headers: { "X-Requested-With": "XMLHttpRequest" },
+    data: {
+      preferedCuisines: preferedCuisines
+    }
+  })
+    .then(ok => console.log(ok))
+    .catch(err => console.log(err));
+});
