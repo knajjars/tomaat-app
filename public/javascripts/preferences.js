@@ -13,3 +13,9 @@ $(".chips-autocomplete").chips({
     minLength: 1
   }
 });
+
+$(".chips").change(e => {
+  console.log("chip added!");
+  const elems = document.querySelectorAll(".chips");
+  const instances = M.Chips.init(elems, options);
+});
