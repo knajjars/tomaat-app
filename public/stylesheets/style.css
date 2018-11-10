@@ -7,14 +7,32 @@ body {
   padding: 0; }
 
 #lp #title {
-  font-family: 'Road Movie';
+  font-family: "Road Movie";
   margin: 0 auto;
   text-align: center;
   font-size: 7rem; }
 
+#lp #subtitle {
+  font-family: "Road Movie";
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem; }
+
 .navbar {
   width: 100%;
   background-color: #26a69a; }
+
+.collapsible {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin: .5rem 1rem 0; }
+
+.btn-large {
+  width: 100%; }
+
+#logo {
+  height: 3rem; }
 
 .main-color {
   color: #26a69a; }

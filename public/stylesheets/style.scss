@@ -3,7 +3,7 @@ $alternative-color: #90bc42;
 $error-color: #e51b51;
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
-$roadmove-src: ('');
+$roadmove-font: 'Road Movie'; 
 
 @font-face{
   font-family: "Road Movie";
@@ -17,15 +17,36 @@ body {
 // GLOBAL SECTION
 
 #lp #title {
-  font-family: 'Road Movie';  
+  font-family:  $roadmove-font;
   margin: 0 auto;
   text-align: center;
   font-size: 7rem;
 }
 
+#lp #subtitle {
+  font-family:  $roadmove-font;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem;
+}
+
 .navbar {
   width: 100%;
   background-color: $main-color;
+}
+
+.collapsible {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin: .5rem 1rem 0;
+}
+.btn-large{
+  width: 100%;
+}
+
+#logo {
+  height: 3rem;
 }
 
 .main-color {
@@ -82,6 +103,9 @@ body {
     background-repeat: no-repeat;
     height: calc(100vh - #{$sm-nav-height});
   }
+
+
+
 }
 
 // COMPUTER SECTION
