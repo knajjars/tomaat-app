@@ -1,50 +1,18 @@
-<div class="login-form">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-6 mx-auto">
-            <!-- form card login -->
-            <div class="card rounded-0">
-              <div class="card-header">
-                <h3 class="mb-0">Log in</h3>
-              </div>
-              <div class="card-body">
-                <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="/auth/login">
-                  <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email" required="">
-                  </div>
-                  <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required=""
-                      autocomplete="new-password" name="password">
-                  </div>
-                  <div>
-                    <label class="custom-control">
-                      <span class="custom-control-indicator"></span>
-                      <span class="custom-control-description small text-dark"><a href="/auth/signup">Don't have an
-                          account?</a></span>
-                    </label>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg float-right" id="btnLogin">Login</button>
-                </form>
-              </div>
-              <!--/card-block-->
-            </div>
-            <!-- /form card login -->
-            {{#if message }}
-            <div class="error-message" role="alert">
-              {{ message }}
-            </div>
-            {{/if}}
-          </div>
+<div class="container">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">First Name</label>
         </div>
-        <!--/row-->
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telephone</label>
+        </div>
       </div>
-      <!--/col-->
-    </div>
-    <!--/row-->
+    </form>
   </div>
-  <!--/container-->
 </div>
