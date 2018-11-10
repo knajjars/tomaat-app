@@ -4,7 +4,8 @@ body {
 
 .navbar {
   width: 100%;
-  position: fixed; }
+  position: fixed;
+  background-color: #26a69a; }
 
 .main-color {
   color: #26a69a; }
@@ -32,10 +33,6 @@ body {
   background-image: url("../images/speculative/whitechopboard-lp.jpg");
   background-size: cover; }
 
-body {
-  background-size: contain;
-  background-repeat: no-repeat; }
-
 .error-message {
   background-color: #e51b51;
   color: white;
@@ -44,6 +41,9 @@ body {
 
 @media only screen and (max-width: 600px) {
   #lp {
-    background-size: cover; } }
+    background-image: url("../images/speculative/veg-lp_M.jpg");
+    background-image: url("../images/speculative/sandwich-lp_M.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; } }
 
 /*# sourceMappingURL=style.css.map */
