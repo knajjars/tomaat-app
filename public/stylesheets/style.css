@@ -6,17 +6,20 @@ body {
   width: 100%;
   position: fixed; }
 
-.login-page {
+.main-color {
+  color: #26a69a; }
+
+.login-page,
+.signup-page {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center; }
+  justify-content: center; }
 
-.login-form {
+.login-form,
+.signup-page {
   background-color: aliceblue;
   border-radius: 8px; }
 
@@ -36,9 +39,8 @@ body {
 .error-message {
   background-color: #e51b51;
   color: white;
-  margin-top: 8px;
-  padding: 4px;
-  box-sizing: border-box; }
+  text-align: center;
+  padding: 5px; }
 
 @media only screen and (max-width: 600px) {
   #lp {

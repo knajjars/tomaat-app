@@ -1,6 +1,6 @@
 <div class="login-page">
   <div class="row">
-    <h3>Welcome back</h3>
+    <h3 class="main-color">Welcome back</h3>
     <form class="col s12 login-form" method="POST" action="/auth/login">
       <div class="row">
         <div class="input-field col s12">
@@ -19,6 +19,9 @@
           </button>
         </div>
       </div>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
     </form>
   </div>
 </div>

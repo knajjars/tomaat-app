@@ -1,4 +1,4 @@
-$main-color: #26c52e;
+$main-color: #26a69a;
 $alternative-color: #90bc42;
 $error-color: #e51b51;
 
@@ -12,18 +12,22 @@ body {
   position: fixed;
 }
 
-.login-page {
+.main-color {
+  color: $main-color;
+}
+
+.login-page,
+.signup-page {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-  align-items: center;
 }
 
-.login-form {
+.login-form,
+.signup-page {
   background-color: aliceblue;
   border-radius: 8px;
 }
@@ -46,9 +50,8 @@ body {
 .error-message {
   background-color: $error-color;
   color: white;
-  margin-top: 8px;
-  padding: 4px;
-  box-sizing: border-box;
+  text-align: center;
+  padding: 5px;
 }
 
 @media only screen and (max-width: 600px) {
