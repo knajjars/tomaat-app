@@ -5,6 +5,11 @@ $bg-nav-height: 64px;
 $sm-nav-height: 56px;
 $roadmove-src: ('');
 
+@font-face{
+  font-family: "Road Movie";
+  src: url('../Font/roadmovie.ttf');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,8 +17,7 @@ body {
 // GLOBAL SECTION
 
 #lp #title {
-  font-family: "roadmovie";
-  src: url('../Font/roadmovie.ttf');
+  font-family: 'Road Movie';  
   margin: 0 auto;
   text-align: center;
   font-size: 7rem;
