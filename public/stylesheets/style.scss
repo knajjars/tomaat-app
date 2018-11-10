@@ -101,6 +101,7 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
+  height: calc(100vh - #{$bg-nav-height});
 }
 
 .collapsible-body span {
@@ -110,6 +111,10 @@ body {
   color: white;
 }
 
+.collapsible-body {
+  background-color: #2bbbad;
+}
+
 // MOBILE SECTION
 
 @media only screen and (max-width: 600px) {
@@ -117,6 +122,10 @@ body {
     background-image: url("../images/speculative/sandwich-lp_M.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    height: calc(100vh - #{$sm-nav-height});
+  }
+
+  .preferences-page{
     height: calc(100vh - #{$sm-nav-height});
   }
 }
