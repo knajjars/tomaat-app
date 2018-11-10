@@ -82,6 +82,12 @@ body {
   align-items: center;
   height: calc(100vh - 64px); }
 
+.preferences-form {
+  background-color: rgba(245, 85, 11, 0.6);
+  padding: 30px;
+  border-radius: 5px;
+  color: white; }
+
 .collapsible-body span {
   display: flex;
   flex-wrap: wrap;

@@ -1,5 +1,6 @@
 $main-color: #26a69a;
-$alternative-color: #90bc42;
+$alternative-color: #f95428;
+
 $error-color: #e51b51;
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
@@ -103,6 +104,12 @@ body {
   align-items: center;
   height: calc(100vh - #{$bg-nav-height});
 }
+.preferences-form {
+  background-color: rgba(245, 85, 11, 0.6);
+  padding: 30px;
+  border-radius: 5px;
+  color: white;
+}
 
 .collapsible-body span {
   display: flex;
@@ -125,7 +132,7 @@ body {
     height: calc(100vh - #{$sm-nav-height});
   }
 
-  .preferences-page{
+  .preferences-page {
     height: calc(100vh - #{$sm-nav-height});
   }
 }
