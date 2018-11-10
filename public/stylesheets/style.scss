@@ -47,6 +47,8 @@ body {
 
 #logo {
   height: 3rem;
+  display: inline;
+  vertical-align: sub;
 }
 
 .main-color {
@@ -93,6 +95,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.collapsible-body span{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+color: white;
+}
 
 // MOBILE SECTION
 
@@ -112,5 +120,11 @@ body {
     // height: calc(100vh);
     background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover;
+    padding: 45px
+  }
+
+  .collapsible {
+    margin: 0 auto;
+    width: 50%
   }
 }
