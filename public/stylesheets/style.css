@@ -1,13 +1,13 @@
+@font-face {
+  font-family: "Road Movie";
+  src: url("../Font/roadmovie.ttf"); }
+
 body {
   margin: 0;
   padding: 0; }
 
 #lp #title {
-  font-family: "roadmovie";
-<<<<<<< HEAD
-  src: url("../Font/roadmovie.ttf");
-=======
->>>>>>> f6698fed02b95b80d5117fbafd52729d3a1b1da1
+  font-family: 'Road Movie';
   margin: 0 auto;
   text-align: center;
   font-size: 7rem; }
