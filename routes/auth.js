@@ -66,6 +66,7 @@ router.get("/preferences", (req, res) => {
 
 router.post("/preferences", (req, res) => {
   const { preferedCuisines } = req.body;
+  console.log(preferedCuisines);
   User.findByIdAndUpdate(req.user._id, {
     preferedCuisines: preferedCuisines
   }).then(user => {

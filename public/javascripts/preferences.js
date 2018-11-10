@@ -14,12 +14,12 @@ $(".chips-autocomplete").chips({
   }
 });
 
-$("#preferences-submit-btn").click(() => {
+$("#preferences-submit-btn").click(e => {
   const preferedCuisines = $(".chips")
     .text()
     .split("close");
   preferedCuisines.pop();
-
+  console.log(preferedCuisines);
   axios({
     method: "POST",
     url: "http://localhost:3000/auth/preferences",
@@ -28,6 +28,6 @@ $("#preferences-submit-btn").click(() => {
       preferedCuisines: preferedCuisines
     }
   })
-    .then(ok => console.log(ok))
+    .then(() => (window.location = window.location.origin))
     .catch(err => console.log(err));
 });
