@@ -16,9 +16,16 @@ body {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .login-form {
+  background-color: aliceblue;
+  border-radius: 8px;
 }
 
 .pt-5,
