@@ -2,9 +2,14 @@ body {
   margin: 0;
   padding: 0; }
 
+#lp #title {
+  font-family: 'roadmovie';
+  margin: 0 auto;
+  text-align: center;
+  font-size: 7rem; }
+
 .navbar {
   width: 100%;
-  position: fixed;
   background-color: #26a69a; }
 
 .main-color {
@@ -28,11 +33,6 @@ body {
 .py-5 {
   padding-top: 6rem !important; }
 
-#lp {
-  height: 100vh;
-  background-image: url("../images/speculative/whitechopboard-lp.jpg");
-  background-size: cover; }
-
 .error-message {
   background-color: #e51b51;
   color: white;
@@ -41,9 +41,15 @@ body {
 
 @media only screen and (max-width: 600px) {
   #lp {
-    background-image: url("../images/speculative/veg-lp_M.jpg");
     background-image: url("../images/speculative/sandwich-lp_M.jpg");
     background-size: cover;
-    background-repeat: no-repeat; } }
+    background-repeat: no-repeat;
+    height: calc(100vh - 56px); } }
+
+@media only screen and (min-width: 600px) {
+  #lp {
+    height: calc(100vh - 64px);
+    background-image: url("../images/speculative/whitechopboard-lp.jpg");
+    background-size: cover; } }
 
 /*# sourceMappingURL=style.css.map */
