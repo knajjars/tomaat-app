@@ -32,7 +32,9 @@ body {
   width: 100%; }
 
 #logo {
-  height: 3rem; }
+  height: 3rem;
+  display: inline;
+  vertical-align: sub; }
 
 .main-color {
   color: #26a69a; }
@@ -72,6 +74,12 @@ body {
   margin: 0;
   padding: 0; }
 
+.collapsible-body span {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white; }
+
 @media only screen and (max-width: 600px) {
   #lp {
     background-image: url("../images/speculative/sandwich-lp_M.jpg");
@@ -83,6 +91,10 @@ body {
   #lp {
     height: calc(100vh - 64px);
     background-image: url("../images/speculative/whitechopboard-lp.jpg");
-    background-size: cover; } }
+    background-size: cover;
+    padding: 45px; }
+  .collapsible {
+    margin: 0 auto;
+    width: 50%; } }
 
 /*# sourceMappingURL=style.css.map */
