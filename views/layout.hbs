@@ -13,21 +13,42 @@
 
 <body>
 
-  <nav>
+   <nav>
     <div class="nav-wrapper">
-<<<<<<< HEAD
-      <a href="/" class="brand-logo"></a>
-=======
-      <a href="/" class="brand-logo"><i class="material-icons">cloud</i>Tomaat</a>
->>>>>>> 649607815cf7321f8248c353c77553a3131c09f2
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/auth/signup"><i class="material-icons">play_arrow</i></a></li>
-        <li><a href="/auth/login"><i class="material-icons">view_module</i></a></li>
-        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+
       </ul>
+      
     </div>
   </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+        <li><a href="/auth/signup"><i class="material-icons">play_arrow</i>Sign Up</a></li>
+        <li><a href="/auth/login"><i class="material-icons">view_module</i>Log In</a></li>
+
+  </ul>
+
+  {{!-- <nav>
+
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><i class="material-icons">cloud</i>Tomaat</a>
+      <ul class="right hide-on-med-and-down">
+
+      </ul>
+
+          
+    </div>
+
+  </nav>
+
+          <ul class="sidenav" id="mobile-demo">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+  </ul> --}}
 
   {{{body}}}
 
@@ -36,6 +57,8 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/javascripts/script.js"> </script>
+
+
 </body>
 
 </html>
