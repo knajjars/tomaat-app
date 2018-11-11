@@ -2,12 +2,12 @@
   <div class="preferences-form">
     <ul id="tabs-swipe" class="tabs">
       <li class="tab col s3"><a id="cuisine-tab" class="active" href="#cuisine-form">Cuisines</a></li>
-      <li class="tab col s3"><a id="allergy-tab" href="#allergies-form">Allergies</a></li>
+      <li class="tab col s3"><a id="allergy-tab" href="#allergy-form">Allergies</a></li>
       <li class="tab col s3"><a id="diet-tab" href="#diet-form">Diets</a></li>
     </ul>
     {{!-- cuisine form --}}
     <div id="cuisine-form" class="col s12 ">
-      <h2>Your preferences</h2>
+      <h1>Your <span class="underlined-special">preferred cuisines</span> </h1>
       <h5>Hey <span class="capitalize bold">{{loggedUser.name}}</span>, please let us know your favorite cuisines,
         we'll
         make it
@@ -17,8 +17,8 @@
     {{!-- end of cuisine form --}}
 
     {{!-- start of allergies form --}}
-    <div id="allergies-form" class="col s12 ">
-      <h2>Your allergies</h2>
+    <div id="allergy-form" class="col s12 ">
+      <h1>Your <span class="underlined-special">allergies</span></h1>
       <h5>If you have any allergies, please share it and we will take it into account.</h5>
       <div class="chips chips-allergy chips-autocomplete"></div>
     </div>
@@ -26,14 +26,17 @@
 
     {{!-- start of diet form --}}
     <div id="diet-form" class="col s12 ">
-      <h2>Your diet</h2>
+      <h1>Your <span class="underlined-special">diet</span></h1>
       <h5>And lastly <span class="capitalize bold">{{loggedUser.name}}</span>, if you are on a special diet and would
         like us to know, please specify.</h5>
       <div class="chips chips-diet chips-autocomplete"></div>
     </div>
     {{!-- end of diet form --}}
-    <button class="btn waves-effect waves-light" id="preferences-submit-btn" name="action">Continue
-      <i class="material-icons right">send</i>
-    </button>
+    <div class="bottom-form-preferences">
+      <i class="material-icons right">local_dining</i>
+      <button class="btn waves-effect waves-light" id="preferences-submit-btn" name="action">Continue
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
   </div>
 </div>

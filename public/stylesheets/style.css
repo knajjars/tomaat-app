@@ -80,6 +80,9 @@ body {
   height: calc(100vh - 64px); }
 
 .preferences-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   margin: 0 90px;
   background-color: #f95428;
   padding: 30px;
@@ -91,6 +94,21 @@ body {
   @media only screen and (min-width: 1200px) {
     .preferences-form {
       margin: 0 200px; } }
+
+#cuisine-form,
+#allergy-form,
+#diet-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
+
+.bottom-form-preferences {
+  display: flex;
+  justify-content: space-between; }
+
+.underlined-special {
+  text-decoration: underline;
+  font-weight: 600; }
 
 .collapsible {
   border-top: 1px solid #ddd;
