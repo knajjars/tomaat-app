@@ -126,6 +126,18 @@ body {
   background-color: #2bbbad;
 }
 
+#cuisine-label{
+    font-size: .8rem;
+    color: #9e9e9e;
+    width: 177px;
+    padding-bottom: 10px;
+
+
+    span {
+      font-size: 1rem;
+    }
+}
+
 // MOBILE SECTION
 
 @media only screen and (max-width: 600px) {

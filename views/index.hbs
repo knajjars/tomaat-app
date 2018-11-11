@@ -11,22 +11,32 @@
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>Cuisine</div>
       <div class="collapsible-body"><span>
         {{#each cuisine}}
-          {{!-- <label>
+          <label id="cuisine-label">
             <input type="checkbox" class="filled-in" checked="checked" />
             <span>{{this}} </span>
-          </label> --}}
+          </label>
 
 
 
-    <label class="button-label">
+    {{!-- <label class="button-label">
           <input class="hidden radio-label" type="checkbox" name="accept-offers" id="yes-button" checked="checked"/>
           <h1>{{this}} </h1>
-    </label>
+    </label> --}}
+
+
           {{/each}}
         </span></div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">place</i>Allergy</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Diet</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Course</div>
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li>
     {{!-- <li>
