@@ -12,23 +12,28 @@
         we'll
         make it
         count. 💚</h5>
-      <div class="chips chips-autocomplete"></div>
-      <button class="btn waves-effect waves-light" id="preferences-submit-btn" name="action">Continue
-        <i class="material-icons right">send</i>
-      </button>
+      <div class="chips chips-cuisine chips-autocomplete"></div>
     </div>
     {{!-- end of cuisine form --}}
 
     {{!-- start of allergies form --}}
     <div id="allergies-form" class="col s12 ">
-      allergies
+      <h2>Your allergies</h2>
+      <h5>If you have any allergies, please share it and we will take it into account.</h5>
+      <div class="chips chips-allergy chips-autocomplete"></div>
     </div>
     {{!-- end of allergies form --}}
 
     {{!-- start of diet form --}}
     <div id="diet-form" class="col s12 ">
-      diets
+      <h2>Your diet</h2>
+      <h5>And lastly <span class="capitalize bold">{{loggedUser.name}}</span>, if you are on a special diet and would
+        like us to know, please specify.</h5>
+      <div class="chips chips-diet chips-autocomplete"></div>
     </div>
     {{!-- end of diet form --}}
+    <button class="btn waves-effect waves-light" id="preferences-submit-btn" name="action">Continue
+      <i class="material-icons right">send</i>
+    </button>
   </div>
 </div>
