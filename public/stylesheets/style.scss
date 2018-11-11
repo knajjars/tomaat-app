@@ -45,9 +45,8 @@ body {
 }
 
 #logo {
-  height: 3rem;
-  display: inline;
   vertical-align: sub;
+  height: 3rem;
 }
 
 .main-color {
@@ -103,6 +102,9 @@ body {
   height: calc(100vh - #{$bg-nav-height});
 }
 .preferences-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   margin: 0 90px;
   background-color: $alternative-color;
   padding: 30px;
@@ -114,6 +116,24 @@ body {
   @media only screen and (min-width: 1200px) {
     margin: 0 200px;
   }
+}
+
+#cuisine-form,
+#allergy-form,
+#diet-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.bottom-form-preferences {
+  display: flex;
+  justify-content: space-between;
+}
+
+.underlined-special {
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .collapsible {
@@ -187,6 +207,23 @@ body {
   }
 }
 
-// TEST SECTION
+// ERRORS
+.not-found {
+  height: calc(100vh - #{$bg-nav-height});
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a0b1b0;
+  color: white;
+
+  * {
+    margin: 20px;
+    text-align: justify;
+  }
+  img {
+    border-radius: 50px;
+  }
+}
 
 // @import "compass/css3";
