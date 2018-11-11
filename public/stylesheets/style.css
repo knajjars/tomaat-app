@@ -156,4 +156,18 @@ body {
     margin: 0 auto;
     width: 50%; } }
 
+.not-found {
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a0b1b0;
+  color: white; }
+  .not-found * {
+    margin: 20px;
+    text-align: justify; }
+  .not-found img {
+    border-radius: 50px; }
+
 /*# sourceMappingURL=style.css.map */
