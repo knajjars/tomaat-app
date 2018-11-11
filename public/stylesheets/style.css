@@ -6,6 +6,9 @@ body {
   margin: 0;
   padding: 0; }
 
+#lp {
+  background-image: url("../images/speculative/whitechopboard-lp.jpg"); }
+
 #lp #title {
   font-family: "Road Movie";
   margin: 0 auto;
@@ -142,7 +145,6 @@ body {
 
 @media only screen and (max-width: 670px) {
   #lp {
-    background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: calc(100vh - 56px); }
@@ -152,12 +154,14 @@ body {
 @media only screen and (min-width: 670px) {
   #lp {
     height: calc(100vh - 64px);
-    background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover;
     padding: 45px; }
   .collapsible {
     margin: 0 auto;
-    width: 50%; } }
+    width: 800px; } }
+  @media only screen and (min-width: 670px) and (max-width: 950px) {
+    .collapsible {
+      width: 600px; } }
 
 .not-found {
   height: calc(100vh - 64px);
@@ -171,6 +175,6 @@ body {
     margin: 20px;
     text-align: justify; }
   .not-found img {
-    border-radius: 50px; }
+    height: 18rem; }
 
 /*# sourceMappingURL=style.css.map */
