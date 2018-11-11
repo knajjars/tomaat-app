@@ -40,12 +40,7 @@ body {
   background-color: $alternative-color;
 }
 
-.collapsible {
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  margin: 0.5rem 1rem 0;
-}
+
 .btn-large {
   width: 100%;
 }
@@ -115,16 +110,34 @@ body {
   color: white;
 }
 
-.collapsible-body span {
+.collapsible {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin: 0.5rem 1rem 0;
+}
+
+.collapsible-header{
+
+  button {
+    margin: 0 20px
+  }
+
+  button#time {
+    background-color: $alternative-color;
+  }
+}
+
+.collapsible-body {
+  background-color: #2bbbad;
+span {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   color: white;
 }
-
-.collapsible-body {
-  background-color: #2bbbad;
 }
+
 
 #cuisine-label{
     font-size: .8rem;
