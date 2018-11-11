@@ -65,10 +65,20 @@ router.get("/preferences", (req, res) => {
 });
 
 router.post("/preferences", (req, res) => {
+  const cuisinesString = "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese".split(
+    ","
+  );
+  const cuisinesArray = cuisinesString.map(cuisine => {
+    return cuisine.trim();
+  });
   const { preferedCuisines } = req.body;
-  console.log(preferedCuisines);
+  const filteredCuisines = preferedCuisines.filter(el => {
+    if (cuisinesArray.includes(el)) {
+      return el;
+    }
+  });
   User.findByIdAndUpdate(req.user._id, {
-    preferedCuisines: preferedCuisines
+    preferedCuisines: filteredCuisines
   }).then(user => {
     res.redirect("/");
   });
