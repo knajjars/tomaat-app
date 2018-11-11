@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,900);
 @font-face {
   font-family: "Road Movie";
   src: url("../Font/roadmovie.ttf"); }
@@ -76,15 +75,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
   align-content: center;
-  align-items: center;
   height: calc(100vh - 64px); }
 
 .preferences-form {
+  margin: 0 90px;
   background-color: #f95428;
   padding: 30px;
   border-radius: 5px;
   color: white; }
+  @media only screen and (max-width: 600px) {
+    .preferences-form {
+      margin: 0 10px; } }
+  @media only screen and (min-width: 1200px) {
+    .preferences-form {
+      margin: 0 200px; } }
 
 .collapsible {
   border-top: 1px solid #ddd;
@@ -107,7 +113,7 @@ body {
     color: white; }
 
 #cuisine-label {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: #9e9e9e;
   width: 177px;
   padding-bottom: 10px; }
@@ -132,44 +138,5 @@ body {
   .collapsible {
     margin: 0 auto;
     width: 50%; } }
-
-.button-label {
-  display: inline-block;
-  padding: 1em 1em;
-  margin: 0.5em;
-  cursor: pointer;
-  color: #292929;
-  border-radius: 0.25em;
-  background: #efefef;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  transition: 0.3s;
-  user-select: none;
-  height: 50px;
-  width: 100px; }
-  .button-label h1 {
-    font-size: 1em;
-    font-family: "Lato", sans-serif;
-    margin: 0; }
-  .button-label:hover {
-    background: #d6d6d6;
-    color: #101010;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32); }
-  .button-label:active {
-    transform: translateY(2px);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.22); }
-  @media (max-width: 40em) {
-    .button-label {
-      padding: 0em 1em 3px;
-      margin: 0.25em; } }
-
-#yes-button:checked + .button-label {
-  background: #2ECC71;
-  color: #efefef; }
-  #yes-button:checked + .button-label:hover {
-    background: #29b765;
-    color: #e2e2e2; }
-
-.hidden {
-  display: none; }
 
 /*# sourceMappingURL=style.css.map */

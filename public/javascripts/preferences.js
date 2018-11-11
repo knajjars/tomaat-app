@@ -6,9 +6,39 @@ cuisinesString.split(",").forEach(cuisine => {
   cuisineObj[cuisine.trim()] = null;
 });
 
-$(".chips-autocomplete").chips({
+const allergyObj = {};
+const allergyString =
+  "Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat";
+allergyString.split(",").forEach(allergy => {
+  allergyObj[allergy.trim()] = null;
+});
+
+const dietObj = {};
+const dietString =
+  "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian";
+dietString.split(",").forEach(diet => {
+  dietObj[diet.trim()] = null;
+});
+
+$(".chips-cuisine").chips({
   autocompleteOptions: {
     data: cuisineObj,
+    limit: Infinity,
+    minLength: 1
+  }
+});
+
+$(".chips-allergy").chips({
+  autocompleteOptions: {
+    data: allergyObj,
+    limit: Infinity,
+    minLength: 1
+  }
+});
+
+$(".chips-diet").chips({
+  autocompleteOptions: {
+    data: dietObj,
     limit: Infinity,
     minLength: 1
   }
@@ -19,7 +49,6 @@ $("#preferences-submit-btn").click(e => {
     .text()
     .split("close");
   preferedCuisines.pop();
-  console.log(preferedCuisines);
   axios({
     method: "POST",
     url: "http://localhost:3000/auth/preferences",
