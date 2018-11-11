@@ -115,11 +115,12 @@ body {
   border-left: 1px solid #ddd;
   margin: 0.5rem 1rem 0; }
 
-.collapsible-header button {
-  margin: 0 20px; }
-
-.collapsible-header button#time {
-  background-color: #f95428; }
+.collapsible-header {
+  justify-content: space-between; }
+  .collapsible-header button {
+    margin: 0 20px; }
+  .collapsible-header button#time {
+    background-color: #f95428; }
 
 .collapsible-body {
   background-color: #2bbbad; }
