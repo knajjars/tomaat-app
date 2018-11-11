@@ -7,7 +7,8 @@
   <form action="/yummly-api" method="post">
     <ul class="collapsible">
       <li>
-        <div class="collapsible-header"><button type="submit" name="quick" id="quick" class="waves-effect waves-light btn-large">I'm
+        <div class="collapsible-header">
+          <button type="submit" name="quick" id="quick" class="waves-effect waves-light btn-large">I'm
             in a hurry</button>
           <button type="submit" name="time" id="time" class="waves-effect waves-light btn-large">I've got time</button>
         </div>
@@ -43,7 +44,8 @@
             {{/each}}
 
 
-          </span></div>
+          </span>
+        </div>
       </li>
       <li>
         <div class="collapsible-header">
@@ -53,10 +55,10 @@
         </div>
         <div class="collapsible-body" id="allergy">
           <div>
-            <button class="waves-effect waves-light btn-small" type="button"  id="allergy-btn">Select All</button>
+            <button class="waves-effect waves-light btn-small" type="button" id="allergy-btn">Select All</button>
 
           </div>
-          
+
           <span>
             {{#each loggedUser.preferences.allergies}}
             <label id="allergy-label">
@@ -71,7 +73,8 @@
               <input type="checkbox" class="filled-in" value="{{this}}" />
               <span>{{this}}</span>
             </label>
-            {{/each}}</span></div>
+            {{/each}}</span>
+        </div>
       </li>
       <li>
         <div class="collapsible-header">
@@ -80,7 +83,7 @@
           </div>
         </div>
         <div class="collapsible-body" id="diet">
-          
+
           <div>
             <button class="waves-effect waves-light btn-small" type="button" id="diet-btn">Select All</button>
 
@@ -99,7 +102,8 @@
               <input type="checkbox" class="filled-in" value="{{this}}" />
               <span>{{this}}</span>
             </label>
-            {{/each}}</span></div></span></div>
+            {{/each}}</span>
+        </div></span></div>
       </li>
     </ul>
   </form>
