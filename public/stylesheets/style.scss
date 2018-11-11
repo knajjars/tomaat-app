@@ -17,6 +17,10 @@ body {
 }
 // GLOBAL SECTION
 
+#lp {
+  background-image: url("../images/speculative/whitechopboard-lp.jpg");
+}
+
 #lp #title {
   font-family: $roadmove-font;
   margin: 0 auto;
@@ -182,8 +186,6 @@ body {
 
 @media only screen and (max-width: 670px) {
   #lp {
-    // background-image: url("../images/speculative/sandwich-lp_M.jpg");
-    background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: calc(100vh - #{$sm-nav-height});
@@ -199,14 +201,16 @@ body {
   #lp {
     height: calc(100vh - #{$bg-nav-height});
     // height: calc(100vh);
-    background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover;
     padding: 45px;
   }
 
   .collapsible {
     margin: 0 auto;
-    width: 50%;
+    width: 800px;
+    @media only screen and (max-width: 950px) {
+      width: 600px;
+    }
   }
 }
 
@@ -225,7 +229,7 @@ body {
     text-align: justify;
   }
   img {
-    border-radius: 50px;
+    height: 18rem;
   }
 }
 
