@@ -3,7 +3,7 @@ const cuisineObj = {};
 const cuisinesString =
   "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
 cuisinesString.split(",").forEach(cuisine => {
-  cuisineObj[cuisine] = null;
+  cuisineObj[cuisine.trim()] = null;
 });
 
 $(".chips-autocomplete").chips({
