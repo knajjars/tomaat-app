@@ -22,6 +22,9 @@ body {
   width: 100%;
   background-color: #26a69a; }
 
+#signup-btn {
+  background-color: #f95428; }
+
 .collapsible {
   border-top: 1px solid #ddd;
   border-right: 1px solid #ddd;
