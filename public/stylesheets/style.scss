@@ -19,21 +19,24 @@ body {
 
 #lp {
   background-image: url("../images/speculative/whitechopboard-lp.jpg");
+   #title {
+    font-family: $roadmove-font;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 7rem;
+    padding: 2rem
+  }
+
+  #subtitle {
+    font-family: $roadmove-font;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem
+  }
 }
 
-#lp #title {
-  font-family: $roadmove-font;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 7rem;
-}
 
-#lp #subtitle {
-  font-family: $roadmove-font;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 3rem;
-}
 
 .navbar {
   width: 100%;
@@ -151,7 +154,16 @@ body {
 
 .collapsible-header {
   justify-content: space-between;
+  div {
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
+  p {
+    margin: 0;
+  }
   &#header1{
     padding: 0%
   }
@@ -173,13 +185,25 @@ body {
     justify-content: space-between;
     color: white;
   }
+  div {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 20px;
+  }
+  label {
+    color: white;
+    font-size: medium;
+    width: 177px;
+    padding-bottom: 10px;
+  }
+}
+
+[type="checkbox"].filled-in:not(:checked)+span:not(.lever):after {
+  border: 2px solid
 }
 
 #cuisine-label {
-  font-size: 0.8rem;
-  color: #9e9e9e;
-  width: 177px;
-  padding-bottom: 10px;
+  font-size: 0.8rem;;
 
   span {
     font-size: 1rem;
@@ -197,6 +221,11 @@ body {
 
   .preferences-page {
     height: calc(100vh - #{$sm-nav-height});
+  }
+
+  label {
+    width: 160px;
+    padding: 5px 0
   }
 }
 

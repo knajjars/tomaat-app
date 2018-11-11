@@ -26,15 +26,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
 $(document).ready(function() {
   $(".collapsible").collapsible();
+  
+  // $('#cuisine .switch').toggle(function(){
+  //     $('#cuisine input:checkbox').attr('checked','checked');
+  //       // $(this).val('uncheck all');
+  //   }
+  //   )
+
+  // $('#cuisine .switch input').is(':checked') = false
+
+    $('#cuisine .switch input').change(function() {
+        if($(this).is(":checked")) {
+          $('#cuisine input:checkbox').attr('checked','checked');
+        }    
+        if(!$(this).is(":checked")) {
+          $('#cuisine input:checkbox').attr('checked',false);
+        }    
+    });
+    $('#allergy .switch input').change(function() {
+        if($(this).is(":checked")) {
+          $('#allergy input:checkbox').attr('checked','checked');
+        }    
+        if(!$(this).is(":checked")) {
+          $('#allergy input:checkbox').attr('checked',false);
+        }    
+    });
+    $('#diet .switch input').change(function() {
+        if($(this).is(":checked")) {
+          $('#diet input:checkbox').attr('checked','checked');
+        }    
+        if(!$(this).is(":checked")) {
+          $('#diet input:checkbox').attr('checked',false);
+        }    
+    });
+
+
+
 });
 
 
 
-  $('.btn-small#cuisine-btn').click(function(){
-    $('#cuisine input:checkbox').attr('checked','checked');
-      // $(this).val('uncheck all');
-  }
-  )
+
+
 
   $('.btn-small#allergy-btn').click(function(){
     $('#allergy input:checkbox').attr('checked','checked');

@@ -8,18 +8,18 @@ body {
 
 #lp {
   background-image: url("../images/speculative/whitechopboard-lp.jpg"); }
-
-#lp #title {
-  font-family: "Road Movie";
-  margin: 0 auto;
-  text-align: center;
-  font-size: 7rem; }
-
-#lp #subtitle {
-  font-family: "Road Movie";
-  margin: 0 auto;
-  text-align: center;
-  font-size: 3rem; }
+  #lp #title {
+    font-family: "Road Movie";
+    margin: 0 auto;
+    text-align: center;
+    font-size: 7rem;
+    padding: 2rem; }
+  #lp #subtitle {
+    font-family: "Road Movie";
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem; }
 
 .navbar {
   width: 100%;
@@ -122,6 +122,13 @@ body {
 
 .collapsible-header {
   justify-content: space-between; }
+  .collapsible-header div {
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+  .collapsible-header p {
+    margin: 0; }
   .collapsible-header#header1 {
     padding: 0%; }
   .collapsible-header button#time {
@@ -134,12 +141,21 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     color: white; }
+  .collapsible-body div {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 20px; }
+  .collapsible-body label {
+    color: white;
+    font-size: medium;
+    width: 177px;
+    padding-bottom: 10px; }
+
+[type="checkbox"].filled-in:not(:checked) + span:not(.lever):after {
+  border: 2px solid; }
 
 #cuisine-label {
-  font-size: 0.8rem;
-  color: #9e9e9e;
-  width: 177px;
-  padding-bottom: 10px; }
+  font-size: 0.8rem; }
   #cuisine-label span {
     font-size: 1rem; }
 
@@ -149,7 +165,10 @@ body {
     background-repeat: no-repeat;
     height: calc(100vh - 56px); }
   .preferences-page {
-    height: calc(100vh - 56px); } }
+    height: calc(100vh - 56px); }
+  label {
+    width: 160px;
+    padding: 5px 0; } }
 
 @media only screen and (min-width: 670px) {
   #lp {

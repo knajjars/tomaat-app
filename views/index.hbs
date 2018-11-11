@@ -15,14 +15,24 @@
       <li>
         <div class="collapsible-header">
           <div>
-            <i class="material-icons">filter_drama</i>Cuisine
+            <i class="material-icons">restaurant</i>
+            <p>Cusine</p>
           </div>
+  
 
         </div>
         <div class="collapsible-body" id="cuisine">
-          <div>
+          {{!-- <div>
             <button type="button" class="waves-effect waves-light btn-small" type="button" id="cuisine-btn">Select All</button>
 
+          </div> --}}
+
+          <div class="switch">
+            <label>
+              Select All
+              <input type="checkbox">
+              <span class="lever"></span>
+            </label>
           </div>
           <span>
 
@@ -48,15 +58,18 @@
       <li>
         <div class="collapsible-header">
           <div>
-            <i class="material-icons">filter_drama</i>Allergy
+            <i class="material-icons">warning</i>Allergy
           </div>
         </div>
         <div class="collapsible-body" id="allergy">
-          <div>
-            <button class="waves-effect waves-light btn-small" type="button"  id="allergy-btn">Select All</button>
-
+          <div class="switch">
+            <label>
+              Select All
+              <input type="checkbox">
+              <span class="lever"></span>
+            </label>
           </div>
-          
+
           <span>
             {{#each loggedUser.preferences.allergies}}
             <label id="allergy-label">
@@ -71,19 +84,23 @@
               <input type="checkbox" class="filled-in" value="{{this}}" />
               <span>{{this}}</span>
             </label>
-            {{/each}}</span></div>
+            {{/each}}</span>
+        </div>
       </li>
       <li>
         <div class="collapsible-header">
           <div>
-            <i class="material-icons">filter_drama</i>Diet
+            <i class="material-icons">spa</i>Diet
           </div>
         </div>
         <div class="collapsible-body" id="diet">
-          
-          <div>
-            <button class="waves-effect waves-light btn-small" type="button" id="diet-btn">Select All</button>
 
+          <div class="switch">
+            <label>
+              Select All
+              <input type="checkbox">
+              <span class="lever"></span>
+            </label>
           </div>
           <span>
             {{#each loggedUser.preferences.diets}}
@@ -99,7 +116,8 @@
               <input type="checkbox" class="filled-in" value="{{this}}" />
               <span>{{this}}</span>
             </label>
-            {{/each}}</span></div></span></div>
+            {{/each}}</span>
+        </div></span></div>
       </li>
     </ul>
   </form>
