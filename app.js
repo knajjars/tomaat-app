@@ -72,17 +72,14 @@ const cuisineObj = {};
 cuisinesString =
   "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
 cuisinesString.split(",").forEach(cuisine => {
-  cuisine.trim()
+  cuisine.trim();
   cuisineObj[cuisine] = null;
 
   // console.log(cuisineObj);
-
 });
 
-delete cuisineObj[' French'];
-console.log('DELETE DEBUG',cuisineObj);
-
-
+delete cuisineObj[" French"];
+console.log("DELETE DEBUG", cuisineObj);
 
 // Enable authentication using session + passport
 app.use(
@@ -99,7 +96,6 @@ app.use((req, res, next) => {
   if (req.user) {
     res.locals.loggedUser = req.user;
     app.locals.cuisine = Object.keys(cuisineObj);
-
   }
   next();
 });
