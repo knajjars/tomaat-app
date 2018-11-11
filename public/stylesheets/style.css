@@ -26,7 +26,8 @@ body {
   background-color: #f95428; }
 
 .btn-large {
-  width: 100%; }
+  width: 100%;
+  background-color: #f62459; }
 
 #logo {
   vertical-align: sub;
@@ -120,7 +121,7 @@ body {
   .collapsible-header button {
     margin: 0 20px; }
   .collapsible-header button#time {
-    background-color: #f95428; }
+    background-color: #736598; }
 
 .collapsible-body {
   background-color: #2bbbad; }
@@ -138,7 +139,7 @@ body {
   #cuisine-label span {
     font-size: 1rem; }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   #lp {
     background-image: url("../images/speculative/sandwich-lp_M.jpg");
     background-size: cover;
@@ -147,7 +148,7 @@ body {
   .preferences-page {
     height: calc(100vh - 56px); } }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 670px) {
   #lp {
     height: calc(100vh - 64px);
     background-image: url("../images/speculative/whitechopboard-lp.jpg");

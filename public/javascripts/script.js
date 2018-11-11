@@ -30,12 +30,17 @@ $(document).ready(function() {
 
 
 
-  $('.btn-small:button').click(function(){
+  $('.btn-small#cuisine-btn').click(function(){
     $('#cuisine input:checkbox').attr('checked','checked');
       // $(this).val('uncheck all');
   }
-  // ,function(){
-  //     $('input:checkbox').removeAttr('checked');
-  //     $(this).val('check all');        
-  // }
   )
+
+  $('.btn-small#allergy-btn').click(function(){
+    $('#allergy input:checkbox').attr('checked','checked');
+      // $(this).val('uncheck all');
+  })
+  $('.btn-small#diet-btn').click(function(){
+    $('#diet input:checkbox').attr('checked','checked');
+      // $(this).val('uncheck all');
+  })

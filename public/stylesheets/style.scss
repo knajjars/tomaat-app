@@ -42,6 +42,7 @@ body {
 
 .btn-large {
   width: 100%;
+  background-color: #f62459;
 }
 
 #logo {
@@ -151,7 +152,7 @@ body {
   }
 
   button#time {
-    background-color: $alternative-color;
+    background-color: #736598;
   }
 }
 
@@ -178,7 +179,7 @@ body {
 
 // MOBILE SECTION
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   #lp {
     background-image: url("../images/speculative/sandwich-lp_M.jpg");
     background-size: cover;
@@ -192,7 +193,7 @@ body {
 }
 
 // COMPUTER SECTION
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 670px) {
   #lp {
     height: calc(100vh - #{$bg-nav-height});
     // height: calc(100vh);

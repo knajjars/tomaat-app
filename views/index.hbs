@@ -19,12 +19,13 @@
           </div>
 
         </div>
-        <div class="collapsible-body" id="cuisine"><span>
+        <div class="collapsible-body" id="cuisine">
           <div>
-            <button type="button" class="waves-effect waves-light btn-small" type="button">Select All</button>
+            <button type="button" class="waves-effect waves-light btn-small" type="button" id="cuisine-btn">Select All</button>
 
           </div>
-<div>
+          <span>
+
 
             {{#each loggedUser.preferences.cuisines}}
             <label id="cuisine-label">
@@ -40,7 +41,7 @@
               <span>{{this}}</span>
             </label>
             {{/each}}
-</div>
+
 
           </span></div>
       </li>
@@ -49,12 +50,14 @@
           <div>
             <i class="material-icons">filter_drama</i>Allergy
           </div>
+        </div>
+        <div class="collapsible-body" id="allergy">
           <div>
-            <button class="waves-effect waves-light btn-small" type="button" >Select All</button>
+            <button class="waves-effect waves-light btn-small" type="button"  id="allergy-btn">Select All</button>
 
           </div>
-        </div>
-        <div class="collapsible-body" id="allergy"><span>
+          
+          <span>
             {{#each loggedUser.preferences.allergies}}
             <label id="allergy-label">
 
@@ -75,12 +78,14 @@
           <div>
             <i class="material-icons">filter_drama</i>Diet
           </div>
+        </div>
+        <div class="collapsible-body" id="diet">
+          
           <div>
-            <button class="waves-effect waves-light btn-small" type="button">Select All</button>
+            <button class="waves-effect waves-light btn-small" type="button" id="diet-btn">Select All</button>
 
           </div>
-        </div>
-        <div class="collapsible-body" id="diet"><span>
+          <span>
             {{#each loggedUser.preferences.diets}}
             <label id="diet-label">
 
