@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const router = express.Router();
 const User = require("../models/User");
+const ensureAuthenticated = require("./Secuirty/ensureAuthenticated");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -60,11 +61,11 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.get("/preferences", (req, res) => {
+router.get("/preferences", ensureAuthenticated, (req, res) => {
   res.render("auth/preferences");
 });
 
-router.post("/preferences", (req, res) => {
+router.post("/preferences", ensureAuthenticated, (req, res) => {
   const cuisinesString = "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese".split(
     ","
   );
