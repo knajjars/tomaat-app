@@ -66,8 +66,7 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 });
 
 // default value for title local
-app.locals.title = "Express - Generated with IronGenerator";
-
+app.locals.title = "Tomaat";
 
 // preferences collection
 const cuisineObj = {};
@@ -86,8 +85,7 @@ allergyString.split(", ").forEach(allergy => {
 });
 
 const dietObj = {};
-dietString =
-  "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian";
+dietString = "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian";
 dietString.split(", ").forEach(diet => {
   dietObj[diet] = null;
 });
@@ -105,16 +103,16 @@ app.use(flash());
 require("./passport")(app);
 app.use((req, res, next) => {
   if (req.user) {
-    res.locals.loggedUser = req.user;    
+    res.locals.loggedUser = req.user;
     req.user.preferences.cuisines.forEach(el => {
       delete cuisineObj[el];
     });
-    req.user.preferences.allergies.forEach(el=>{
-      delete allergyObj[el]
-    })
-    req.user.preferences.diets.forEach(el=>{
-      delete dietObj[el]
-    })
+    req.user.preferences.allergies.forEach(el => {
+      delete allergyObj[el];
+    });
+    req.user.preferences.diets.forEach(el => {
+      delete dietObj[el];
+    });
     app.locals.cuisine = Object.keys(cuisineObj);
     app.locals.allergy = Object.keys(allergyObj);
     app.locals.diet = Object.keys(dietObj);

@@ -30,7 +30,8 @@ body {
 
 #logo {
   vertical-align: sub;
-  height: 3rem; }
+  height: 2.5rem;
+  margin-left: 10px; }
 
 .main-color {
   color: #26a69a; }
@@ -140,7 +141,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   #lp {
-    background-image: url("../images/speculative/sandwich-lp_M.jpg");
+    background-image: url("../images/speculative/whitechopboard-lp.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: calc(100vh - 56px); }
