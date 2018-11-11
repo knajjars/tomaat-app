@@ -105,7 +105,7 @@ body {
   height: calc(100vh - #{$bg-nav-height});
 }
 .preferences-form {
-  background-color: rgba(245, 85, 11, 0.6);
+  background-color: $alternative-color;
   padding: 30px;
   border-radius: 5px;
   color: white;
