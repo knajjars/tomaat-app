@@ -72,14 +72,44 @@ router.post("/preferences", ensureAuthenticated, (req, res) => {
   const cuisinesArray = cuisinesString.map(cuisine => {
     return cuisine.trim();
   });
-  const { preferedCuisines } = req.body;
-  const filteredCuisines = preferedCuisines.filter(el => {
+  const { cuisines } = req.body.preferences;
+  const filteredCuisines = cuisines.filter(el => {
     if (cuisinesArray.includes(el)) {
       return el;
     }
   });
+
+  const allergiesString = "Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat".split(
+    ","
+  );
+  const allergiesArray = allergiesString.map(allergy => {
+    return allergy.trim();
+  });
+  const { allergies } = req.body.preferences;
+  const filteredAllergies = allergies.filter(el => {
+    if (allergiesArray.includes(el)) {
+      return el;
+    }
+  });
+
+  const dietsString = "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian".split(
+    ","
+  );
+  const dietsArray = dietsString.map(diet => {
+    return diet.trim();
+  });
+  const { diets } = req.body.preferences;
+  const filteredDiets = diets.filter(el => {
+    if (dietsArray.includes(el)) {
+      return el;
+    }
+  });
   User.findByIdAndUpdate(req.user._id, {
-    preferedCuisines: filteredCuisines
+    preferences: {
+      cuisines: filteredCuisines,
+      diets: filteredDiets,
+      allergies: filteredAllergies
+    }
   }).then(user => {
     res.redirect("/");
   });

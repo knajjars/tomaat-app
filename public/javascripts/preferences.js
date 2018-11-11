@@ -45,16 +45,30 @@ $(".chips-diet").chips({
 });
 
 $("#preferences-submit-btn").click(e => {
-  const preferedCuisines = $(".chips-cuisine")
+  const cuisines = $(".chips-cuisine")
     .text()
     .split("close");
-  preferedCuisines.pop();
+  cuisines.pop();
+
+  const allergies = $(".chips-allergy")
+    .text()
+    .split("close");
+  allergies.pop();
+  const diets = $(".chips-diet")
+    .text()
+    .split("close");
+  diets.pop();
+
   axios({
     method: "POST",
     url: "http://localhost:3000/auth/preferences",
     headers: { "X-Requested-With": "XMLHttpRequest" },
     data: {
-      preferedCuisines: preferedCuisines
+      preferences: {
+        cuisines,
+        diets,
+        allergies
+      }
     }
   })
     .then(() => (window.location = window.location.origin))

@@ -97,9 +97,9 @@ require("./passport")(app);
 app.use((req, res, next) => {
   if (req.user) {
     res.locals.loggedUser = req.user;
-    res.locals.loggedUser.preferedCuisines.forEach(el => {
-      delete cuisineObj[el];
-    });
+    // res.locals.loggedUser.preferedCuisines.forEach(el => {
+    //   delete cuisineObj[el];
+    // });
     // res.locals.loggedUser.allergy.forEach(el=>{
     //   delete cuisineObj[el]
     // })
