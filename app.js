@@ -71,15 +71,17 @@ app.locals.title = "Express - Generated with IronGenerator";
 const cuisineObj = {};
 cuisinesString =
   "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
-cuisinesString.split(",").forEach(cuisine => {
-  cuisine.trim();
-  cuisineObj[cuisine] = null;
 
-  // console.log(cuisineObj);
+cuisinesString.split(", ").forEach(cuisine => {
+  cuisineObj[cuisine] = null;
 });
 
-delete cuisineObj[" French"];
-console.log("DELETE DEBUG", cuisineObj);
+const allergyObj = {};
+allergyString =
+  "Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat";
+allergyString.split(", ").forEach(allergy => {
+  allergyObj[allergy] = null;
+});
 
 // Enable authentication using session + passport
 app.use(
@@ -95,10 +97,19 @@ require("./passport")(app);
 app.use((req, res, next) => {
   if (req.user) {
     res.locals.loggedUser = req.user;
+    res.locals.loggedUser.preferedCuisines.forEach(el => {
+      delete cuisineObj[el];
+    });
+    // res.locals.loggedUser.allergy.forEach(el=>{
+    //   delete cuisineObj[el]
+    // })
     app.locals.cuisine = Object.keys(cuisineObj);
+    app.locals.allergy = Object.keys(allergyObj);
   }
   next();
 });
+
+console.log("DELETE DEBUG", cuisineObj);
 
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
