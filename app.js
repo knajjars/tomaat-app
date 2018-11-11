@@ -68,6 +68,8 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
+
+// preferences collection
 const cuisineObj = {};
 cuisinesString =
   "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
@@ -83,6 +85,13 @@ allergyString.split(", ").forEach(allergy => {
   allergyObj[allergy] = null;
 });
 
+const dietObj = {};
+dietString =
+  "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian";
+dietString.split(", ").forEach(diet => {
+  dietObj[diet] = null;
+});
+
 // Enable authentication using session + passport
 app.use(
   session({
@@ -96,20 +105,24 @@ app.use(flash());
 require("./passport")(app);
 app.use((req, res, next) => {
   if (req.user) {
-    res.locals.loggedUser = req.user;
-    // res.locals.loggedUser.preferedCuisines.forEach(el => {
-    //   delete cuisineObj[el];
-    // });
-    // res.locals.loggedUser.allergy.forEach(el=>{
-    //   delete cuisineObj[el]
-    // })
+    res.locals.loggedUser = req.user;    
+    req.user.preferences.cuisines.forEach(el => {
+      delete cuisineObj[el];
+    });
+    req.user.preferences.allergies.forEach(el=>{
+      delete allergyObj[el]
+    })
+    req.user.preferences.diets.forEach(el=>{
+      delete dietObj[el]
+    })
     app.locals.cuisine = Object.keys(cuisineObj);
     app.locals.allergy = Object.keys(allergyObj);
+    app.locals.diet = Object.keys(dietObj);
   }
   next();
 });
 
-console.log("DELETE DEBUG", cuisineObj);
+// console.log("DELETE DEBUG", cuisineObj);
 
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
