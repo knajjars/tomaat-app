@@ -14,7 +14,7 @@
     <li>
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>Cuisine</div>
       <div class="collapsible-body"><span>
-        {{#each loggedUser.preferedCuisines}}
+        {{#each loggedUser.preferences.cuisines}}
           <label id="cuisine-label">
 
             <input type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
@@ -41,7 +41,7 @@
     <li>
       <div class="collapsible-header"><i class="material-icons">place</i>Allergy</div>
       <div class="collapsible-body"><span>
-        {{#each loggedUser.allergy}}
+        {{#each loggedUser.preferences.allergies}}
           <label id="cuisine-label">
 
             <input type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
@@ -58,16 +58,22 @@
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">place</i>Diet</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-body"><span>        
+        {{#each loggedUser.preferences.diets}}
+          <label id="cuisine-label">
+
+            <input type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
+            <span>{{this}}</span>
+          </label>
+          {{/each}}
+
+        {{#each diet}}
+          <label id="cuisine-label">
+            <input type="checkbox" class="filled-in" value="{{this}}" />
+            <span>{{this}}</span>
+          </label>
+          {{/each}}</span></div></span></div>
     </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Course</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    {{!-- <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li> --}}
   </ul>
 </form>
 
