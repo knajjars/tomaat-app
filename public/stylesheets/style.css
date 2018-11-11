@@ -119,8 +119,8 @@ body {
 
 .collapsible-header {
   justify-content: space-between; }
-  .collapsible-header button {
-    margin: 0 20px; }
+  .collapsible-header#header1 {
+    padding: 0%; }
   .collapsible-header button#time {
     background-color: #736598; }
 

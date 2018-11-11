@@ -148,8 +148,12 @@ body {
 .collapsible-header {
   justify-content: space-between;
 
+  &#header1{
+    padding: 0%
+  }
+
   button {
-    margin: 0 20px;
+    // margin: 0 20px;
   }
 
   button#time {
