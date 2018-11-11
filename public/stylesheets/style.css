@@ -26,12 +26,6 @@ body {
 #signup-btn {
   background-color: #f95428; }
 
-.collapsible {
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  margin: 0.5rem 1rem 0; }
-
 .btn-large {
   width: 100%; }
 
@@ -92,14 +86,25 @@ body {
   border-radius: 5px;
   color: white; }
 
-.collapsible-body span {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: white; }
+.collapsible {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin: 0.5rem 1rem 0; }
+
+.collapsible-header button {
+  margin: 0 20px; }
+
+.collapsible-header button#time {
+  background-color: #f95428; }
 
 .collapsible-body {
   background-color: #2bbbad; }
+  .collapsible-body span {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white; }
 
 #cuisine-label {
   font-size: .8rem;

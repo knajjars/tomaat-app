@@ -1,22 +1,39 @@
 <section id="lp">
   <h1 id="title">TOMAAT</h1>
-  <h3 id="subtitle">What are you feeling today...?</h3>
+  <h3 id="subtitle">What are you feeling today {{loggedUser.preferedCuisines}}?</h3>
 
+{{#each loggedUser.preferedCuisines}}
+  <h1>{{this}} </h1>
+{{/each}}
 
+        <form action="/yummly-api" method="post">
   <ul class="collapsible">
     <li>
-      <div class="collapsible-header"><a class="waves-effect waves-light btn-large">I'm Hungry</a></div>
+      <div class="collapsible-header"><button type="submit" name="quick" id="quick" class="waves-effect waves-light btn-large">I'm in a hurry</button>
+      <button type="submit" name="time" id="time" class="waves-effect waves-light btn-large">I've got time</button>
+      </div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>Cuisine</div>
       <div class="collapsible-body"><span>
+        {{#if loggedUser.preferedCuisines}}
         {{#each cuisine}}
           <label id="cuisine-label">
-            <input type="checkbox" class="filled-in" checked="checked" />
-            <span>{{this}} </span>
+
+            <input type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
+            <span>{{this}}</span>
           </label>
+          {{/each}}
 
+          {{else}}
+        {{#each cuisine}}
+          <label id="cuisine-label">
+            <input type="checkbox" class="filled-in" value="{{this}}" />
+            <span>{{this}}</span>
+          </label>
+          {{/each}}
 
+            {{/if}}
 
     {{!-- <label class="button-label">
           <input class="hidden radio-label" type="checkbox" name="accept-offers" id="yes-button" checked="checked"/>
@@ -24,7 +41,6 @@
     </label> --}}
 
 
-          {{/each}}
         </span></div>
     </li>
     <li>
@@ -44,5 +60,6 @@
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li> --}}
   </ul>
+</form>
 
 </section>
