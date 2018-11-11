@@ -31,3 +31,7 @@ $("#preferences-submit-btn").click(e => {
     .then(() => (window.location = window.location.origin))
     .catch(err => console.log(err));
 });
+
+$(document).ready(function() {
+  $(".tabs").tabs({ swipeable: true });
+});

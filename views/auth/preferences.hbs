@@ -1,12 +1,34 @@
 <div class="preferences-page">
   <div class="preferences-form">
-    <h2>Your preferences</h2>
-    <h5>Hey <span class="capitalize bold">{{loggedUser.name}}</span>, please let us know your favorite cuisines, we'll
-      make it
-      count. 💚</h5>
-    <div class="chips chips-autocomplete"></div>
-    <button class="btn waves-effect waves-light" id="preferences-submit-btn" name="action">Continue
-      <i class="material-icons right">send</i>
-    </button>
+    <ul id="tabs-swipe" class="tabs">
+      <li class="tab col s3"><a class="active" href="#cuisine-form">Cuisines</a></li>
+      <li class="tab col s3"><a href="#allergies-form">Allergies</a></li>
+      <li class="tab col s3"><a href="#diet-form">Diets</a></li>
+    </ul>
+    {{!-- cuisine form --}}
+    <div id="cuisine-form" class="col s12 ">
+      <h2>Your preferences</h2>
+      <h5>Hey <span class="capitalize bold">{{loggedUser.name}}</span>, please let us know your favorite cuisines,
+        we'll
+        make it
+        count. 💚</h5>
+      <div class="chips chips-autocomplete"></div>
+      <button class="btn waves-effect waves-light" id="preferences-submit-btn" name="action">Continue
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+    {{!-- end of cuisine form --}}
+
+    {{!-- start of allergies form --}}
+    <div id="allergies-form" class="col s12 ">
+      allergies
+    </div>
+    {{!-- end of allergies form --}}
+
+    {{!-- start of diet form --}}
+    <div id="diet-form" class="col s12 ">
+      diets
+    </div>
+    {{!-- end of diet form --}}
   </div>
 </div>
