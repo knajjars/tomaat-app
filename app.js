@@ -69,16 +69,15 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 app.locals.title = "Express - Generated with IronGenerator";
 
 const cuisineObj = {};
-cuisinesString = "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
+cuisinesString =
+  "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
 cuisinesString.split(",").forEach(cuisine => {
   cuisineObj[cuisine] = null;
   // console.log(cuisineObj);
-  
 });
 
-app.locals.cuisine = Object.keys(cuisineObj)
+app.locals.cuisine = Object.keys(cuisineObj);
 
-console.log('Hello',Object.keys(cuisineObj))
 // Enable authentication using session + passport
 app.use(
   session({
