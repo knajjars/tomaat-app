@@ -27,3 +27,15 @@ document.addEventListener("DOMContentLoaded", function() {
 $(document).ready(function() {
   $(".collapsible").collapsible();
 });
+
+
+
+  $('.btn-small:button').click(function(){
+    $('#cuisine input:checkbox').attr('checked','checked');
+      // $(this).val('uncheck all');
+  }
+  // ,function(){
+  //     $('input:checkbox').removeAttr('checked');
+  //     $(this).val('check all');        
+  // }
+  )
