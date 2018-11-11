@@ -45,7 +45,7 @@ $(".chips-diet").chips({
 });
 
 $("#preferences-submit-btn").click(e => {
-  const preferedCuisines = $(".chips")
+  const preferedCuisines = $(".chips-cuisine")
     .text()
     .split("close");
   preferedCuisines.pop();
