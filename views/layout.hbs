@@ -33,9 +33,13 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
+    {{#if loggedUser}}
+    <li><a href="/auth/account"><i class="material-icons">account_circle</i>Account</a></li>
+    <li><a href="/auth/logout">Logout, <span class="capitalize">{{loggedUser.name}}</span></a></li>
+    {{else}}
     <li><a href="/auth/login"><i class="material-icons">touch_app</i>Log In</a></li>
     <li><a href="/auth/signup"><i class="material-icons">plus_one</i>Sign Up</a></li>
-    <li><a href="/auth/account"><i class="material-icons">account_circle</i>Account</a></li>
+    {{/if}}
     <hr>
   </ul>
 
