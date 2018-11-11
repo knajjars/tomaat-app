@@ -29,9 +29,8 @@ body {
   width: 100%; }
 
 #logo {
-  height: 3rem;
-  display: inline;
-  vertical-align: sub; }
+  vertical-align: sub;
+  height: 3rem; }
 
 .main-color {
   color: #26a69a; }

@@ -78,3 +78,7 @@ $("#preferences-submit-btn").click(e => {
 $(document).ready(function() {
   $(".tabs").tabs({ swipeable: true });
 });
+
+var ct = document.getElementById("cuisine-tab");
+var at = document.getElementById("allergy-tab");
+var dt = document.getElementById("diet-tab");
