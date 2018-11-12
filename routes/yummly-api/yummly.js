@@ -25,6 +25,7 @@ router.post("/discover", (req, res, next) => {
     .maxTotalTimeInSeconds(1400)
     .maxResults(20)
     .allowedAllergies(["Egg"])
+    .allowedDiets(["Pescetarian",'Vegan'])
     .minRating(3)
     .getURL();
   console.log(val);
