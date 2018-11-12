@@ -19,12 +19,18 @@ body {
 
 #lp {
   background-image: url("../images/speculative/whitechopboard-lp.jpg");
-   #title {
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  #title {
     font-family: $roadmove-font;
     margin: 0 auto;
     text-align: center;
     font-size: 7rem;
-    padding: 2rem
+    padding: 2rem;
   }
 
   #subtitle {
@@ -32,11 +38,9 @@ body {
     margin: 0 auto;
     text-align: center;
     font-size: 3rem;
-    padding: 1rem
+    padding: 1rem;
   }
 }
-
-
 
 .navbar {
   width: 100%;
@@ -67,6 +71,7 @@ body {
 .signup-page {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -102,6 +107,7 @@ body {
   margin: 0;
   padding: 0;
   background: url("/images/speculative/preferences-background.jpg");
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -165,8 +171,8 @@ body {
   p {
     margin: 0;
   }
-  &#header1{
-    padding: 0%
+  &#header1 {
+    padding: 0%;
   }
 
   button {
@@ -199,12 +205,12 @@ body {
   }
 }
 
-[type="checkbox"].filled-in:not(:checked)+span:not(.lever):after {
-  border: 2px solid
+[type="checkbox"].filled-in:not(:checked) + span:not(.lever):after {
+  border: 2px solid;
 }
 
 #cuisine-label {
-  font-size: 0.8rem;;
+  font-size: 0.8rem;
 
   span {
     font-size: 1rem;
@@ -217,26 +223,34 @@ body {
   #lp {
     background-size: cover;
     background-repeat: no-repeat;
-    height: calc(100vh - #{$sm-nav-height});
+    min-height: calc(100vh - #{$sm-nav-height});
   }
 
   .preferences-page {
-    height: calc(100vh - #{$sm-nav-height});
+    min-height: calc(100vh - #{$sm-nav-height});
   }
 
   label {
     width: 160px;
-    padding: 5px 0
+    padding: 5px 0;
   }
 }
 
 // COMPUTER SECTION
 @media only screen and (min-width: 670px) {
   #lp {
-    height: calc(100vh - #{$bg-nav-height});
+    min-height: calc(100vh - #{$bg-nav-height});
     // height: calc(100vh);
     background-size: cover;
     padding: 45px;
+  }
+
+  #discover-btn {
+    // margin: 0 auto;
+    width: 800px;
+    @media only screen and (max-width: 950px) {
+      width: 600px;
+    }
   }
 
   .collapsible {

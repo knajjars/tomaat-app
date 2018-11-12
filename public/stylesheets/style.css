@@ -7,7 +7,13 @@ body {
   padding: 0; }
 
 #lp {
-  background-image: url("../images/speculative/whitechopboard-lp.jpg"); }
+  background-image: url("../images/speculative/whitechopboard-lp.jpg");
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center; }
   #lp #title {
     font-family: "Road Movie";
     margin: 0 auto;
@@ -45,6 +51,7 @@ body {
 .signup-page {
   height: 100vh;
   background: url("/images/speculative/login-background.jpg");
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -75,6 +82,7 @@ body {
   margin: 0;
   padding: 0;
   background: url("/images/speculative/preferences-background.jpg");
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -164,18 +172,25 @@ body {
   #lp {
     background-size: cover;
     background-repeat: no-repeat;
-    height: calc(100vh - 56px); }
+    min-height: calc(100vh - 56px); }
   .preferences-page {
-    height: calc(100vh - 56px); }
+    min-height: calc(100vh - 56px); }
   label {
     width: 160px;
     padding: 5px 0; } }
 
 @media only screen and (min-width: 670px) {
   #lp {
-    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
     background-size: cover;
     padding: 45px; }
+  #discover-btn {
+    width: 800px; } }
+  @media only screen and (min-width: 670px) and (max-width: 950px) {
+    #discover-btn {
+      width: 600px; } }
+
+@media only screen and (min-width: 670px) {
   .collapsible {
     margin: 0 auto;
     width: 800px; } }
