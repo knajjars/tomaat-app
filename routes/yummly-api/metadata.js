@@ -360,6 +360,9 @@ class MetaData {
     this.diet = dietArray;
   }
   getSearchValue(queryArr, type) {
+    if (typeof queryArr === "string") {
+      queryArr = [queryArr];
+    }
     const searchValue = [];
     switch (type) {
       case "cuisine":

@@ -1,26 +1,27 @@
 <div class="discover-recipe-container">
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src={{recipeImage}}>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <h1 class="card-title">{{recipe.recipeName}}</h1>
-          <ul>
-            {{#each recipe.ingredients}}
-            <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <div class="time-to-cook">
-            {{recipeTime}}
-          </div>
-        </div>
-      </div>
+
+  <div class="card-image">
+    <img src={{recipeImage}}>
+  </div>
+  <div class="card-content">
+    <h1 class="card-title">{{recipe.recipeName}}</h1>
+    <h5>Ingredients:</h5>
+    <ul>
+      {{#each recipe.ingredients}}
+      <li class="capitalize">{{this}}</li>
+      {{/each}}
+    </ul>
+    <div class="time-to-cook">
+      <i class="material-icons right">timer</i>
+      <p>{{recipeTime}}</p>
+    </div>
+    <div class="attribute-course">
+      <i class="material-icons right">restaurant</i>
+      <p>{{recipe.attributes.course}}</p>
     </div>
   </div>
 </div>
+
 
 
 {{!-- { imageUrlsBySize:
