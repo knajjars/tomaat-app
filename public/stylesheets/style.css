@@ -168,6 +168,10 @@ body {
   #cuisine-label span {
     font-size: 1rem; }
 
+.discover-recipe-container {
+  display: flex;
+  justify-content: stretch; }
+
 @media only screen and (max-width: 670px) {
   #lp {
     background-size: cover;
