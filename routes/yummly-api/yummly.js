@@ -54,15 +54,15 @@ router.post("/decide", (req, res, next) => {
   const cuisines = req.body.cuisine;
   const allergies = req.body.allergy ? req.body.allergy : "";
   
+  console.log(diets);
+  console.log(cuisines);
+  console.log(allergies);
   
   
   //get search values for metadata
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
   const allergySearchValue = MetaData.getSearchValue(allergies, "allergy");
-  console.log(dietSearchValue);
-  console.log(cuisineSearchValue);
-  console.log(allergySearchValue);
 
   
       Yummly.query("")
