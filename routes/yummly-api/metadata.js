@@ -353,10 +353,14 @@ const dietArray = dietMeta.map(element => {
   return element.shortDescription;
 });
 
-const metaData = {
-  allergy: allergyArray,
-  cuisine: cuisineArray,
-  diet: dietArray
-};
+class MetaData {
+  constructor() {
+    this.allergy = allergyArray;
+    this.cuisine = cuisineArray;
+    this.diet = dietArray;
+  }
+}
 
-module.exports = metaData;
+const Meta = new MetaData();
+
+module.exports = Meta;
