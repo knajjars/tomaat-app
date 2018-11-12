@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 $(document).ready(function() {
   $(".collapsible").collapsible();
+  $(".collapsible-header:not(:first)").hide()
   
   // $('#cuisine .switch').toggle(function(){
   //     $('#cuisine input:checkbox').attr('checked','checked');
@@ -67,11 +68,10 @@ $(document).ready(function() {
       $("input[name = 'xyz']").css("border","2px solid red");
   })
   
-  $(".collapsible-header:not(:first)").hide()
 
  $(".collapsible-header button[name='decide']").click(()=>{
   //  event.preventDefault()
-  $('#lp-form').attr('action','/yummly-api')
+  $('#lp-form').attr('action','/yummly-api/decide')
   setTimeout(() => {
     $(".collapsible-header button[name='decide']").attr('type','submit')
     
@@ -82,7 +82,7 @@ $(document).ready(function() {
 
   $(".collapsible-header button[name='discover']").click(()=>{
     $('#cuisine input:checkbox').attr('checked','checked');
-  $('#lp-form').attr('action','/yummly-api')
+  $('#lp-form').attr('action','/yummly-api/discover')
     
   })
 });
