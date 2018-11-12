@@ -224,6 +224,19 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: calc(100vh - #{$sm-nav-height});
+    #title {
+      font-family: $roadmove-font;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 5rem;
+      padding: 1rem;
+  }
+    #subtitle {
+      font-size: 2rem
+    }
+  }
+  .btn-large {
+    // padding: 0
   }
 
   .preferences-page {
@@ -234,6 +247,7 @@ body {
     width: 160px;
     padding: 5px 0;
   }
+
 }
 
 // COMPUTER SECTION

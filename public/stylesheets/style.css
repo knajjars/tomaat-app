@@ -173,6 +173,14 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: calc(100vh - 56px); }
+    #lp #title {
+      font-family: "Road Movie";
+      margin: 0 auto;
+      text-align: center;
+      font-size: 5rem;
+      padding: 1rem; }
+    #lp #subtitle {
+      font-size: 2rem; }
   .preferences-page {
     min-height: calc(100vh - 56px); }
   label {

@@ -60,6 +60,18 @@ $(document).ready(function() {
         }    
     });
 
+    $(function() {
+      $("input[name = 'xyz']").css("border","2px solid red");
+  })
+  
+  $(".collapsible-header:not(:first)").hide()
+
+ $(".collapsible-header button[name='decide']").click(()=>{
+  //  event.preventDefault()
+  $(".collapsible-header button[name='decide']")[0].innerText = 'GO!'
+   $(".collapsible-header:not(:first)").show("slow")
+  console.log('hello')
+  })
 
 
 });

@@ -1,9 +1,9 @@
 <section id="lp">
   <h1 id="title">TOMAAT</h1>
-  <button name="discover" id="discover-btn" class="waves-effect waves-light btn-large deep-purple accent-3">
+  {{!-- <button name="discover" id="discover-btn" class="waves-effect waves-light btn-large deep-purple accent-3">
     <i class="material-icons">mood</i>
     Discover something new
-  </button>
+  </button> --}}
   <h3 id="subtitle">Looking for something specific, {{loggedUser.name}}?</h3>
 
 
@@ -12,14 +12,15 @@
     <ul class="collapsible">
       <li>
         {{!-- BUTTONS --}}
-        <div class="collapsible-header" id="header1"><button type="submit" name="quick" id="quick" class="waves-effect waves-light btn-large">I'm
-            in a hurry</button>
-          <button type="submit" name="time" id="time" class="waves-effect waves-light btn-large">I've got time</button>
+        <div class="collapsible-header" id="header1">
+          <button type="button" name="decide" id="decide" class="waves-effect waves-light btn-large">Decide</button>
+          <button type="button" name="discover" id="discover" class="waves-effect waves-light btn-large">Discover</button>
         </div>
       </li>
       <li>
 
         {{!--  --}}
+
         <div class="collapsible-header">
           <div>
             <i class="material-icons">restaurant</i>
@@ -128,6 +129,7 @@
         </div></span></div>
       </li>
     </ul>
+
   </form>
 
 </section>
