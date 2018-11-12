@@ -214,7 +214,21 @@ body {
 }
 
 .discover-recipe-container {
+  min-height: calc(100vh - #{$bg-nav-height});
   display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  * {
+    margin: 10px;
+  }
+}
+
+.time-to-cook,
+.attribute-course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // MOBILE SECTION

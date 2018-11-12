@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const ensureAuthenticated = require("../Secuirty/ensureAuthenticated");
 const Yummly = require("ws-yummly");
 const RecipeToolset = require("./recipe-toolset");
 const ToolSet = new RecipeToolset();
@@ -10,7 +11,7 @@ Yummly.config({
   app_key: process.env.API_KEY
 });
 
-router.post("/discover", (req, res, next) => {
+router.post("/discover", ensureAuthenticated, (req, res, next) => {
   //get user preferences
   const userPref = req.user.preferences;
   const diets = userPref.diets ? userPref.diets : "";
@@ -47,15 +48,12 @@ router.post("/discover", (req, res, next) => {
     });
 });
 
-
-router.post("/decide", (req, res, next) => {
+router.post("/decide", ensureAuthenticated, (req, res, next) => {
   //get user preferences
   const diets = req.body.diet ? req.body.diet : "";
   const cuisines = req.body.cuisine;
   const allergies = req.body.allergy ? req.body.allergy : "";
-  
 
-  
   //get search values for metadata
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
