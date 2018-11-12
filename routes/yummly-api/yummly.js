@@ -7,7 +7,7 @@ Yummly.config({
   app_key: process.env.API_KEY
 });
 
-router.post("/something-new", (req, res, next) => {
+router.post("/discover", (req, res, next) => {
   Yummly.query("pineapple")
     .maxTotalTimeInSeconds(1400)
     .maxResults(20)
