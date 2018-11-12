@@ -1,9 +1,11 @@
 <section id="lp">
   <h1 id="title">TOMAAT</h1>
-  <button name="discover" id="discover-btn" class="waves-effect waves-light btn-large deep-purple accent-3">
-    <i class="material-icons">mood</i>
-    Discover something new
-  </button>
+  <form action="/yummly-api/discover" method="post">
+    <button type="submit" name="discover" id="discover-btn" class="waves-effect waves-light btn-large deep-purple accent-3">
+      <i class="material-icons">mood</i>
+      Discover something new
+    </button>
+  </form>
   <h3 id="subtitle">Looking for something specific, {{loggedUser.name}}?</h3>
 
 
@@ -19,7 +21,7 @@
       </li>
       <li>
 
-        {{!--  --}}
+        {{!-- --}}
         <div class="collapsible-header">
           <div>
             <i class="material-icons">restaurant</i>
