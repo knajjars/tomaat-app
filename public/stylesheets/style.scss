@@ -273,31 +273,6 @@ body {
       width: 600px;
     }
   }
-
-  .discover-recipe-container {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 0;
-    margin-left: 20px;
-    margin-right: 20px;
-    &:before {
-      position: fixed;
-      left: 0;
-      right: 0;
-      z-index: -1;
-
-      display: block;
-      width: 1200px;
-      height: 800px;
-
-      -webkit-filter: blur(5px);
-      -moz-filter: blur(5px);
-      -o-filter: blur(5px);
-      -ms-filter: blur(5px);
-      filter: blur(5px);
-    }
-  }
 }
 
 // ERRORS
