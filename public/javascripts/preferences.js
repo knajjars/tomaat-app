@@ -1,23 +1,17 @@
 $(".chips").chips();
 const cuisineObj = {};
-const cuisinesString =
-  "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
-cuisinesString.split(",").forEach(cuisine => {
-  cuisineObj[cuisine.trim()] = null;
+metaDataYummly.cuisine.forEach(cuisine => {
+  cuisineObj[cuisine] = null;
 });
 
 const allergyObj = {};
-const allergyString =
-  "Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat";
-allergyString.split(",").forEach(allergy => {
-  allergyObj[allergy.trim()] = null;
+metaDataYummly.allergy.forEach(allergy => {
+  allergyObj[allergy] = null;
 });
 
 const dietObj = {};
-const dietString =
-  "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian";
-dietString.split(",").forEach(diet => {
-  dietObj[diet.trim()] = null;
+metaDataYummly.diet.forEach(diet => {
+  dietObj[diet] = null;
 });
 
 $(".chips-cuisine").chips({
@@ -78,7 +72,3 @@ $("#preferences-submit-btn").click(e => {
 $(document).ready(function() {
   $(".tabs").tabs({ swipeable: true });
 });
-
-var ct = document.getElementById("cuisine-tab");
-var at = document.getElementById("allergy-tab");
-var dt = document.getElementById("diet-tab");

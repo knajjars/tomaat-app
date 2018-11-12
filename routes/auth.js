@@ -3,6 +3,7 @@ const passport = require("passport");
 const router = express.Router();
 const User = require("../models/User");
 const ensureAuthenticated = require("./Secuirty/ensureAuthenticated");
+const metaData = require("./yummly-api/metadata");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -66,44 +67,27 @@ router.get("/preferences", ensureAuthenticated, (req, res) => {
 });
 
 router.post("/preferences", ensureAuthenticated, (req, res) => {
-  const cuisinesString = "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese".split(
-    ","
-  );
-  const cuisinesArray = cuisinesString.map(cuisine => {
-    return cuisine.trim();
-  });
   const { cuisines } = req.body.preferences;
   const filteredCuisines = cuisines.filter(el => {
-    if (cuisinesArray.includes(el)) {
+    if (metaData.cuisine.includes(el)) {
       return el;
     }
   });
 
-  const allergiesString = "Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat".split(
-    ","
-  );
-  const allergiesArray = allergiesString.map(allergy => {
-    return allergy.trim();
-  });
   const { allergies } = req.body.preferences;
   const filteredAllergies = allergies.filter(el => {
-    if (allergiesArray.includes(el)) {
+    if (metaData.allergy.includes(el)) {
       return el;
     }
   });
 
-  const dietsString = "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian".split(
-    ","
-  );
-  const dietsArray = dietsString.map(diet => {
-    return diet.trim();
-  });
   const { diets } = req.body.preferences;
   const filteredDiets = diets.filter(el => {
-    if (dietsArray.includes(el)) {
+    if (metaData.diet.includes(el)) {
       return el;
     }
   });
+
   User.findByIdAndUpdate(req.user._id, {
     preferences: {
       cuisines: filteredCuisines,
