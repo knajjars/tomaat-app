@@ -230,9 +230,9 @@ body {
       text-align: center;
       font-size: 5rem;
       padding: 1rem;
-  }
+    }
     #subtitle {
-      font-size: 2rem
+      font-size: 2rem;
     }
   }
   .btn-large {
@@ -247,7 +247,6 @@ body {
     width: 160px;
     padding: 5px 0;
   }
-
 }
 
 // COMPUTER SECTION
@@ -272,6 +271,31 @@ body {
     width: 800px;
     @media only screen and (max-width: 950px) {
       width: 600px;
+    }
+  }
+
+  .discover-recipe-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    &:before {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: -1;
+
+      display: block;
+      width: 1200px;
+      height: 800px;
+
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px);
     }
   }
 }
