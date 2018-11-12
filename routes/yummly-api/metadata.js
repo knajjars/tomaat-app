@@ -359,6 +359,39 @@ class MetaData {
     this.cuisine = cuisineArray;
     this.diet = dietArray;
   }
+  getSearchValue(queryArr, type) {
+    const searchValue = [];
+    switch (type) {
+      case "cuisine":
+        cuisineMeta.forEach(meta => {
+          queryArr.forEach(query => {
+            if (meta.name === query) {
+              searchValue.push(meta.searchValue);
+            }
+          });
+        });
+        break;
+      case "allergy":
+        allergyMeta.forEach(meta => {
+          queryArr.forEach(query => {
+            if (meta.shortDescription === query) {
+              searchValue.push(meta.searchValue);
+            }
+          });
+        });
+        break;
+      case "diet":
+        dietMeta.forEach(meta => {
+          queryArr.forEach(query => {
+            if (meta.shortDescription === query) {
+              searchValue.push(meta.searchValue);
+            }
+          });
+        });
+        break;
+    }
+    return searchValue;
+  }
 }
 
 const Meta = new MetaData();
