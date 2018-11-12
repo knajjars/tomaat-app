@@ -3,6 +3,7 @@ const router = express.Router();
 const Yummly = require("ws-yummly");
 const Randomizer = require("./recipe-randomizer");
 const Random = new Randomizer();
+const MetaData = require("./metadata");
 
 Yummly.config({
   app_id: process.env.API_ID,
@@ -21,13 +22,16 @@ router.post("/discover", (req, res, next) => {
   const excludedCourses = "Desserts,Breads,Beverages,Condiments and Sauces,Cocktails".split(
     ","
   );
-  const val = Yummly.query("pancakes")
-    .maxTotalTimeInSeconds(1400)
-    .maxResults(20)
-    .allowedAllergies(["Egg"])
-    .minRating(3)
-    .getURL();
-  console.log(val);
+  console.log("allergyArray", MetaData.allergy);
+  console.log("cuisineArray", MetaData.cuisine);
+  console.log("dietArray", MetaData.diet);
+  // const val = Yummly.query("pancakes")
+  //   .maxTotalTimeInSeconds(1400)
+  //   .maxResults(20)
+  //   .allowedAllergies(["Egg"])
+  //   .minRating(3)
+  //   .getURL();
+  // console.log(val);
 });
 
 module.exports = router;
