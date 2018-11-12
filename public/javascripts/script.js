@@ -26,12 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 $(document).ready(function() {
   $(".collapsible").collapsible();
-<<<<<<< HEAD
-  $(".collapsible-header:not(:first)").hide()
-  
-=======
+  $(".collapsible-header:not(:first)").hide();
 
->>>>>>> 5b88df168f86b9522876d5ebce9d8d1347b5b8f6
   // $('#cuisine .switch').toggle(function(){
   //     $('#cuisine input:checkbox').attr('checked','checked');
   //       // $(this).val('uncheck all');
@@ -40,57 +36,6 @@ $(document).ready(function() {
 
   // $('#cuisine .switch input').is(':checked') = false
 
-<<<<<<< HEAD
-    $('#cuisine .switch input').change(function() {
-        if($(this).is(":checked")) {
-          $('#cuisine input:checkbox').attr('checked','checked');
-          
-          console.log('Hello');
-        }    
-        if(!$(this).is(":checked")) {
-          $('#cuisine input:checkbox').attr('checked',false);
-          console.log('goodbye');
-        }    
-    });
-    $('#allergy .switch input').change(function() {
-        if($(this).is(":checked")) {
-          $('#allergy input:checkbox').attr('checked','checked');
-        }    
-        if(!$(this).is(":checked")) {
-          $('#allergy input:checkbox').attr('checked',false);
-        }    
-    });
-    $('#diet .switch input').change(function() {
-        if($(this).is(":checked")) {
-          $('#diet input:checkbox').attr('checked','checked');
-        }    
-        if(!$(this).is(":checked")) {
-          $('#diet input:checkbox').attr('checked',false);
-        }    
-    });
-
-    $(function() {
-      $("input[name = 'xyz']").css("border","2px solid red");
-  })
-  
-
- $(".collapsible-header button[name='decide']").click(()=>{
-  //  event.preventDefault()
-  $('#lp-form').attr('action','/yummly-api/decide')
-  setTimeout(() => {
-    $(".collapsible-header button[name='decide']").attr('type','submit')
-    
-  }, 1000);
-  $(".collapsible-header button[name='decide']")[0].innerText = 'GO!'
-   $(".collapsible-header:not(:first)").show("slow")
-  })
-
-  $(".collapsible-header button[name='discover']").click(()=>{
-    $('#cuisine input:checkbox').attr('checked','checked');
-  $('#lp-form').attr('action','/yummly-api/discover')
-    
-  })
-=======
   $("#cuisine .switch input").change(function() {
     if ($(this).is(":checked")) {
       $("#cuisine input:checkbox").attr("checked", "checked");
@@ -123,11 +68,9 @@ $(document).ready(function() {
     $("input[name = 'xyz']").css("border", "2px solid red");
   });
 
-  $(".collapsible-header:not(:first)").hide();
-
   $(".collapsible-header button[name='decide']").click(() => {
     //  event.preventDefault()
-    $("#lp-form").attr("action", "/yummly-api");
+    $("#lp-form").attr("action", "/yummly-api/decide");
     setTimeout(() => {
       $(".collapsible-header button[name='decide']").attr("type", "submit");
     }, 1000);
@@ -139,7 +82,6 @@ $(document).ready(function() {
     $("#cuisine input:checkbox").attr("checked", "checked");
     $("#lp-form").attr("action", "/yummly-api/discover");
   });
->>>>>>> 5b88df168f86b9522876d5ebce9d8d1347b5b8f6
 });
 
 $(".btn-small#allergy-btn").click(function() {
