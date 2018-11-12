@@ -54,28 +54,21 @@ router.post("/decide", (req, res, next) => {
   const cuisines = req.body.cuisine;
   const allergies = req.body.allergy ? req.body.allergy : "";
   
-
+  
   
   //get search values for metadata
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
   const allergySearchValue = MetaData.getSearchValue(allergies, "allergy");
+  console.log(dietSearchValue);
+  console.log(cuisineSearchValue);
+  console.log(allergySearchValue);
 
-  Yummly.query("")
-    .requirePictures(true)
-    .maxResults(1)
-    .allowedDiets(dietSearchValue)
-    .allowedCuisines(cuisineSearchValue)
-    .allowedAllergies(allergySearchValue)
-    .minRating(4)
-    .get()
-    .then(recipes => {
-      const totalMatchCount = recipes.totalMatchCount;
-      const randomRecipe = Random.getRandomIndex(totalMatchCount);
+  
       Yummly.query("")
         .requirePictures(true)
         .maxResults(1)
-        .start(randomRecipe)
+        .start(ToolSet.getRandomIndex())
         .allowedDiets(dietSearchValue)
         .allowedCuisines(cuisineSearchValue)
         .allowedAllergies(allergySearchValue)
@@ -91,7 +84,6 @@ router.post("/decide", (req, res, next) => {
             )
           });
         });
-    });
-});
+    })
 
 module.exports = router;
