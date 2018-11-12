@@ -116,7 +116,6 @@ app.use((req, res, next) => {
     app.locals.cuisine = Object.keys(cuisineObj);
     app.locals.allergy = Object.keys(allergyObj);
     app.locals.diet = Object.keys(dietObj);
-    console.log(app.locals.diet);
   }
   next();
 });

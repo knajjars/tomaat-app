@@ -1,8 +1,8 @@
+const MetaData = require("./metadata");
+
 class RandomQuery {
   constructor() {
-    this.cuisinesArr = "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese".split(
-      ", "
-    );
+    this.cuisinesArr = MetaData.cuisine;
   }
 
   getRandomCuisine() {
@@ -10,8 +10,8 @@ class RandomQuery {
     return [this.cuisinesArr[randomIndex]];
   }
 
-  getRandomIndex() {
-    return Math.floor(Math.random() * 5000);
+  getRandomIndex(num) {
+    return Math.floor(Math.random() * num);
   }
 }
 

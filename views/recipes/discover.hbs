@@ -1,0 +1,46 @@
+<div class="discover-recipe-container">
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src={{recipeImage}}>
+          <span class="card-title">{{recipe.recipeName}}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <ul>
+            {{#each recipe.ingredients}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- { imageUrlsBySize:
+{ '90':
+'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d6JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c' },
+sourceDisplayName: 'OMG Chocolate Desserts',
+ingredients:
+[ 'white chocolate',
+'unsalted butter',
+'heavy whipping cream',
+'salt',
+'lemon extract',
+'powdered sugar' ],
+id: 'White-Chocolate-Lemon-Truffles-924470',
+smallImageUrls:
+[ 'http://lh4.ggpht.com/tiU2NYh47gAn6OdStWq4mL3kkwAezVDZYHtWo_dh7cdtxH0OY8_pOw-YpMiuT94hJxq-CyNRewTPAuc3TbMcnQ=s90' ],
+recipeName: 'White Chocolate Lemon Truffles',
+totalTimeInSeconds: 1800,
+attributes: { course: [ 'Desserts' ] },
+flavors:
+{ piquant: 0,
+meaty: 0.8333333333333334,
+bitter: 0.5,
+sweet: 0.8333333333333334,
+sour: 0.16666666666666666,
+salty: 0.16666666666666666 },
+rating: 4 } --}}
