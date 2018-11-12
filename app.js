@@ -8,10 +8,11 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
-
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
+const metaDataYummly = require("./routes/yummly-api/metadata.js")
+
 
 mongoose
   .connect(
@@ -70,23 +71,17 @@ app.locals.title = "Tomaat";
 
 // preferences collection
 const cuisineObj = {};
-cuisinesString =
-  "American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese";
-
-cuisinesString.split(", ").forEach(cuisine => {
+metaDataYummly.cuisine.forEach(cuisine => {
   cuisineObj[cuisine] = null;
 });
 
 const allergyObj = {};
-allergyString =
-  "Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat";
-allergyString.split(", ").forEach(allergy => {
+metaDataYummly.allergy.forEach(allergy => {
   allergyObj[allergy] = null;
 });
 
 const dietObj = {};
-dietString = "Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian";
-dietString.split(", ").forEach(diet => {
+metaDataYummly.diet.forEach(diet => {
   dietObj[diet] = null;
 });
 
@@ -116,7 +111,6 @@ app.use((req, res, next) => {
     app.locals.cuisine = Object.keys(cuisineObj);
     app.locals.allergy = Object.keys(allergyObj);
     app.locals.diet = Object.keys(dietObj);
-    console.log(app.locals.diet);
   }
   next();
 });

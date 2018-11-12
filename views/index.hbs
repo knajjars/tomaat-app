@@ -1,21 +1,16 @@
 <section id="lp">
   <h1 id="title">TOMAAT</h1>
-  <button name="discover" id="discover-btn" class="waves-effect waves-light btn-large deep-purple accent-3">
-    <i class="material-icons">mood</i>
-    Discover something new
-  </button>
   <h3 id="subtitle">Looking for something specific, {{loggedUser.name}}?</h3>
 
 
 
-  {{!-- <form action="/yummly-api" method="post"> --}}
+  <form id="lp-form" action="" method="POST">
     <ul class="collapsible">
       <li>
         {{!-- BUTTONS --}}
         <div class="collapsible-header" id="header1">
-          <form action="/yummly-api/discover" method="POST">
             <button type="submit" name="discover" id="discover" class="waves-effect waves-light btn-large">Discover</button>
-          </form>
+
           <button type="button" name="decide" id="decide" class="waves-effect waves-light btn-large">Decide</button>
         </div>
       </li>
@@ -50,14 +45,14 @@
             {{#each loggedUser.preferences.cuisines}}
             <label id="cuisine-label">
 
-              <input id="cuisine-input" type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
+              <input name="cuisine" id="cuisine-input" type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
               <span>{{this}}</span>
             </label>
             {{/each}}
 
             {{#each cuisine}}
             <label id="cuisine-label">
-              <input type="checkbox" class="filled-in" value="{{this}}" />
+              <input name="cuisine" type="checkbox" class="filled-in" value="{{this}}" />
               <span>{{this}}</span>
             </label>
             {{/each}}
@@ -85,14 +80,14 @@
             {{#each loggedUser.preferences.allergies}}
             <label id="allergy-label">
 
-              <input type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
+              <input name="allergy" type="checkbox" class="filled-in" checked="checked" value="{{this}}" />
               <span>{{this}}</span>
             </label>
             {{/each}}
 
             {{#each allergy}}
             <label id="allergy-label">
-              <input type="checkbox" class="filled-in" value="{{this}}" />
+              <input name="allergy" type="checkbox" class="filled-in" value="{{this}}" />
               <span>{{this}}</span>
             </label>
             {{/each}}</span>
@@ -117,14 +112,14 @@
             {{#each loggedUser.preferences.diets}}
             <label id="diet-label">
 
-              <input type="checkbox" class="filled-in a" checked="checked" value="{{this}}" />
+              <input name="diet" type="checkbox" class="filled-in a" checked="checked" value="{{this}}" />
               <span>{{this}}</span>
             </label>
             {{/each}}
 
             {{#each diet}}
             <label id="diet-label">
-              <input type="checkbox" class="filled-in" value="{{this}}" />
+              <input name="diet" type="checkbox" class="filled-in" value="{{this}}" />
               <span>{{this}}</span>
             </label>
             {{/each}}</span>
@@ -132,6 +127,6 @@
       </li>
     </ul>
 
-    {{!-- </form> --}}
+    </form>
 
 </section>

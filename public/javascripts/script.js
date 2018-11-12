@@ -38,9 +38,12 @@ $(document).ready(function() {
     $('#cuisine .switch input').change(function() {
         if($(this).is(":checked")) {
           $('#cuisine input:checkbox').attr('checked','checked');
+          
+          console.log('Hello');
         }    
         if(!$(this).is(":checked")) {
           $('#cuisine input:checkbox').attr('checked',false);
+          console.log('goodbye');
         }    
     });
     $('#allergy .switch input').change(function() {
@@ -68,12 +71,20 @@ $(document).ready(function() {
 
  $(".collapsible-header button[name='decide']").click(()=>{
   //  event.preventDefault()
+  $('#lp-form').attr('action','/yummly-api')
+  setTimeout(() => {
+    $(".collapsible-header button[name='decide']").attr('type','submit')
+    
+  }, 1000);
   $(".collapsible-header button[name='decide']")[0].innerText = 'GO!'
    $(".collapsible-header:not(:first)").show("slow")
-  console.log('hello')
   })
 
-
+  $(".collapsible-header button[name='discover']").click(()=>{
+    $('#cuisine input:checkbox').attr('checked','checked');
+  $('#lp-form').attr('action','/yummly-api')
+    
+  })
 });
 
 
