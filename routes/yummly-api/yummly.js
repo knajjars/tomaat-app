@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Yummly = require("ws-yummly");
-const RandomizerClass = require("./recipe-randomizer");
-const Random = new RandomizerClass();
+const RecipeToolset = require("./recipe-toolset");
+const ToolSet = new RecipeToolset();
 const MetaData = require("./metadata");
 
 Yummly.config({
@@ -17,7 +17,7 @@ router.post("/discover", (req, res, next) => {
   const cuisines =
     userPref.cuisines.length !== 0
       ? userPref.cuisines
-      : Random.getRandomCuisine();
+      : ToolSet.getRandomCuisine();
   const allergies = userPref.allergies ? userPref.allergies : "";
 
   //get search values for metadata
@@ -28,33 +28,22 @@ router.post("/discover", (req, res, next) => {
   Yummly.query("")
     .requirePictures(true)
     .maxResults(1)
+    .start(ToolSet.getRandomIndex())
     .allowedDiets(dietSearchValue)
     .allowedCuisines(cuisineSearchValue)
     .allowedAllergies(allergySearchValue)
     .minRating(4)
     .get()
-    .then(recipes => {
-      const totalMatchCount = recipes.totalMatchCount;
-      const randomRecipe = Random.getRandomIndex(totalMatchCount);
-      Yummly.query("")
-        .requirePictures(true)
-        .maxResults(1)
-        .start(randomRecipe)
-        .allowedDiets(dietSearchValue)
-        .allowedCuisines(cuisineSearchValue)
-        .allowedAllergies(allergySearchValue)
-        .minRating(4)
-        .get()
-        .then(recipe => {
-          console.log(recipe.matches[0]);
-          res.render("recipes/discover", {
-            recipe: recipe.matches[0],
-            recipeImage: recipe.matches[0].imageUrlsBySize["90"].replace(
-              "=s90-c",
-              ""
-            )
-          });
-        });
+    .then(recipe => {
+      console.log(recipe.matches[0]);
+      res.render("recipes/discover", {
+        recipe: recipe.matches[0],
+        recipeImage: recipe.matches[0].imageUrlsBySize["90"].replace(
+          "=s90-c",
+          ""
+        ),
+        recipeTime: ToolSet.secondsToHms(recipe.matches[0].totalTimeInSeconds)
+      });
     });
 });
 
