@@ -190,7 +190,42 @@ body {
   align-items: center; }
 
 .decide-recipes-container {
-  display: flex; }
+  background-image: url("/images/speculative/recipes-background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch; }
+  .decide-recipes-container .recipe-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 40px 5px 40px 5px;
+    margin: 15px;
+    width: 350px;
+    box-sizing: border-box;
+    background-color: white; }
+    .decide-recipes-container .recipe-card:hover {
+      cursor: pointer;
+      background-color: #26a69a;
+      color: white; }
+      .decide-recipes-container .recipe-card:hover .timer-course {
+        color: black; }
+    .decide-recipes-container .recipe-card img {
+      border-radius: 5px;
+      height: 200px;
+      max-width: 300px; }
+    .decide-recipes-container .recipe-card .card-content {
+      align-self: stretch; }
+    .decide-recipes-container .recipe-card .timer-course {
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 0.7em;
+      color: #9c9c9c; }
 
 #account {
   width: 90%;

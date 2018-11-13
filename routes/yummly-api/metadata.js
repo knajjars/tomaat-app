@@ -367,7 +367,6 @@ class MetaData {
     switch (type) {
       case "cuisine":
         cuisineMeta.forEach(meta => {
-          
           queryArr.forEach(query => {
             if (meta.name === query) {
               searchValue.push(meta.searchValue);

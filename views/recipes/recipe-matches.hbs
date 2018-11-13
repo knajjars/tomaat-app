@@ -1,19 +1,32 @@
 <div class="decide-recipes-container">
   {{#each recipes.matches}}
-  <div class="decide-card-image">
-    <img src={{this.imageUrlsBy}}>
-  </div>
-  <div class="card-content">
-    <h4 class="card-title">{{this.recipeName}}</h4>
-    <h5>Ingredients:</h5>
-    <ul>
-      {{#each this.ingredients}}
-      <li class="capitalize">{{this}}</li>
-      {{/each}}
-    </ul>
-    <div class="attribute-course">
-      <i class="material-icons right">restaurant</i>
-      <p>{{this.attributes.course}}</p>
+  <div class="recipe-card">
+    <div class="decide-card-image">
+      <img src={{this.imageURL}}>
+    </div>
+    <div class="card-content">
+      <h5 class="card-title">{{this.recipeName}}</h5>
+      <strong>Ingredients:</strong>
+      <ul>
+        {{#each this.ingredients}}
+        <li class="capitalize">{{this}}</li>
+        {{/each}}
+      </ul>
+      <div class="timer-course">
+        {{#if this.attributes.course}}
+        <div class="attribute-course">
+          <i class="material-icons right">restaurant</i>
+          <p>{{this.attributes.course}}</p>
+        </div>
+        {{/if}}
+
+        {{#if this.recipeTime}}
+        <div class="attribute-course">
+          <i class="material-icons right">timer</i>
+          <p>{{this.recipeTime}}</p>
+        </div>
+        {{/if}}
+      </div>
     </div>
   </div>
   {{/each}}
@@ -22,7 +35,7 @@
 
 {{!-- { imageUrlsBySize:
 { '90':
-'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d6JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c' },
+'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d5JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c' },
 sourceDisplayName: 'OMG Chocolate Desserts',
 ingredients:
 [ 'white chocolate',
