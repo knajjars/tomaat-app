@@ -20,7 +20,7 @@
         Tomaat</a>
       <ul class="right hide-on-med-and-down">
         {{#if loggedUser}}
-        <li><a href="/auth/account"><i class="material-icons">account_circle</i></span></a></li>
+        <li><a href="/account"><i class="material-icons">account_circle</i></span></a></li>
         <li><a href="/auth/logout">Logout, <span class="capitalize">{{loggedUser.name}}</span></a></li>
 
         {{else}}
@@ -35,7 +35,7 @@
 
   <ul class="sidenav" id="mobile-demo">
     {{#if loggedUser}}
-    <li><a href="/auth/account"><i class="material-icons">account_circle</i>Account</a></li>
+    <li><a href="/account"><i class="material-icons">account_circle</i>Account</a></li>
     <li><a href="/auth/logout">Logout, <span class="capitalize">{{loggedUser.name}}</span></a></li>
     {{else}}
     <li><a href="/auth/login"><i class="material-icons">touch_app</i>Log In</a></li>
@@ -50,8 +50,10 @@
   <script src="/javascripts/axios.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/javascripts/script.js"> </script>
+  <script src="/javascripts/account.js"></script>
   <script src="/javascripts/preferences.js"></script>
 </body>
 

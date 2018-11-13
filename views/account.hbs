@@ -1,17 +1,27 @@
-<section>
+<section id="account">
   {{!-- BASIC INFO AND PICTURES --}}
   <div class="info container">
     <div class="basic-info container">
-      
+      <h2>{{loggedUser.name}} </h2>
+      <h3><i>{{loggedUser.email}} </i></h3>
+      <h4>Member Since: {{loggedUser.created_at}}</h4>
     </div>
     <div class="photo container">
-
+      
     </div>
 
     {{!-- PREFERENCES --}}
   </div>
   <div class="preferences container">
     <div class="cuisine">
+      <div id="cuisine-form" class="col s12 ">
+      <h1>Your <span class="underlined-special">preferred cuisines</span> </h1>
+      <h5>Hey <span class="capitalize bold">{{loggedUser.name}}</span>, please let us know your favorite cuisines,
+        we'll
+        make it
+        count. 💚</h5>
+      <div class="chips chips-cuisine chips-autocomplete"></div>
+    </div>
 
     </div>
     <div class="allergy">
@@ -25,3 +35,4 @@
 
   </div>
 </section>
+

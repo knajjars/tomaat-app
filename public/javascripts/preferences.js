@@ -38,6 +38,8 @@ $(".chips-diet").chips({
   }
 });
 
+
+
 $("#preferences-submit-btn").click(e => {
   const cuisines = $(".chips-cuisine")
     .text()

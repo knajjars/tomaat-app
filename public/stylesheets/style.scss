@@ -244,6 +244,42 @@ body {
   display: flex;
 }
 
+
+#account{
+  width: 90%;
+margin: 1rem auto;
+
+  display: flex;
+  flex-direction: column;
+  background-color: $main-color;
+
+  .info {
+    display: flex;
+    flex-direction: row;
+
+    .photo{
+      border-radius: 400px;
+      height: 400px;
+      width: 400px;
+      background-image: url("../images/speculative/error-routing.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+  }
+  .preferences {
+    display: flex;
+    flex-direction: row;
+  }
+  .favourites {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+}
+
+
 // MOBILE SECTION
 
 @media only screen and (max-width: 670px) {

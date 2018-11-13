@@ -192,6 +192,29 @@ body {
 .decide-recipes-container {
   display: flex; }
 
+#account {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #26a69a; }
+  #account .info {
+    display: flex;
+    flex-direction: row; }
+    #account .info .photo {
+      border-radius: 400px;
+      height: 400px;
+      width: 400px;
+      background-image: url("../images/speculative/error-routing.png");
+      background-size: cover;
+      background-repeat: no-repeat; }
+  #account .preferences {
+    display: flex;
+    flex-direction: row; }
+  #account .favourites {
+    display: flex;
+    flex-direction: row; }
+
 @media only screen and (max-width: 670px) {
   #lp {
     background-size: cover;

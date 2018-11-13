@@ -89,3 +89,4 @@ $(".btn-small#diet-btn").click(function() {
   $("#diet input:checkbox").attr("checked", "checked");
   // $(this).val('uncheck all');
 });
+
