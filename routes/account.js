@@ -8,8 +8,7 @@ const ensureAuthenticated = require("./Secuirty/ensureAuthenticated");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-
-router.get('/', (req,res,next)=>{
-  res.render('account')
-})
+router.get("/", (req, res, next) => {
+  res.render("account");
+});
 module.exports = router;

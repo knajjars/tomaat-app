@@ -6,12 +6,6 @@
     </div>
     <div class="card-content">
       <h5 class="card-title">{{this.recipeName}}</h5>
-      <strong>Ingredients:</strong>
-      <ul>
-        {{#each this.ingredients}}
-        <li class="capitalize">{{this}}</li>
-        {{/each}}
-      </ul>
       <div class="timer-course">
         {{#if this.attributes.course}}
         <div class="attribute-course">
@@ -31,8 +25,13 @@
   </div>
   {{/each}}
 </div>
+<ul class="pagination">
 
+  <li class="waves-effect pagination-left"><i class="material-icons">chevron_left</i></li>
+  <li class="waves-effect pagination-right"><i class="material-icons">chevron_right</i></li>
+</ul>
 
+<script src="/javascripts/pagination.js"></script>
 {{!-- { imageUrlsBySize:
 { '90':
 'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d5JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c' },

@@ -240,6 +240,11 @@ body {
   align-items: center;
 }
 
+.disabled {
+  color: gainsboro;
+  cursor: not-allowed;
+}
+
 .decide-recipes-container {
   background-image: url("/images/speculative/recipes-background.jpg");
   background-attachment: fixed;
@@ -254,6 +259,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     padding: 20px;
     border-radius: 40px 5px 40px 5px;
     margin: 15px;
@@ -285,10 +291,9 @@ body {
   }
 }
 
-
-#account{
+#account {
   width: 90%;
-margin: 1rem auto;
+  margin: 1rem auto;
 
   display: flex;
   flex-direction: column;
@@ -298,7 +303,7 @@ margin: 1rem auto;
     display: flex;
     flex-direction: row;
 
-    .photo{
+    .photo {
       border-radius: 400px;
       height: 400px;
       width: 400px;
@@ -306,7 +311,6 @@ margin: 1rem auto;
       background-size: cover;
       background-repeat: no-repeat;
     }
-
   }
   .preferences {
     display: flex;
@@ -316,10 +320,7 @@ margin: 1rem auto;
     display: flex;
     flex-direction: row;
   }
-
-
 }
-
 
 // MOBILE SECTION
 
