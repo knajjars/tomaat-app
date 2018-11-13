@@ -63,7 +63,7 @@ router.get("/discover", ensureAuthenticated, (req, res, next) => {
 router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
   //page the user is in
   let page = req.params.page;
-  page !== 1 ? (page *= 15) : (page = 0);
+  page !== 1 ? (page *= 30) : (page = 0);
 
   //get user preferences
   const diets = req.query.diet ? req.query.diet : "";
@@ -79,7 +79,7 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
   Yummly.query(query)
     .requirePictures(true)
     .start(page)
-    .maxResults(15)
+    .maxResults(30)
     .allowedCuisines(cuisineSearchValue)
     .allowedDiets(dietSearchValue)
     .allowedAllergies(allergySearchValue)

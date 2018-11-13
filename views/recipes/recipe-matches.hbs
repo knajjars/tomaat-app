@@ -1,26 +1,8 @@
 <div class="decide-recipes-container">
 
-<<<<<<< HEAD
-  <h5 class="results-found">We found <strong>{{recipes.totalMatchCount}}</strong> for you.</h5>
-  <div class="recipes-cards">
-    {{#each recipes.matches}}
-    <div class="recipe-card">
-      <div class="decide-card-image">
-        <img src={{this.imageURL}}>
-      </div>
-      <div class="card-content">
-        <h5 class="card-title">{{this.recipeName}}</h5>
-        <div class="timer-course">
-          {{#if this.attributes.course}}
-          <div class="attribute-course">
-            <i class="material-icons right">restaurant</i>
-            <p>{{this.attributes.course}}</p>
-          </div>
-          {{/if}}
-=======
   {{#each recipes.matches}}
   <div class="recipe-card">
-     <a class="btn-floating  btn-large waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+    <a class="btn-floating  btn-large waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
     <div>
 
     </div>
@@ -36,19 +18,18 @@
           <p>{{this.attributes.course}}</p>
         </div>
         {{/if}}
->>>>>>> d56c53278f7aaf242d85d5647fc827ea3ec9d156
 
-          {{#if this.recipeTime}}
-          <div class="attribute-course">
-            <i class="material-icons right">timer</i>
-            <p>{{this.recipeTime}}</p>
-          </div>
-          {{/if}}
+        {{#if this.recipeTime}}
+        <div class="attribute-course">
+          <i class="material-icons right">timer</i>
+          <p>{{this.recipeTime}}</p>
         </div>
+        {{/if}}
       </div>
     </div>
-    {{/each}}
   </div>
+  {{/each}}
+</div>
 </div>
 <ul class="pagination">
 
