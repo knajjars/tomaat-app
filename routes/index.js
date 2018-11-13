@@ -9,9 +9,10 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/users', (req,res,next)=>{
-  User.find()
+  User.findOne(req.user)
   .then(user=>{
-    console.log('user',user)
+    console.log('user',user);
+    res.render(user.data)
   })
 })
 
