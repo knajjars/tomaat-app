@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const ensureAuthenticated = require("../Secuirty/ensureAuthenticated");
-const Yummly = require("ws-yummly");
+const Yummly = require("./ws-yummly");
 const RecipeToolset = require("./recipe-toolset");
 const ToolSet = new RecipeToolset();
 const MetaData = require("./metadata");

@@ -1,0 +1,68 @@
+{
+  "_args": [
+    [
+      "ws-yummly@1.0.24",
+      "/Users/khalilnajjar/Desktop/IronHack/projects/food-app"
+    ]
+  ],
+  "_from": "ws-yummly@1.0.24",
+  "_id": "ws-yummly@1.0.24",
+  "_inBundle": false,
+  "_integrity": "sha1-/dwstW5pagIDvJ8oHVA9E2BUrEY=",
+  "_location": "/ws-yummly",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "ws-yummly@1.0.24",
+    "name": "ws-yummly",
+    "escapedName": "ws-yummly",
+    "rawSpec": "1.0.24",
+    "saveSpec": null,
+    "fetchSpec": "1.0.24"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ws-yummly/-/ws-yummly-1.0.24.tgz",
+  "_spec": "1.0.24",
+  "_where": "/Users/khalilnajjar/Desktop/IronHack/projects/food-app",
+  "author": {
+    "name": "Wesley Stam",
+    "email": "wstam88@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/wstam88/yummly/issues"
+  },
+  "dependencies": {
+    "fs-extra": "^0.26.4",
+    "lodash.chunk": "^4.0.0",
+    "needle": "^0.11.0",
+    "q": "^1.4.1"
+  },
+  "description": "A wrapper for the Yummly recipe API.",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "mocha": "^2.3.4",
+    "validator": "^4.5.1"
+  },
+  "homepage": "https://github.com/wstam88/yummly#readme",
+  "keywords": [
+    "yummly",
+    "wrapper",
+    "recipes",
+    "api"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "ws-yummly",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wstam88/yummly.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "1.0.24"
+}
