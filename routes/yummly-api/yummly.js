@@ -50,7 +50,7 @@ router.post("/discover", ensureAuthenticated, (req, res, next) => {
 router.post("/decide", ensureAuthenticated, (req, res, next) => {
   //get user preferences
   const diets = req.body.diet ? req.body.diet : "";
-  const cuisines = req.body.cuisine;
+  const cuisines = req.body.cuisine ? req.body.cuisine : "";
   const allergies = req.body.allergy ? req.body.allergy : "";
   const query = req.body.query ? req.body.query : "";
 
