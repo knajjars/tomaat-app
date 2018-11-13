@@ -185,6 +185,10 @@ body {
   justify-content: center;
   align-items: center; }
 
+.disabled {
+  color: gainsboro;
+  cursor: not-allowed; }
+
 .decide-recipes-container {
   background-image: url("/images/speculative/recipes-background.jpg");
   background-attachment: fixed;
@@ -199,6 +203,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     padding: 20px;
     border-radius: 40px 5px 40px 5px;
     margin: 15px;

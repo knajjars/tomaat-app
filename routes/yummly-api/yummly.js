@@ -11,7 +11,7 @@ Yummly.config({
   app_key: process.env.API_KEY
 });
 
-router.post("/discover", ensureAuthenticated, (req, res, next) => {
+router.get("/discover", ensureAuthenticated, (req, res, next) => {
   //get user preferences
   const userPref = req.user.preferences;
   const diets = userPref.diets ? userPref.diets : "";
@@ -47,12 +47,17 @@ router.post("/discover", ensureAuthenticated, (req, res, next) => {
     });
 });
 
-router.post("/decide", ensureAuthenticated, (req, res, next) => {
+router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
+  //page the user is in
+  let page = req.params.page;
+  page !== 1 ? (page *= 15) : (page = 0);
+
   //get user preferences
-  const diets = req.body.diet ? req.body.diet : "";
-  const cuisines = req.body.cuisine ? req.body.cuisine : "";
-  const allergies = req.body.allergy ? req.body.allergy : "";
-  const query = req.body.query ? req.body.query : "";
+  const diets = req.query.diet ? req.query.diet : "";
+  const cuisines = req.query.cuisine ? req.query.cuisine : "";
+  const allergies = req.query.allergy ? req.query.allergy : "";
+  const query = req.query.query ? req.query.query : "";
+  console.log(req.query);
 
   //get search values for metadata
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
@@ -61,6 +66,7 @@ router.post("/decide", ensureAuthenticated, (req, res, next) => {
 
   Yummly.query(query)
     .requirePictures(true)
+    .start(page)
     .maxResults(15)
     .allowedDiets(dietSearchValue)
     .allowedCuisines(cuisineSearchValue)

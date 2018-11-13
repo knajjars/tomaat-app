@@ -62,7 +62,7 @@ $(document).ready(function() {
 
   $(".collapsible-header button[name='decide']").click(() => {
     //  event.preventDefault()
-    $("#lp-form").attr("action", "/yummly-api/decide");
+    $("#lp-form").attr("action", "/yummly-api/decide/1");
     setTimeout(() => {
       $(".collapsible-header button[name='decide']").attr("type", "submit");
     }, 1000);
@@ -89,4 +89,3 @@ $(".btn-small#diet-btn").click(function() {
   $("#diet input:checkbox").attr("checked", "checked");
   // $(this).val('uncheck all');
 });
-
