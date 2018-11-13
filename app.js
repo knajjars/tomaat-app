@@ -12,20 +12,39 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 const metaDataYummly = require("./routes/yummly-api/metadata.js");
+const mongoURL = `mongodb://${process.env.MONGO_USER}:${
+  process.env.MONGO_PASS
+}@ds161653.mlab.com:61653/tomaat`;
 
-mongoose
-  .connect(
-    "mongodb://localhost/food-app",
-    { useNewUrlParser: true }
-  )
-  .then(x => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch(err => {
-    console.error("Error connecting to mongo", err);
-  });
+if (process.env.ENV === "development") {
+  mongoose
+    .connect(
+      "mongodb://localhost/food-app",
+      { useNewUrlParser: true }
+    )
+    .then(x => {
+      console.log(
+        `Connected to Mongo! Database name: "${x.connections[0].name}"`
+      );
+    })
+    .catch(err => {
+      console.error("Error connecting to mongo", err);
+    });
+} else {
+  mongoose
+    .connect(
+      mongoURL,
+      { useNewUrlParser: true }
+    )
+    .then(x => {
+      console.log(
+        `Connected to Mongo! Database name: "${x.connections[0].name}"`
+      );
+    })
+    .catch(err => {
+      console.error("Error connecting to mongo", err);
+    });
+}
 
 const app_name = require("./package.json").name;
 const debug = require("debug")(
