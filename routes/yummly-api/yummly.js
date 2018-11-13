@@ -25,7 +25,6 @@ router.get("/discover", ensureAuthenticated, (req, res, next) => {
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
   const allergySearchValue = MetaData.getSearchValue(allergies, "allergy");
-
   Yummly.query("")
     .requirePictures(true)
     .maxResults(1)
@@ -57,7 +56,6 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
   const cuisines = req.query.cuisine ? req.query.cuisine : "";
   const allergies = req.query.allergy ? req.query.allergy : "";
   const query = req.query.query ? req.query.query : "";
-  console.log(req.query);
 
   //get search values for metadata
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
@@ -68,8 +66,8 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
     .requirePictures(true)
     .start(page)
     .maxResults(15)
-    .allowedDiets(dietSearchValue)
     .allowedCuisines(cuisineSearchValue)
+    .allowedDiets(dietSearchValue)
     .allowedAllergies(allergySearchValue)
     .minRating(4)
     .get()
@@ -80,7 +78,7 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
       });
       const recipes = {
         matches: recipe.matches,
-        totalMatchCount: recipe.totalMatchCount
+        totalMatchCount: ToolSet.numberWithCommas(recipe.totalMatchCount)
       };
       res.render("recipes/recipe-matches", { recipes });
     });

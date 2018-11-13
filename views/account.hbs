@@ -1,44 +1,10 @@
-<section id="account">
-  {{!-- BASIC INFO AND PICTURES --}}
-  <div class="info container">
-    <div class="basic-info ">
-      <h2>{{loggedUser.name}} </h2>
-      <h3><i>{{loggedUser.email}} </i></h3>
-      <h4>Member Since: {{loggedUser.created_at}}</h4>
-    </div>
-    <div class="photo ">
-
-    </div>
-
-    {{!-- PREFERENCES --}}
-  </div>
-  <div class="preferences container">
-    <div class="cuisine">
-      <div>
-        <h4>Your Favourite Cuisines</h4>
-        <p>{{loggedUser.preferences.cuisines}}</p>
-      </div>
-      </div>
-
-    <div class="allergy">
-      <div id="allergy-form" class="col s12 ">
-        <h4>Your Designated Allegies</h4>
-        <p>{{loggedUser.preferences.allergies}}</p>
-      </div>
-
-    </div>
-    <div class="diet">
-      <div id="diet-form" class="col s12 ">
-        <h4>Your Preferred Diets</h4>
-       <p> {{loggedUser.preferences.diets}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="favourties container">
-    </div>
-
-
-
-
-  </div>
-</section>
+<div class="account-container">
+  <ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s3"><a href="#account-favorites">Favorites</a></li>
+    <li class="tab col s3"><a class="active" href="#account-preferences">Preferences</a></li>
+    <li class="tab col s3"><a href="#account-settings">Account settings</a></li>
+  </ul>
+  <div id="account-favorites" class="col s12 blue">Test 1</div>
+  <div id="account-preferences" class="col s12 red">Test 2</div>
+  <div id="account-settings" class="col s12 green">Test 3</div>
+</div>

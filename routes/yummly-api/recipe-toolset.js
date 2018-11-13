@@ -25,6 +25,10 @@ class RandomQuery {
     var sDisplay = s > 0 ? s + (s == 1 ? " sec" : " secs") : "";
     return hDisplay + mDisplay + sDisplay;
   }
+
+  numberWithCommas(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 }
 
 module.exports = RandomQuery;

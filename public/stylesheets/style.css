@@ -258,6 +258,9 @@ body {
     display: flex;
     flex-direction: row; }
 
+.account-container {
+  min-height: 100vh; }
+
 @media only screen and (max-width: 670px) {
   #lp {
     background-size: cover;
