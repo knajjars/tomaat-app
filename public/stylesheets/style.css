@@ -189,6 +189,13 @@ body {
   color: gainsboro;
   cursor: not-allowed; }
 
+.pagination {
+  text-align: center;
+  padding: 8px;
+  margin: 0;
+  background-color: #736598;
+  color: white; }
+
 .decide-recipes-container {
   background-image: url("/images/speculative/recipes-background.jpg");
   background-attachment: fixed;

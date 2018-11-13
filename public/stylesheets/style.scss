@@ -1,6 +1,6 @@
 $main-color: #26a69a;
 $alternative-color: #f95428;
-
+$alternative-color-2: #736598;
 $error-color: #e51b51;
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
@@ -143,16 +143,12 @@ body {
     display: flex;
     justify-content: space-between;
   }
-  
+
   .underlined-special {
     text-decoration: underline;
     font-weight: 600;
   }
 }
-
-
-
-
 
 .collapsible {
   border-top: 1px solid #ddd;
@@ -247,6 +243,14 @@ body {
   cursor: not-allowed;
 }
 
+.pagination {
+  text-align: center;
+  padding: 8px;
+  margin: 0;
+  background-color: $alternative-color-2;
+  color: white;
+}
+
 .decide-recipes-container {
   background-image: url("/images/speculative/recipes-background.jpg");
   background-attachment: fixed;
@@ -317,7 +321,6 @@ body {
   .preferences {
     display: flex;
     flex-direction: row;
-    
   }
   .favourites {
     display: flex;
