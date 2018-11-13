@@ -76,16 +76,30 @@ $(document).ready(function() {
   });
 
   $(".collapsible-header button[name='discover']").click(() => {
-    $("#lp-form").attr("action", "/yummly-api/discover");
     $("#cuisine input:checkbox").attr("checked", "checked");
+    $("#lp-form").attr("action", "/yummly-api/discover");
+  });
+
+  
+  $(".btn-small#allergy-btn").click(function() {
+    $("#allergy input:checkbox").attr("checked", "checked");
+    // $(this).val('uncheck all');
+  });
+  $(".btn-small#diet-btn").click(function() {
+    $("#diet input:checkbox").attr("checked", "checked");
+    // $(this).val('uncheck all');
+  });
+  
+  $('.decide-recipes-container i').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    if($(this).text()=='favorite'){
+      $(this).text('favorite_border') 
+
+    }else {
+      $(this).text('favorite') 
+
+    }
   });
 });
 
-$(".btn-small#allergy-btn").click(function() {
-  $("#allergy input:checkbox").attr("checked", "checked");
-  // $(this).val('uncheck all');
-});
-$(".btn-small#diet-btn").click(function() {
-  $("#diet input:checkbox").attr("checked", "checked");
-  // $(this).val('uncheck all');
-});
