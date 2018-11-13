@@ -8,4 +8,11 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/users', (req,res,next)=>{
+  User.find()
+  .then(user=>{
+    console.log('user',user)
+  })
+})
+
 module.exports = router;
