@@ -38,8 +38,6 @@ $(".chips-diet").chips({
   }
 });
 
-
-
 $("#preferences-submit-btn").click(e => {
   const cuisines = $(".chips-cuisine")
     .text()
@@ -57,7 +55,7 @@ $("#preferences-submit-btn").click(e => {
 
   axios({
     method: "POST",
-    url: "http://localhost:3000/auth/preferences",
+    url: "/auth/preferences",
     headers: { "X-Requested-With": "XMLHttpRequest" },
     data: {
       preferences: {
