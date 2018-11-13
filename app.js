@@ -119,6 +119,6 @@ app.use((req, res, next) => {
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/yummly-api", require("./routes/yummly-api/yummly"));
-app.use("/account", require("./routes/account"));
+app.use("/account", require("./routes/account/account"));
 
 module.exports = app;

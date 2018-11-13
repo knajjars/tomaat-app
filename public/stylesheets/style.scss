@@ -2,8 +2,10 @@ $main-color: #26a69a;
 $alternative-color: #f95428;
 $alternative-color-2: #736598;
 $error-color: #e51b51;
+
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
+$bg-account-height: 48px;
 $roadmove-font: "Road Movie";
 
 @font-face {
@@ -250,16 +252,27 @@ body {
   background-color: $alternative-color-2;
   color: white;
 }
-
+.account-container {
+  .carousel {
+    min-height: calc(100vh - #{$bg-account-height} - #{$bg-nav-height});
+  }
+}
 .decide-recipes-container {
-  background-image: url("/images/speculative/recipes-background.jpg");
+  background-image: url("/images/speculative/whitechopboard-lp.jpg");
   background-attachment: fixed;
   background-size: cover;
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: stretch;
+  flex-direction: column;
+  .results-found {
+    padding-left: 9px;
+  }
+  .recipes-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch;
+  }
   .recipe-card {
     display: flex;
     flex-direction: column;
@@ -295,41 +308,6 @@ body {
       color: #9c9c9c;
     }
   }
-}
-
-#account {
-  width: 90%;
-  margin: 1rem auto;
-
-  display: flex;
-  flex-direction: column;
-  background-color: $main-color;
-
-  .info {
-    display: flex;
-    flex-direction: row;
-
-    .photo {
-      border-radius: 400px;
-      height: 400px;
-      width: 400px;
-      background-image: url("../images/speculative/error-routing.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-  }
-  .preferences {
-    display: flex;
-    flex-direction: row;
-  }
-  .favourites {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-.account-container {
-  min-height: 100vh;
 }
 
 // MOBILE SECTION

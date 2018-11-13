@@ -10,8 +10,8 @@ class RandomQuery {
     return [this.cuisinesArr[randomIndex]];
   }
 
-  getRandomIndex() {
-    return Math.floor(Math.random() * 2000);
+  getRandomIndex(num) {
+    return Math.floor(Math.random() * num);
   }
 
   secondsToHms(d) {

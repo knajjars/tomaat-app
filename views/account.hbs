@@ -5,6 +5,30 @@
     <li class="tab col s3"><a href="#account-settings">Account settings</a></li>
   </ul>
   <div id="account-favorites" class="col s12 blue">Test 1</div>
-  <div id="account-preferences" class="col s12 red">Test 2</div>
+
+  <div id="account-preferences" class="col s12 red">
+    <h3>Your preferences</h3>
+    <h5>Cuisines</h5>
+    {{#each values.cuisine}}
+    <div class="cuisine-box">
+      {{this}}
+    </div>
+    {{/each}}
+    <h5>Diets</h5>
+    {{#each values.diet}}
+    <div class="cuisine-box">
+      {{this}}
+    </div>
+    {{/each}}
+    <h5>Allergies</h5>
+    {{#each values.allergy}}
+    <div class="cuisine-box">
+      {{this}}
+    </div>
+    {{/each}}
+  </div>
+
   <div id="account-settings" class="col s12 green">Test 3</div>
 </div>
+
+<script src="/javascripts/account.js"></script>

@@ -25,24 +25,38 @@ router.get("/discover", ensureAuthenticated, (req, res, next) => {
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
   const allergySearchValue = MetaData.getSearchValue(allergies, "allergy");
+
   Yummly.query("")
     .requirePictures(true)
     .maxResults(1)
-    .start(ToolSet.getRandomIndex())
     .allowedDiets(dietSearchValue)
     .allowedCuisines(cuisineSearchValue)
     .allowedAllergies(allergySearchValue)
     .minRating(4)
     .get()
-    .then(recipe => {
-      res.render("recipes/discover", {
-        recipe: recipe.matches[0],
-        recipeImage: recipe.matches[0].imageUrlsBySize["90"].replace(
-          "=s90-c",
-          ""
-        ),
-        recipeTime: ToolSet.secondsToHms(recipe.matches[0].totalTimeInSeconds)
-      });
+    .then(results => {
+      const totalMatchCount = results.totalMatchCount;
+      Yummly.query("")
+        .requirePictures(true)
+        .maxResults(1)
+        .start(ToolSet.getRandomIndex(totalMatchCount))
+        .allowedDiets(dietSearchValue)
+        .allowedCuisines(cuisineSearchValue)
+        .allowedAllergies(allergySearchValue)
+        .minRating(4)
+        .get()
+        .then(recipe => {
+          res.render("recipes/discover", {
+            recipe: recipe.matches[0],
+            recipeImage: recipe.matches[0].imageUrlsBySize["90"].replace(
+              "=s90-c",
+              ""
+            ),
+            recipeTime: ToolSet.secondsToHms(
+              recipe.matches[0].totalTimeInSeconds
+            )
+          });
+        });
     });
 });
 
