@@ -28,13 +28,7 @@ $(document).ready(function() {
   $(".collapsible").collapsible();
   $(".collapsible-header:not(:first)").hide();
 
-  // $('#cuisine .switch').toggle(function(){
-  //     $('#cuisine input:checkbox').attr('checked','checked');
-  //       // $(this).val('uncheck all');
-  //   }
-  //   )
 
-  // $('#cuisine .switch input').is(':checked') = false
 
   $("#cuisine .switch input").change(function() {
     if ($(this).is(":checked")) {

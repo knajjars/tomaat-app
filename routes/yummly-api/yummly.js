@@ -54,9 +54,9 @@ router.post("/decide", ensureAuthenticated, (req, res, next) => {
   const cuisines = req.body.cuisine;
   const allergies = req.body.allergy ? req.body.allergy : "";
   
-  console.log(diets);
-  console.log(cuisines);
-  console.log(allergies);
+  console.log('DIETS',diets);
+  console.log('CUISINES',cuisines);
+  console.log('ALLERGIES',allergies);
   
   
   //get search values for metadata

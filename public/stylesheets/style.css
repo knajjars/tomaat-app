@@ -169,9 +169,6 @@ body {
     font-size: 1rem; }
 
 .discover-recipe-container {
-<<<<<<< HEAD
-  display: flex; }
-=======
   min-height: calc(100vh - 64px);
   display: flex;
   justify-content: center;
@@ -185,7 +182,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
->>>>>>> 3e45eae5dfbeaca6e2208a4126d6fe99e9526d45
 
 @media only screen and (max-width: 670px) {
   #lp {
