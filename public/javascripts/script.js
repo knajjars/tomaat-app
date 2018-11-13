@@ -90,7 +90,7 @@ $(document).ready(function() {
     // $(this).val('uncheck all');
   });
   
-  $("i").click(function(e){
+  $('.decide-recipes-container i').click(function(e){
     e.preventDefault();
     e.stopPropagation();
     if($(this).text()=='favorite'){
