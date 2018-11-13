@@ -68,6 +68,10 @@ router.post("/decide", ensureAuthenticated, (req, res, next) => {
     .minRating(4)
     .get()
     .then(recipe => {
+      recipe.matches.forEach(el => {
+        el.recipeTime = ToolSet.secondsToHms(el.totalTimeInSeconds);
+        el.imageURL = el.imageUrlsBySize["90"].replace("=s90-c", "");
+      });
       const recipes = {
         matches: recipe.matches,
         totalMatchCount: recipe.totalMatchCount
