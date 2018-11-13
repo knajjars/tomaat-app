@@ -36,7 +36,6 @@ router.post("/discover", ensureAuthenticated, (req, res, next) => {
     .minRating(4)
     .get()
     .then(recipe => {
-      console.log(recipe.matches[0]);
       res.render("recipes/discover", {
         recipe: recipe.matches[0],
         recipeImage: recipe.matches[0].imageUrlsBySize["90"].replace(
@@ -53,37 +52,28 @@ router.post("/decide", ensureAuthenticated, (req, res, next) => {
   const diets = req.body.diet ? req.body.diet : "";
   const cuisines = req.body.cuisine;
   const allergies = req.body.allergy ? req.body.allergy : "";
-  
-  console.log('DIETS',diets);
-  console.log('CUISINES',cuisines);
-  console.log('ALLERGIES',allergies);
-  
-  
+  const query = req.body.query ? req.body.query : "";
+
   //get search values for metadata
   const dietSearchValue = MetaData.getSearchValue(diets, "diet");
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
   const allergySearchValue = MetaData.getSearchValue(allergies, "allergy");
 
-  
-      Yummly.query("")
-        .requirePictures(true)
-        .maxResults(1)
-        .start(ToolSet.getRandomIndex())
-        .allowedDiets(dietSearchValue)
-        .allowedCuisines(cuisineSearchValue)
-        .allowedAllergies(allergySearchValue)
-        .minRating(4)
-        .get()
-        .then(recipe => {
-          console.log(recipe.matches[0]);
-          res.render("recipes/discover", {
-            recipe: recipe.matches[0],
-            recipeImage: recipe.matches[0].imageUrlsBySize["90"].replace(
-              "=s90-c",
-              ""
-            )
-          });
-        });
-    })
+  Yummly.query(query)
+    .requirePictures(true)
+    .maxResults(15)
+    .allowedDiets(dietSearchValue)
+    .allowedCuisines(cuisineSearchValue)
+    .allowedAllergies(allergySearchValue)
+    .minRating(4)
+    .get()
+    .then(recipe => {
+      const recipes = {
+        matches: recipe.matches,
+        totalMatchCount: recipe.totalMatchCount
+      };
+      res.render("recipes/recipe-matches", { recipes });
+    });
+});
 
 module.exports = router;

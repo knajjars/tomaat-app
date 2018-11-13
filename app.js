@@ -11,8 +11,7 @@ const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
-const metaDataYummly = require("./routes/yummly-api/metadata.js")
-
+const metaDataYummly = require("./routes/yummly-api/metadata.js");
 
 mongoose
   .connect(
@@ -120,5 +119,6 @@ app.use((req, res, next) => {
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/yummly-api", require("./routes/yummly-api/yummly"));
+app.use("/account", require("./routes/account"));
 
 module.exports = app;

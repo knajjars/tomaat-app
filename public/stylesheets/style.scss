@@ -178,6 +178,15 @@ body {
   button#time {
     background-color: #736598;
   }
+
+  #search-input-field {
+    width: 100%;
+    margin: 0;
+    input {
+      border: none;
+      border-color: transparent;
+    }
+  }
 }
 
 .collapsible-body {
@@ -229,6 +238,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.decide-recipes-container {
+  display: flex;
 }
 
 // MOBILE SECTION

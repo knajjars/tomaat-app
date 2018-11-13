@@ -1,26 +1,23 @@
-<div class="discover-recipe-container">
-  <div class="card-image">
-    <img src={{recipeImage}}>
+<div class="decide-recipes-container">
+  {{#each recipes.matches}}
+  <div class="decide-card-image">
+    <img src={{this.imageUrlsBy}}>
   </div>
   <div class="card-content">
-    <h1 class="card-title">{{recipe.recipeName}}</h1>
+    <h4 class="card-title">{{this.recipeName}}</h4>
     <h5>Ingredients:</h5>
     <ul>
-      {{#each recipe.ingredients}}
+      {{#each this.ingredients}}
       <li class="capitalize">{{this}}</li>
       {{/each}}
     </ul>
-    <div class="time-to-cook">
-      <i class="material-icons right">timer</i>
-      <p>{{recipeTime}}</p>
-    </div>
     <div class="attribute-course">
       <i class="material-icons right">restaurant</i>
-      <p>{{recipe.attributes.course}}</p>
+      <p>{{this.attributes.course}}</p>
     </div>
   </div>
+  {{/each}}
 </div>
-
 
 
 {{!-- { imageUrlsBySize:
