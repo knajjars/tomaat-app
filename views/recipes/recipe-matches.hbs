@@ -3,10 +3,13 @@
 
   {{#each recipes.matches}}
   <div class="recipe-card">
+     <a class="btn-floating  btn-large waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+    <div>
+
+    </div>
     <div class="decide-card-image">
       <img src={{this.imageURL}}>
     </div>
-     <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">heart</i></a>
     <div class="card-content">
       <h5 class="card-title">{{this.recipeName}}</h5>
       <div class="timer-course">

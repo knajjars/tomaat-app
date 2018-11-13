@@ -205,6 +205,10 @@ body {
   margin: 0 auto;
   justify-content: center;
   align-items: stretch; }
+  .decide-recipes-container a {
+    position: absolute;
+    margin-left: 150px;
+    margin-bottom: 200px; }
   .decide-recipes-container .recipe-card {
     display: flex;
     flex-direction: column;
