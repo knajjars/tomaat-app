@@ -91,37 +91,33 @@ body {
   align-items: stretch;
   align-content: center;
   height: calc(100vh - 64px); }
-
-.preferences-form {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin: 0 90px;
-  background-color: #f95428;
-  padding: 30px;
-  border-radius: 5px;
-  color: white; }
-  @media only screen and (max-width: 600px) {
-    .preferences-form {
-      margin: 0 10px; } }
-  @media only screen and (min-width: 1200px) {
-    .preferences-form {
-      margin: 0 200px; } }
-
-#cuisine-form,
-#allergy-form,
-#diet-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; }
-
-.bottom-form-preferences {
-  display: flex;
-  justify-content: space-between; }
-
-.underlined-special {
-  text-decoration: underline;
-  font-weight: 600; }
+  .preferences-page .preferences-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 90px;
+    background-color: #f95428;
+    padding: 30px;
+    border-radius: 5px;
+    color: white; }
+    @media only screen and (max-width: 600px) {
+      .preferences-page .preferences-form {
+        margin: 0 10px; } }
+    @media only screen and (min-width: 1200px) {
+      .preferences-page .preferences-form {
+        margin: 0 200px; } }
+  .preferences-page #cuisine-form,
+  .preferences-page #allergy-form,
+  .preferences-page #diet-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+  .preferences-page .bottom-form-preferences {
+    display: flex;
+    justify-content: space-between; }
+  .preferences-page .underlined-special {
+    text-decoration: underline;
+    font-weight: 600; }
 
 .collapsible {
   border-top: 1px solid #ddd;

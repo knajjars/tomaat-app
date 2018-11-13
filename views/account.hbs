@@ -1,38 +1,54 @@
 <section id="account">
   {{!-- BASIC INFO AND PICTURES --}}
   <div class="info container">
-    <div class="basic-info container">
+    <div class="basic-info ">
       <h2>{{loggedUser.name}} </h2>
       <h3><i>{{loggedUser.email}} </i></h3>
       <h4>Member Since: {{loggedUser.created_at}}</h4>
     </div>
-    <div class="photo container">
-      
+    <div class="photo ">
+
     </div>
 
     {{!-- PREFERENCES --}}
   </div>
   <div class="preferences container">
     <div class="cuisine">
+      <div>
+        <h4>Your Favourite Cuisines</h4>
+        <p>{{loggedUser.preferences.cuisines}}</p>
+      </div>
       <div id="cuisine-form" class="col s12 ">
-      <h1>Your <span class="underlined-special">preferred cuisines</span> </h1>
-      <h5>Hey <span class="capitalize bold">{{loggedUser.name}}</span>, please let us know your favorite cuisines,
-        we'll
-        make it
-        count. 💚</h5>
-      <div class="chips chips-cuisine chips-autocomplete"></div>
-    </div>
+        <div class="chips chips-cuisine chips-autocomplete"></div>
+        <button class="btn waves-effect waves-light" id="account-preferences-submit-btn" name="action">
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
 
     </div>
+
+
+
     <div class="allergy">
+      <div id="allergy-form" class="col s12 ">
+        <h4>Your Designated Allegies</h4>
+        {{loggedUser.preferences.allergies}}
+
+
+        <div class="chips chips-allergy chips-autocomplete"></div>
+      </div>
 
     </div>
     <div class="diet">
+      <div id="diet-form" class="col s12 ">
+        <h4>Your Preferred Diets</h4>
+        {{loggedUser.preferences.diets}}
 
+        <div class="chips chips-diet chips-autocomplete"></div>
+      </div>
     </div>
   </div>
   <div class="favourties container">
 
   </div>
 </section>
-

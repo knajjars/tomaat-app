@@ -104,4 +104,54 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+
+router.patch("/accountPreferences", ensureAuthenticated, (req, res) => {
+  const { cuisines } = req.body.preferences;
+  const userCuisines = req.user.preferences.cuisines;
+  let filteredCuisines = cuisines.filter(el => {
+    if (metaData.cuisine.includes(el)) {
+      return el;
+    }
+  });
+  
+  
+  const { allergies } = req.body.preferences;
+  const userAllergies = req.user.preferences.allergies;
+  let filteredAllergies = allergies.filter(el => {
+    if (metaData.allergy.includes(el)) {
+      return el;
+    }
+  });
+  
+  const { diets } = req.body.preferences;
+  const userDiets = req.user.preferences.diets;
+  let filteredDiets = diets.filter(el => {
+    if (metaData.diet.includes(el)) {
+      return el;
+    }
+  });
+  
+  filteredCuisines = [...cuisines,...userCuisines]
+  filteredAllergies = [...allergies,...userAllergies]
+  filteredDiets = [...diets,...userDiets]
+
+
+
+  User.findByIdAndUpdate(req.user._id, {
+    preferences: {
+      cuisines: filteredCuisines,
+      diets: filteredDiets,
+      allergies: filteredAllergies
+    }
+  }).then(user => {
+    console.log('Then Working');
+    res.render("account");
+  });
+});
+
+router.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
+
 module.exports = router;
