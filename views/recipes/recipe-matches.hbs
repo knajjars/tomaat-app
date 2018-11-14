@@ -9,11 +9,11 @@
     {{#each recipes.matches}}
     <div class="recipe-card">
       <a href="#" class="btn-floating  btn-large waves-effect waves-light red">
-        {{#ifCond ../userFavorites this.id }}
+        {{#includes ../userFavorites this.id }}
         <i class="material-icons">favorite</i></a>
       {{else}}
       <i class="material-icons">favorite_border</i></a>
-      {{/ifCond}}
+      {{/includes}}
 
       <div class="decide-card-image">
         <img src={{this.imageURL}}>
@@ -50,6 +50,7 @@
 </ul>
 
 <script src="/javascripts/pagination.js"></script>
+
 {{!-- { imageUrlsBySize:
 { '90':
 'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d5JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c' },

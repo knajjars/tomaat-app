@@ -6,6 +6,7 @@ $main-color-active: #0b6b62;
 $main-color-hover: #0b423d;
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
+$pagination-height: 46px;
 $roadmove-font: "Road Movie";
 
 @font-face {
@@ -328,6 +329,7 @@ body {
   margin: 0 auto;
   justify-content: center;
   align-items: stretch;
+  min-height: calc(100vh - #{$sm-nav-height} - #{$pagination-height});
   .recipes-found {
     align-self: flex-start;
     padding-left: 10px;

@@ -34,4 +34,8 @@ router.patch("/preferences", ensureAuthenticated, (req, res, next) => {
   }).then(user => res.json(user));
 });
 
+router.get("/settings", ensureAuthenticated, (req, res, next) => {
+  res.render("account/settings");
+});
+
 module.exports = router;

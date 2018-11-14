@@ -16,6 +16,7 @@ const mongoURL = `mongodb://${process.env.MONGO_USER}:${
   process.env.MONGO_PASS
 }@ds161653.mlab.com:61653/tomaat`;
 
+//handle bars configuration
 require("./HandlebarsConfig");
 
 if (process.env.ENV === "development") {
