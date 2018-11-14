@@ -262,14 +262,25 @@ body {
   background-attachment: fixed;
   background-size: cover;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 0 auto;
   justify-content: center;
   align-items: stretch;
+  .recipes-found {
+    align-self: flex-end;
+    padding-right: 10px;
+  }
   a {
     position: absolute;
     margin-left: 150px;
     margin-bottom: 200px;
+  }
+  .recipes-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch;
   }
   .recipe-card {
     display: flex;

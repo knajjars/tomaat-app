@@ -133,8 +133,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// console.log("DELETE DEBUG", cuisineObj);
-
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/yummly-api", require("./routes/yummly-api/yummly"));

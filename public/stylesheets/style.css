@@ -204,14 +204,23 @@ body {
   background-attachment: fixed;
   background-size: cover;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 0 auto;
   justify-content: center;
   align-items: stretch; }
+  .decide-recipes-container .recipes-found {
+    align-self: flex-end;
+    padding-right: 10px; }
   .decide-recipes-container a {
     position: absolute;
     margin-left: 150px;
     margin-bottom: 200px; }
+  .decide-recipes-container .recipes-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch; }
   .decide-recipes-container .recipe-card {
     display: flex;
     flex-direction: column;
