@@ -196,8 +196,50 @@ body {
   background-color: #736598;
   color: white; }
 
-.account-container .carousel {
-  min-height: calc(100vh - 48px - 64px); }
+.account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center; }
+  .account-container .carousel {
+    min-height: calc(100vh - 48px - 64px); }
+    .account-container .carousel .carousel-fixed-item {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px; }
+  .account-container .button-save {
+    display: flex;
+    justify-content: space-around;
+    width: 90px;
+    padding: 5px;
+    align-items: center; }
+  .account-container #account-preferences .collapsible-header {
+    display: block !important; }
+  .account-container #account-preferences .cuisine-boxes .box-container,
+  .account-container #account-preferences .allergy-boxes .box-container,
+  .account-container #account-preferences .diet-boxes .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: row; }
+    .account-container #account-preferences .cuisine-boxes .box-container .box,
+    .account-container #account-preferences .allergy-boxes .box-container .box,
+    .account-container #account-preferences .diet-boxes .box-container .box {
+      padding: 7px;
+      margin: 4px;
+      background-color: #26a69a;
+      color: white;
+      border-radius: 4px; }
+      .account-container #account-preferences .cuisine-boxes .box-container .box:hover,
+      .account-container #account-preferences .allergy-boxes .box-container .box:hover,
+      .account-container #account-preferences .diet-boxes .box-container .box:hover {
+        cursor: pointer;
+        background-color: #0b423d; }
+    .account-container #account-preferences .cuisine-boxes .box-container .active-pref,
+    .account-container #account-preferences .allergy-boxes .box-container .active-pref,
+    .account-container #account-preferences .diet-boxes .box-container .active-pref {
+      background-color: #0b6b62; }
 
 .decide-recipes-container {
   background-image: url("/images/speculative/whitechopboard-lp.jpg");
