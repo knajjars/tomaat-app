@@ -2,6 +2,7 @@ $main-color: #26a69a;
 $alternative-color: #d86060;
 $alternative-color-2: #736598;
 $error-color: #e51b51;
+$success-color: #18d18a;
 $main-color-active: #0b6b62;
 $main-color-hover: #0b423d;
 $bg-nav-height: 64px;
@@ -100,6 +101,10 @@ body {
 .capitalize {
   text-transform: capitalize;
 }
+.underlined-special {
+  text-decoration: underline;
+  font-weight: 600;
+}
 
 .bold {
   font-weight: bolder;
@@ -109,7 +114,17 @@ body {
   background-color: $error-color;
   color: white;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px;
+}
+.success-message {
+  background-color: $success-color;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px;
 }
 
 .btn-floating.btn-large {
@@ -155,11 +170,6 @@ body {
   .bottom-form-preferences {
     display: flex;
     justify-content: space-between;
-  }
-
-  .underlined-special {
-    text-decoration: underline;
-    font-weight: 600;
   }
   small {
     display: inline;
@@ -311,10 +321,21 @@ body {
     .collapsible-header {
       display: block !important;
     }
-    ul,
-    a {
+    ul {
       margin: 10px;
     }
+
+    .buttons-settings {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      button,
+      a {
+        margin: 5px;
+      }
+    }
+
     .cuisine-boxes,
     .allergy-boxes,
     .diet-boxes {
@@ -345,6 +366,20 @@ body {
       padding: 25px;
       border-radius: 20px;
     }
+
+    .favorites-container {
+      .empty-collection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        * {
+          margin: 10px;
+          text-align: center;
+        }
+      }
+    }
   }
 }
 .decide-recipes-container {
@@ -363,9 +398,6 @@ body {
   }
   a {
     justify-self: flex-end;
-    // position: absolute;
-    // margin-left: 150px;
-    // margin-bottom: 200px;
   }
   .recipes-cards {
     display: flex;
@@ -508,7 +540,7 @@ body {
     text-align: justify;
   }
   img {
-    height: 18rem;
+    max-height: 18rem;
   }
 }
 

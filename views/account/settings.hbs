@@ -5,35 +5,32 @@
     <a href="/account/preferences">Preferences</a>
   </div>
   <div id="account-preferences" class="col s12">
-    <h4>Your account settings</h4>
+    <h4>This are your account settings</h4>
     <form class="col s12 account-settings-form" method="POST" action="/account/settings">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">email</i>
-          <input id="icon_prefix" type="text" class="validate" value="{{loggedUser.email}}" name="email">
+          <input id="icon_prefix" type="email" class="validate" name="email">
           <label for="icon_prefix">E-mail</label>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate" value="{{loggedUser.name}}" name="name">
+          <input id="icon_prefix" type="text" class="validate" name="name">
           <label for="icon_prefix">Name</label>
         </div>
-        <div class="input-field col s12">
-          <i class="material-icons prefix">lock_open</i>
-          <input id="icon_telephone" type="password" value="" class="validate" name="current-password">
-          <label for="icon_telephone">Old password</label>
-        </div>
-        <div class="input-field col s12">
-          <i class="material-icons prefix">lock</i>
-          <input id="icon_telephone" type="password" class="validate" name="new-password">
-          <label for="icon_telephone">New password</label>
-        </div>
       </div>
-      {{#if message }}
-      <div class="error-message">{{ message }}</div>
-      {{/if}}
-      <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">cloud_done</i>Save</button>
+      <div class="buttons-settings">
+        <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">cloud_done</i>Save</button>
+        <a href="/account/settings/password" class="waves-effect waves-light btn"><i class="material-icons right">lock</i>Change
+          password</a>
+      </div>
     </form>
+    {{#if errorMessage }}
+    <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
+    {{#if successMessage }}
+    <div class="success-message">{{ successMessage }}</div>
+    {{/if}}
   </div>
 </div>
 

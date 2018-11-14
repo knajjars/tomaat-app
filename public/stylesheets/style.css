@@ -74,6 +74,10 @@ body {
 .capitalize {
   text-transform: capitalize; }
 
+.underlined-special {
+  text-decoration: underline;
+  font-weight: 600; }
+
 .bold {
   font-weight: bolder; }
 
@@ -81,7 +85,17 @@ body {
   background-color: #e51b51;
   color: white;
   text-align: center;
-  padding: 5px; }
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px; }
+
+.success-message {
+  background-color: #18d18a;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px; }
 
 .btn-floating.btn-large {
   align-self: flex-end; }
@@ -123,9 +137,6 @@ body {
   .preferences-page .bottom-form-preferences {
     display: flex;
     justify-content: space-between; }
-  .preferences-page .underlined-special {
-    text-decoration: underline;
-    font-weight: 600; }
   .preferences-page small {
     display: inline;
     width: 20px; }
@@ -242,9 +253,16 @@ body {
       text-align: center; }
     .account-container #account-preferences .collapsible-header {
       display: block !important; }
-    .account-container #account-preferences ul,
-    .account-container #account-preferences a {
+    .account-container #account-preferences ul {
       margin: 10px; }
+    .account-container #account-preferences .buttons-settings {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center; }
+      .account-container #account-preferences .buttons-settings button,
+      .account-container #account-preferences .buttons-settings a {
+        margin: 5px; }
     .account-container #account-preferences .cuisine-boxes .box-container,
     .account-container #account-preferences .allergy-boxes .box-container,
     .account-container #account-preferences .diet-boxes .box-container {
@@ -274,6 +292,15 @@ body {
       background: white;
       padding: 25px;
       border-radius: 20px; }
+    .account-container #account-preferences .favorites-container .empty-collection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center; }
+      .account-container #account-preferences .favorites-container .empty-collection * {
+        margin: 10px;
+        text-align: center; }
 
 .decide-recipes-container {
   background-image: url("/images/speculative/whitechopboard-lp.jpg");
@@ -393,7 +420,7 @@ body {
     margin: 20px;
     text-align: justify; }
   .not-found img {
-    height: 18rem; }
+    max-height: 18rem; }
 
 .carousel.carousel-slider .carousel-item {
   min-height: 0; }
