@@ -112,6 +112,10 @@ body {
   padding: 5px;
 }
 
+.btn-floating.btn-large {
+  align-self: flex-end;
+}
+
 .preferences-page {
   margin: 0;
   padding: 0;
@@ -349,7 +353,12 @@ body {
     align-self: flex-start;
     padding-left: 10px;
   }
-
+  a {
+    justify-self: flex-end;
+    // position: absolute;
+    // margin-left: 150px;
+    // margin-bottom: 200px;
+  }
   .recipes-cards {
     display: flex;
     flex-wrap: wrap;
@@ -496,3 +505,15 @@ body {
 }
 
 // @import "compass/css3";
+
+// MATERIALIZE FIXES
+
+.carousel.carousel-slider .carousel-item {
+  min-height: 0;
+}
+
+.input-field {
+  position: relative;
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}
