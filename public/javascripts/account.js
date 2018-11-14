@@ -1,6 +1,27 @@
 window.onload = function() {
   axios.get("/account/user-preferences").then(response => {
-    console.log(response.data);
+    const data = response.data;
+    const nodeBoxes = $(".box");
+    const boxes = [...nodeBoxes];
+    boxes.forEach(box => {
+      switch (box.dataset.preference) {
+        case "cuisine":
+          if (data.cuisines.includes(box.innerText)) {
+            box.classList.add("active-pref");
+          }
+          break;
+        case "diet":
+          if (data.diets.includes(box.innerText)) {
+            box.classList.add("active-pref");
+          }
+          break;
+        case "allergy":
+          if (data.allergies.includes(box.innerText)) {
+            box.classList.add("active-pref");
+          }
+          break;
+      }
+    });
   });
 
   $(".tabs").tabs({ swipeable: true });

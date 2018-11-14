@@ -126,9 +126,9 @@ app.use((req, res, next) => {
     req.user.preferences.diets.forEach(el => {
       delete dietObj[el];
     });
-    app.locals.cuisine = Object.keys(cuisineObj);
-    app.locals.allergy = Object.keys(allergyObj);
-    app.locals.diet = Object.keys(dietObj);
+    app.locals.cuisineGlobal = Object.keys(cuisineObj);
+    app.locals.allergyGlobal = Object.keys(allergyObj);
+    app.locals.dietGlobal = Object.keys(dietObj);
   }
   next();
 });

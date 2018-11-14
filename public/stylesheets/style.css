@@ -236,6 +236,10 @@ body {
       .account-container #account-preferences .diet-boxes .box-container .box:hover {
         cursor: pointer;
         background-color: #0a8d80; }
+    .account-container #account-preferences .cuisine-boxes .box-container .active-pref,
+    .account-container #account-preferences .allergy-boxes .box-container .active-pref,
+    .account-container #account-preferences .diet-boxes .box-container .active-pref {
+      background-color: #0a8d80; }
 
 .decide-recipes-container {
   background-image: url("/images/speculative/whitechopboard-lp.jpg");

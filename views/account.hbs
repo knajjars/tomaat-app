@@ -6,7 +6,6 @@
   </ul>
   {{!-- account favorites --}}
   <div id="account-favorites" class="col s12 blue">Test 1</div>
-
   {{!-- account preferences --}}
   <div id="account-preferences" class="col s12 red">
     <h3><span class="capitalize">{{loggedUser.name}}</span> preferences</h3>
@@ -15,10 +14,8 @@
         <div class="collapsible-header"><i class="material-icons">restaurant</i>Your cuisines</div>
         <div class="collapsible-body cuisine-boxes">
           <div class="box-container">
-            {{#each cuisine}}
-            <div class="box">
-              {{this}}
-            </div>
+            {{#each values.cuisine}}
+            <div class="box" data-preference="cuisine">{{this}}</div>
             {{/each}}
           </div>
         </div>
@@ -27,10 +24,8 @@
         <div class="collapsible-header"><i class="material-icons">spa</i>Your diets</div>
         <div class="collapsible-body diet-boxes">
           <div class="box-container">
-            {{#each diet}}
-            <div class="box">
-              {{this}}
-            </div>
+            {{#each values.diet}}
+            <div class="box" data-preference="diet">{{this}}</div>
             {{/each}}
           </div>
         </div>
@@ -39,10 +34,8 @@
         <div class="collapsible-header"><i class="material-icons">warning</i>Your allergies</div>
         <div class="collapsible-body allergy-boxes">
           <div class="box-container">
-            {{#each allergy}}
-            <div class="box">
-              {{this}}
-            </div>
+            {{#each values.allergy}}
+            <div class="box" data-preference="allergy">{{this}}</div>
             {{/each}}
           </div>
         </div>
