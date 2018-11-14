@@ -199,12 +199,20 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center; }
-  .discover-recipe-container * {
-    margin: 10px; }
   .discover-recipe-container .card-image {
-    width: 100%;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    align-items: center; }
+    .discover-recipe-container .card-imageimg {
+      max-width: 100%; }
+  .discover-recipe-container * {
+    margin: 5px 5px; }
+  .discover-recipe-container .ingredientsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; }
+  .discover-recipe-container label {
+    max-width: 50%; }
 
 .time-to-cook,
 .attribute-course {

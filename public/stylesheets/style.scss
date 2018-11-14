@@ -254,16 +254,38 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
-  * {
-    margin: 10px;
-  }
 
   .card-image {
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center; 
     
+    &img {
+      max-width: 100%;
+    }
   }
+
+
+  *{
+    margin: 5px 5px
+  }
+
+.ingredientsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+  label {
+    max-width: 50%;
+
+  }
+  
+  label * {
+
+  }
+
+
 }
 
 .time-to-cook,

@@ -5,11 +5,17 @@
   <div class="card-content">
     <h1 class="card-title">{{recipe.recipeName}}</h1>
     <h5>Ingredients:</h5>
-    <ul>
+    <div class="ingredientsContainer">
+
       {{#each recipe.ingredients}}
-      <li class="capitalize">{{this}}</li>
+
+      <label id="cuisine-label">
+      <input name="cuisine" id="cuisine-input" type="checkbox" class="filled-in"  value="{{this}}" />
+      <span>{{this}}</span>
+      </label>
       {{/each}}
-    </ul>
+    </div>
+
     <div class="time-to-cook">
       <i class="material-icons right">timer</i>
       <p>{{recipeTime}}</p>
