@@ -90,16 +90,39 @@ $(document).ready(function() {
     // $(this).val('uncheck all');
   });
   
-  $('.decide-recipes-container i').click(function(e){
+  $('.decide-recipes-container a').click(function(e){
     e.preventDefault();
     e.stopPropagation();
-    if($(this).text()=='favorite'){
-      $(this).text('favorite_border') 
+
+    if($("i",this).text()=='favorite'){
+      $("i",this).text('favorite_border') 
 
     }else {
-      $(this).text('favorite') 
-
+      $("i",this).text('favorite') 
+      let recipeName = $(this).closest('div').children('div.card-content').children('h5').text()
+      let thumbnail = $(this).closest('div').children('div.decide-card-image').children('img').attr('src')
+      let apiURL = $(this).closest('div').children('div.card-content').children('a').attr('href')
+      
+      axios({
+        method: "POST",
+        url: "/favorites/userfavorite",
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+        data: {
+          recipeName: recipeName,
+          thumbnail: thumbnail,
+          apiURL:apiURL
+        }
+      })
+        .then(() => console.log('success'))
+        .catch(err => console.log('err'));
+      
+      
     }
+
+    let favoritesArray = []
+
+
+  });  
   });
-});
+
 

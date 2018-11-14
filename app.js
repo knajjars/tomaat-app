@@ -137,5 +137,6 @@ app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/yummly-api", require("./routes/yummly-api/yummly"));
 app.use("/account", require("./routes/account/account"));
+app.use("/favorites", require("./routes/favorites"));
 
 module.exports = app;
