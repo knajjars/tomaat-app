@@ -24,7 +24,7 @@
     <div class="nav-wrapper">
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <a href="/" class="brand-logo"><img id="logo" src="../images/speculative/brand-logo.png" alt="" srcset="">
-        Tomaat</a>
+        Tomaat</a> 
       <ul class="right hide-on-med-and-down">
         {{#if loggedUser}}
         <li><a href="/account/preferences"><i class="material-icons">account_circle</i></span></a></li>
@@ -41,6 +41,7 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
+    <li><a href="/"><i class="material-icons">home</i>Home</a></li>
     {{#if loggedUser}}
     <li><a href="/account/preferences"><i class="material-icons">account_circle</i>Account</a></li>
     <li><a href="/auth/logout">Logout, <span class="capitalize">{{loggedUser.name}}</span></a></li>

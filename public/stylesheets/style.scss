@@ -13,6 +13,12 @@ $roadmove-font: "Road Movie";
   src: url("../Font/roadmovie.ttf");
 }
 
+.topright {
+align-self: flex-end;
+  top: 10px;
+  font-size: 18px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -337,9 +343,9 @@ body {
     padding-left: 10px;
   }
   a {
-    position: absolute;
-    margin-left: 150px;
-    margin-bottom: 200px;
+    // position: absolute;
+    // margin-left: 150px;
+    // margin-bottom: 200px;
   }
   .recipes-cards {
     display: flex;
@@ -357,7 +363,7 @@ body {
     padding: 20px;
     border-radius: 40px 5px 40px 5px;
     margin: 15px;
-    width: 350px;
+    width: 20rem;
     box-sizing: border-box;
     background-color: white;
     &:hover {
@@ -371,7 +377,7 @@ body {
     img {
       border-radius: 5px;
       height: 200px;
-      max-width: 300px;
+      max-width: 19rem;
     }
     .card-content {
       align-self: stretch;
@@ -406,6 +412,9 @@ body {
       width: 100%;
       margin: 10px;
     }
+  }
+  img {
+    max-width: 100px;
   }
 
   .preferences-page {
@@ -459,6 +468,8 @@ body {
       width: 600px;
     }
   }
+
+ 
 }
 
 // ERRORS

@@ -2,6 +2,11 @@
   font-family: "Road Movie";
   src: url("../Font/roadmovie.ttf"); }
 
+.topright {
+  align-self: flex-end;
+  top: 10px;
+  font-size: 18px; }
+
 body {
   margin: 0;
   padding: 0; }
@@ -270,10 +275,6 @@ body {
   .decide-recipes-container .recipes-found {
     align-self: flex-start;
     padding-left: 10px; }
-  .decide-recipes-container a {
-    position: absolute;
-    margin-left: 150px;
-    margin-bottom: 200px; }
   .decide-recipes-container .recipes-cards {
     display: flex;
     flex-wrap: wrap;
@@ -289,7 +290,7 @@ body {
     padding: 20px;
     border-radius: 40px 5px 40px 5px;
     margin: 15px;
-    width: 350px;
+    width: 20rem;
     box-sizing: border-box;
     background-color: white; }
     .decide-recipes-container .recipe-card:hover {
@@ -301,7 +302,7 @@ body {
     .decide-recipes-container .recipe-card img {
       border-radius: 5px;
       height: 200px;
-      max-width: 300px; }
+      max-width: 19rem; }
     .decide-recipes-container .recipe-card .card-content {
       align-self: stretch; }
     .decide-recipes-container .recipe-card .timer-course {
@@ -326,6 +327,8 @@ body {
     #lp #lp-form {
       width: 100%;
       margin: 10px; }
+  img {
+    max-width: 100px; }
   .preferences-page {
     min-height: calc(100vh - 56px); }
     .preferences-page h1 {
