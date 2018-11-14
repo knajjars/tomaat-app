@@ -1,15 +1,15 @@
 <div class="decide-recipes-container">
 
-  <p class="recipes-found">We found <strong>{{recipes.totalMatchCount}}</strong> just for you. 
-  {{!-- <form action="/favorites/userfavorite" method="post">
-    <button type="submit">TEST</button>
-  </form> --}}
-  
+  <p class="recipes-found">We found <strong>{{recipes.totalMatchCount}}</strong> recipes just for you.
+    {{!-- <form action="/favorites/userfavorite" method="post">
+      <button type="submit">TEST</button>
+    </form> --}}
+
   </p>
   <div class="recipes-cards">
     {{#each recipes.matches}}
     <div class="recipe-card">
-    {{!-- <a href="{{this.}}"></a> --}}
+      {{!-- <a href="{{this.}}"></a> --}}
       <a href="#" class="btn-floating  btn-large waves-effect waves-light red">
         <i class="material-icons">favorite_border</i></a>
       <div class="decide-card-image">
