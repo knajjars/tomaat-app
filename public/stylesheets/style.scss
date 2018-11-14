@@ -408,6 +408,13 @@ body {
     width: 160px;
     padding: 5px 0;
   }
+
+  #account-preferences {
+    .collapsible {
+      width: 100%;
+      margin: 10px;
+    }
+  }
 }
 
 // COMPUTER SECTION

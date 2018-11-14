@@ -324,7 +324,10 @@ body {
     min-height: calc(100vh - 56px); }
   label {
     width: 160px;
-    padding: 5px 0; } }
+    padding: 5px 0; }
+  #account-preferences .collapsible {
+    width: 100%;
+    margin: 10px; } }
 
 @media only screen and (min-width: 670px) {
   #lp {
