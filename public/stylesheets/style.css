@@ -83,6 +83,9 @@ body {
   text-align: center;
   padding: 5px; }
 
+.btn-floating.btn-large {
+  align-self: flex-end; }
+
 .preferences-page {
   margin: 0;
   padding: 0;
@@ -276,6 +279,8 @@ body {
   .decide-recipes-container .recipes-found {
     align-self: flex-start;
     padding-left: 10px; }
+  .decide-recipes-container a {
+    justify-self: flex-end; }
   .decide-recipes-container .recipes-cards {
     display: flex;
     flex-wrap: wrap;
@@ -378,5 +383,13 @@ body {
     text-align: justify; }
   .not-found img {
     height: 18rem; }
+
+.carousel.carousel-slider .carousel-item {
+  min-height: 0; }
+
+.input-field {
+  position: relative;
+  margin-top: 0rem;
+  margin-bottom: 3rem; }
 
 /*# sourceMappingURL=style.css.map */
