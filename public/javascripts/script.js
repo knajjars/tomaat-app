@@ -22,9 +22,16 @@ document.addEventListener("DOMContentLoaded", function() {
   var instances = M.Collapsible.init(elems);
 });
 
+
 // Or with jQuery
 
 $(document).ready(function() {
+
+  $('#reveal').click(()=>{
+    $('.small-cuisine').toggle()
+  })
+
+
   $(".collapsible").collapsible();
   $(".collapsible-header:not(:first)").hide();
 

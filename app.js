@@ -103,6 +103,8 @@ metaDataYummly.diet.forEach(diet => {
   dietObj[diet] = null;
 });
 
+app.locals.preDeleteCuisine = Object.keys(cuisineObj);
+
 // Enable authentication using session + passport
 app.use(
   session({

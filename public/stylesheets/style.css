@@ -118,6 +118,9 @@ body {
   .preferences-page .underlined-special {
     text-decoration: underline;
     font-weight: 600; }
+  .preferences-page small {
+    display: inline;
+    width: 20px; }
 
 .collapsible {
   border-top: 1px solid #ddd;
@@ -320,8 +323,18 @@ body {
       padding: 1rem; }
     #lp #subtitle {
       font-size: 2rem; }
+    #lp #lp-form {
+      width: 100%;
+      margin: 10px; }
   .preferences-page {
     min-height: calc(100vh - 56px); }
+    .preferences-page h1 {
+      font-size: 2.6rem;
+      padding: 0.7rem 0;
+      margin: 1rem 0; }
+    .preferences-page .preferences-form {
+      margin: 10px;
+      padding: 0.8em; }
   label {
     width: 160px;
     padding: 5px 0; }

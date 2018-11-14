@@ -9,6 +9,13 @@
     {{!-- cuisine form --}}
     <div id="cuisine-form" class="col s12 ">
       <h1>Your <span class="underlined-special">preferred cuisines</span> </h1>
+      <div>
+        <a id="reveal" class=" waves-effect waves-light" type="button">Our Suppported Cuisines</a>
+      {{#each preDeleteCuisine}}
+      <small class="small-cuisine" style="display:none">{{this}}, </small>
+      {{/each}}
+
+      </div>
       <h5>Hey <span class="capitalize bold">{{loggedUser.name}}</span>, please let us know your favorite cuisines,
         we'll
         make it
