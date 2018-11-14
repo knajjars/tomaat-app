@@ -271,7 +271,8 @@ body {
   flex-direction: column;
   margin: 0 auto;
   justify-content: center;
-  align-items: stretch; }
+  align-items: stretch;
+  min-height: calc(100vh - 56px - 46px); }
   .decide-recipes-container .recipes-found {
     align-self: flex-start;
     padding-left: 10px; }

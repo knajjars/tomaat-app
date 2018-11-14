@@ -4,14 +4,17 @@
     {{!-- <form action="/favorites/userfavorite" method="post">
       <button type="submit">TEST</button>
     </form> --}}
-
   </p>
   <div class="recipes-cards">
     {{#each recipes.matches}}
     <div class="recipe-card">
-      {{!-- <a href="{{this.}}"></a> --}}
-      <a href="#" class="btn-floating topright  btn-large waves-effect waves-light red">
-        <i class="material-icons">favorite_border</i></a>
+      <a href="#" class="btn-floating  btn-large waves-effect waves-light red">
+        {{#includes ../userFavorites this.id }}
+        <i class="material-icons">favorite</i></a>
+      {{else}}
+      <i class="material-icons">favorite_border</i></a>
+      {{/includes}}
+
       <div class="decide-card-image">
         <img src={{this.imageURL}}>
       </div>
@@ -47,6 +50,7 @@
 </ul>
 
 <script src="/javascripts/pagination.js"></script>
+
 {{!-- { imageUrlsBySize:
 { '90':
 'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d5JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c' },
