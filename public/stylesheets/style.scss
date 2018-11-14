@@ -2,7 +2,8 @@ $main-color: #26a69a;
 $alternative-color: #f95428;
 $alternative-color-2: #736598;
 $error-color: #e51b51;
-$main-color-hover: #0a8d80;
+$main-color-active: #0b6b62;
+$main-color-hover: #0b423d;
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
 $bg-account-height: 48px;
@@ -298,7 +299,7 @@ body {
           }
         }
         .active-pref {
-          background-color: $main-color-hover;
+          background-color: $main-color-active;
         }
       }
     }

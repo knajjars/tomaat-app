@@ -24,6 +24,15 @@ window.onload = function() {
     });
   });
 
+  const $box = $(".box");
+  $box.click(function() {
+    if ($(this).hasClass("active-pref")) {
+      $(this).removeClass("active-pref");
+    } else {
+      $(this).addClass("active-pref");
+    }
+  });
+
   $(".tabs").tabs({ swipeable: true });
   $(".carousel").append(`
   <div class="carousel-fixed-item center">
