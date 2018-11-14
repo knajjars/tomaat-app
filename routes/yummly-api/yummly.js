@@ -97,13 +97,17 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
     .minRating(4)
     .get()
     .then(recipe => {
+      const totalMatchCount =
+        recipe.matches.length > 0
+          ? ToolSet.numberWithCommas(recipe.totalMatchCount)
+          : 0;
       recipe.matches.forEach(el => {
         el.recipeTime = ToolSet.secondsToHms(el.totalTimeInSeconds);
         el.imageURL = el.imageUrlsBySize["90"].replace("=s90-c", "");
       });
       return {
         matches: recipe.matches,
-        totalMatchCount: ToolSet.numberWithCommas(recipe.totalMatchCount)
+        totalMatchCount
       };
     });
 

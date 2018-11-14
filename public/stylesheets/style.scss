@@ -15,7 +15,7 @@ $roadmove-font: "Road Movie";
 }
 
 .topright {
-align-self: flex-end;
+  align-self: flex-end;
   top: 10px;
   font-size: 18px;
 }
@@ -152,15 +152,15 @@ body {
     display: flex;
     justify-content: space-between;
   }
-  
+
   .underlined-special {
     text-decoration: underline;
     font-weight: 600;
   }
   small {
-  display: inline;
-  width: 20px;
-}
+    display: inline;
+    width: 20px;
+  }
 }
 
 .collapsible {
@@ -344,11 +344,7 @@ body {
     align-self: flex-start;
     padding-left: 10px;
   }
-  a {
-    // position: absolute;
-    // margin-left: 150px;
-    // margin-bottom: 200px;
-  }
+
   .recipes-cards {
     display: flex;
     flex-wrap: wrap;
@@ -470,8 +466,6 @@ body {
       width: 600px;
     }
   }
-
- 
 }
 
 // ERRORS
