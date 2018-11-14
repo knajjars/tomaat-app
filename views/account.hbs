@@ -1,34 +1,57 @@
 <div class="account-container">
-  <ul id="tabs-swipe-demo" class="tabs">
+  <ul class="tabs">
     <li class="tab col s3"><a href="#account-favorites">Favorites</a></li>
     <li class="tab col s3"><a class="active" href="#account-preferences">Preferences</a></li>
     <li class="tab col s3"><a href="#account-settings">Account settings</a></li>
   </ul>
+  {{!-- account favorites --}}
   <div id="account-favorites" class="col s12 blue">Test 1</div>
 
+  {{!-- account preferences --}}
   <div id="account-preferences" class="col s12 red">
-    <h3>Your preferences</h3>
-    <h5>Cuisines</h5>
-    {{#each values.cuisine}}
-    <div class="cuisine-box">
-      {{this}}
-    </div>
-    {{/each}}
-    <h5>Diets</h5>
-    {{#each values.diet}}
-    <div class="cuisine-box">
-      {{this}}
-    </div>
-    {{/each}}
-    <h5>Allergies</h5>
-    {{#each values.allergy}}
-    <div class="cuisine-box">
-      {{this}}
-    </div>
-    {{/each}}
+    <h3><span class="capitalize">{{loggedUser.name}}</span> preferences</h3>
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">restaurant</i>Your cuisines</div>
+        <div class="collapsible-body cuisine-boxes">
+          <div class="box-container">
+            {{#each cuisine}}
+            <div class="box">
+              {{this}}
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">spa</i>Your diets</div>
+        <div class="collapsible-body diet-boxes">
+          <div class="box-container">
+            {{#each diet}}
+            <div class="box">
+              {{this}}
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">warning</i>Your allergies</div>
+        <div class="collapsible-body allergy-boxes">
+          <div class="box-container">
+            {{#each allergy}}
+            <div class="box">
+              {{this}}
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
-
+  {{!-- account settings --}}
   <div id="account-settings" class="col s12 green">Test 3</div>
 </div>
+
 
 <script src="/javascripts/account.js"></script>

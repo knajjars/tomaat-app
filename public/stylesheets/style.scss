@@ -2,7 +2,7 @@ $main-color: #26a69a;
 $alternative-color: #f95428;
 $alternative-color-2: #736598;
 $error-color: #e51b51;
-
+$main-color-hover: #0a8d80;
 $bg-nav-height: 64px;
 $sm-nav-height: 56px;
 $bg-account-height: 48px;
@@ -252,9 +252,53 @@ body {
   background-color: $alternative-color-2;
   color: white;
 }
+
 .account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   .carousel {
     min-height: calc(100vh - #{$bg-account-height} - #{$bg-nav-height});
+    .carousel-fixed-item {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px;
+    }
+  }
+  .button-save {
+    display: flex;
+    justify-content: space-around;
+    width: 90px;
+    padding: 5px;
+    align-items: center;
+  }
+  #account-preferences {
+    .collapsible-header {
+      display: block !important;
+    }
+    .cuisine-boxes,
+    .allergy-boxes,
+    .diet-boxes {
+      .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-direction: row;
+        .box {
+          padding: 7px;
+          margin: 4px;
+          background-color: $main-color;
+          color: white;
+          border-radius: 4px;
+          &:hover {
+            cursor: pointer;
+            background-color: $main-color-hover;
+          }
+        }
+      }
+    }
   }
 }
 .decide-recipes-container {
