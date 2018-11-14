@@ -5,6 +5,7 @@ const Yummly = require("./ws-yummly");
 const RecipeToolset = require("./recipe-toolset");
 const ToolSet = new RecipeToolset();
 const MetaData = require("./metadata");
+const UserFavorites = require("../../models/UserFavorites");
 
 Yummly.config({
   app_id: process.env.API_ID,
@@ -76,7 +77,17 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
   const allergySearchValue = MetaData.getSearchValue(allergies, "allergy");
 
-  Yummly.query(query)
+  const userFavorites = [];
+
+  const userFavPromise = UserFavorites.find({ _user: req.user._id })
+    .populate("_favorite")
+    .then(favorites => {
+      favorites.forEach(el => {
+        userFavorites.push(el._favorite.apiURL);
+      });
+      return userFavorites;
+    });
+  const yummlyPromise = Yummly.query(query)
     .requirePictures(true)
     .start(page)
     .maxResults(30)
@@ -90,12 +101,19 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
         el.recipeTime = ToolSet.secondsToHms(el.totalTimeInSeconds);
         el.imageURL = el.imageUrlsBySize["90"].replace("=s90-c", "");
       });
-      const recipes = {
+      return {
         matches: recipe.matches,
         totalMatchCount: ToolSet.numberWithCommas(recipe.totalMatchCount)
       };
-      res.render("recipes/recipe-matches", { recipes });
     });
+
+  Promise.all([userFavPromise, yummlyPromise]).then(responses => {
+    const userFavorites = responses[0] ? responses[0] : [];
+    res.render("recipes/recipe-matches", {
+      recipes: responses[1],
+      userFavorites: userFavorites
+    });
+  });
 });
 
 module.exports = router;
