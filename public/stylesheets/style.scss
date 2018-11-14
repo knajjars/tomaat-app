@@ -249,8 +249,9 @@ body {
   }
 
   .card-image {
-    width: 200px;
+    width: 100%;
     display: flex;
+    justify-content: center;
     
   }
 }

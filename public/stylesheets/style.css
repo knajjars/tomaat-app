@@ -191,8 +191,9 @@ body {
   .discover-recipe-container * {
     margin: 10px; }
   .discover-recipe-container .card-image {
-    width: 200px;
-    display: flex; }
+    width: 100%;
+    display: flex;
+    justify-content: center; }
 
 .time-to-cook,
 .attribute-course {
