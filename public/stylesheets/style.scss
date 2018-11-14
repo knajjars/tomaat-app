@@ -240,11 +240,18 @@ body {
 .discover-recipe-container {
   min-height: calc(100vh - #{$bg-nav-height});
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
   * {
     margin: 10px;
+  }
+
+  .card-image {
+    width: 200px;
+    display: flex;
+    
   }
 }
 

@@ -184,11 +184,15 @@ body {
 .discover-recipe-container {
   min-height: calc(100vh - 64px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center; }
   .discover-recipe-container * {
     margin: 10px; }
+  .discover-recipe-container .card-image {
+    width: 200px;
+    display: flex; }
 
 .time-to-cook,
 .attribute-course {
