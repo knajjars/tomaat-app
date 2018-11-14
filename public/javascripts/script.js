@@ -80,7 +80,6 @@ $(document).ready(function() {
     $("#lp-form").attr("action", "/yummly-api/discover");
   });
 
-  
   $(".btn-small#allergy-btn").click(function() {
     $("#allergy input:checkbox").attr("checked", "checked");
     // $(this).val('uncheck all');
@@ -89,32 +88,39 @@ $(document).ready(function() {
     $("#diet input:checkbox").attr("checked", "checked");
     // $(this).val('uncheck all');
   });
-  
-  $('.decide-recipes-container a').click(function(e){
+
+  $(".decide-recipes-container a").click(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    let recipeName = $(this).closest('div').children('div.card-content').children('h5').text()
-    let thumbnail = $(this).closest('div').children('div.decide-card-image').children('img').attr('src')
-    let apiURL = $(this).closest('div').children('div.card-content').children('a').attr('href')
-    
+    let recipeName = $(this)
+      .closest("div")
+      .children("div.card-content")
+      .children("h5")
+      .text();
+    let thumbnail = $(this)
+      .closest("div")
+      .children("div.decide-card-image")
+      .children("img")
+      .attr("src");
+    let apiURL = $(this)
+      .closest("div")
+      .children("div.card-content")
+      .children("a")
+      .attr("href");
 
-    
-    if($("i",this).text()=='favorite'){
-      
+    if ($("i", this).text() == "favorite") {
       axios({
-        url:"/favorites/userFavoriteDelete",
-        method: 'DELETE',
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
-        data:
-        {
-          apiURL: {apiURL:apiURL}
+        url: "/favorites/userFavoriteDelete",
+        method: "DELETE",
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+        data: {
+          apiURL: apiURL
         }
-      })
+      });
 
-      $("i",this).text('favorite_border') 
-
-    }else {
-      $("i",this).text('favorite') 
+      $("i", this).text("favorite_border");
+    } else {
+      $("i", this).text("favorite");
       axios({
         method: "POST",
         url: "/favorites/userfavorite",
@@ -122,19 +128,11 @@ $(document).ready(function() {
         data: {
           recipeName: recipeName,
           thumbnail: thumbnail,
-          apiURL:apiURL
+          apiURL: apiURL
         }
       })
-        .then(() => console.log('success'))
-        .catch(err => console.log('err'));
-      
-      
+        .then(() => console.log("success"))
+        .catch(err => console.log("err"));
     }
-
-    let favoritesArray = []
-
-
-  });  
   });
-
-
+});
