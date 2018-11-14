@@ -34,13 +34,6 @@ window.onload = function() {
   });
 
   $(".tabs").tabs({ swipeable: true });
-  $(".carousel").append(`
-  <div class="carousel-fixed-item center">
-  <a class="btn waves-effect white grey-text darken-text-2 button-save">
-  <i class="material-icons">cloud_done</i>
-  Save</a>
-</div>
-  `);
   $(".carousel.carousel-slider").carousel({
     fullWidth: true,
     indicators: true
@@ -50,3 +43,48 @@ window.onload = function() {
     $(".collapsible").collapsible();
   });
 };
+
+const $submit = $("#submit-btn");
+
+$submit.click(function() {
+  const preferences = {
+    cuisines: [],
+    diets: [],
+    allergies: []
+  };
+  const nodeBoxes = $(".box");
+  const boxes = [...nodeBoxes];
+  boxes.forEach(box => {
+    switch (box.dataset.preference) {
+      case "cuisine":
+        if (box.className.match(/\active-pref\b/)) {
+          preferences.cuisines.push(box.innerText);
+        }
+        break;
+      case "diet":
+        if (box.className.match(/\active-pref\b/)) {
+          preferences.diets.push(box.innerText);
+        }
+        break;
+      case "allergy":
+        if (box.className.match(/\active-pref\b/)) {
+          preferences.allergies.push(box.innerText);
+        }
+        break;
+    }
+  });
+  axios({
+    method: "PATCH",
+    url: "/account/preferences",
+    headers: { "X-Requested-With": "XMLHttpRequest" },
+    data: {
+      preferences
+    }
+  })
+    .then(response => {
+      if (response.status === 200) {
+        location.reload();
+      }
+    })
+    .catch(err => console.log(err));
+});
