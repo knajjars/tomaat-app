@@ -328,6 +328,11 @@ body {
         }
       }
     }
+    .account-settings-form {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+    }
   }
 }
 .decide-recipes-container {
@@ -437,6 +442,9 @@ body {
   #account-preferences {
     .collapsible {
       width: 100%;
+      margin: 10px;
+    }
+    .account-settings-form {
       margin: 10px;
     }
   }

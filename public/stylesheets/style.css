@@ -262,6 +262,10 @@ body {
       .account-container #account-preferences .allergy-boxes .box-container .active-pref,
       .account-container #account-preferences .diet-boxes .box-container .active-pref {
         background-color: #0b6b62; }
+    .account-container #account-preferences .account-settings-form {
+      background: white;
+      padding: 25px;
+      border-radius: 20px; }
 
 .decide-recipes-container {
   background-image: url("/images/speculative/whitechopboard-lp.jpg");
@@ -344,6 +348,8 @@ body {
     padding: 5px 0; }
   #account-preferences .collapsible {
     width: 100%;
+    margin: 10px; }
+  #account-preferences .account-settings-form {
     margin: 10px; } }
 
 @media only screen and (min-width: 670px) {
