@@ -30,6 +30,7 @@ body {
 #lp {
   background-image: url("../images/speculative/whitechopboard-lp.jpg");
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -446,6 +447,7 @@ body {
 
 @media only screen and (max-width: 670px) {
   #lp {
+    justify-content: center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: calc(100vh - #{$sm-nav-height});
