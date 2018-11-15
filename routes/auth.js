@@ -4,7 +4,8 @@ const router = express.Router();
 const User = require("../models/User");
 const ensureAuthenticated = require("./Secuirty/ensureAuthenticated");
 const metaData = require("./yummly-api/metadata");
-
+const nodemailer = require('nodemailer')
+const email = require('../templates/template')
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
@@ -34,33 +35,74 @@ router.post("/signup", (req, res, next) => {
     return;
   }
 
+
   User.findOne({ email }, "email", (err, user) => {
     if (user !== null) {
       res.render("auth/signup", { message: "The username already exists" });
       return;
     }
+    let transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: process.env.NODEMAIL_EMAIL,
+        pass: process.env.NODEMAIL_PASS
+      }
+    });
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
+    const hashEmail = bcrypt.hashSync(email, salt);
 
     User.create({
       name,
       password: hashPass,
-      email
+      email,
+      confirmationCode: hashEmail,
     })
-      .then(user => {
-        req.login(user, function(err) {
-          if (err) {
-            return res.redirect("/auth/signup");
-          }
-          return res.redirect("/auth/preferences");
-        });
+    .then(user => {
+      req.login(user, function(err) {
+        console.log('WORKING');
+        return  res.redirect("/auth/preferences");
+      });
+    })
+    .then(() => {
+      transporter.sendMail({
+        from: '"Tomaat" 🍅 <no_reply@tomaat.com>',
+        to: email, 
+        subject: 'You need to authorise your account', 
+        text: 'Click this',
+        // html: email.templateExample
+        html: email.email(hashEmail)
       })
+    })
+ 
       .catch(err => {
-        res.render("auth/signup", { message: "Something went wrong" });
+        console.log('WRONG',err);
+        res.json('Help')
+        // res.render("auth/signup", { message: "Something went wrong" });
       });
   });
 });
+
+
+router.get('/confirm/:code', (req,res,next)=>{
+  
+  code = req.params.code
+  console.log('CODE', code);
+  
+  User.findOneAndUpdate({confirmationCode: code},{
+    accountStatus: 'Active'
+  })
+  .then((user)=>{
+    console.log('USER',user);
+    
+    res.render('index',{user})
+  })
+  .catch(()=>{
+
+  })
+})
+
 
 router.get("/preferences", ensureAuthenticated, (req, res) => {
   res.render("auth/preferences");

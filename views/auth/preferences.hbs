@@ -10,7 +10,7 @@
     <div id="cuisine-form" class="col s12 ">
       <h1>Your <span class="underlined-special">preferred cuisines</span> </h1>
       <div>
-        <a id="reveal" class=" waves-effect waves-light" type="button">Our Suppported Cuisines</a>
+        <a id="revealCuisine" class=" waves-effect waves-light" type="button" style="-webkit-appearance: button-bevel";>Our Suppported Cuisines</a>
       {{#each preDeleteCuisine}}
       <small class="small-cuisine" style="display:none">{{this}}, </small>
       {{/each}}
@@ -27,6 +27,13 @@
     {{!-- start of allergies form --}}
     <div id="allergy-form" class="col s12 ">
       <h1>Your <span class="underlined-special">allergies</span></h1>
+            <div>
+        <a id="revealAllergy" class=" waves-effect waves-light" type="button" style="-webkit-appearance: button-bevel";>Our Suppported Allergies</a>
+      {{#each preDeleteAllergy}}
+      <small class="small-allergy" style="display:none">{{this}}, </small>
+      {{/each}}
+
+      </div>
       <h5>If you have any allergies, please share it and we will take it into account.</h5>
       <div class="chips chips-allergy chips-autocomplete"></div>
     </div>
@@ -35,6 +42,13 @@
     {{!-- start of diet form --}}
     <div id="diet-form" class="col s12 ">
       <h1>Your <span class="underlined-special">diet</span></h1>
+                  <div>
+        <a id="revealDiet" class=" waves-effect waves-light" type="button" style="-webkit-appearance: button-bevel";>Our Suppported Diets</a>
+      {{#each preDeleteDiet}}
+      <small class="small-diet" style="display:none">{{this}}, </small>
+      {{/each}}
+
+      </div>
       <h5>And lastly <span class="capitalize bold">{{loggedUser.name}}</span>, if you are on a special diet and would
         like us to know, please specify.</h5>
       <div class="chips chips-diet chips-autocomplete"></div>

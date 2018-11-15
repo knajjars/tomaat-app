@@ -19,8 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
 // Or with jQuery
 
 $(document).ready(function() {
-  $("#reveal").click(() => {
+  $("#revealCuisine").click(() => {
     $(".small-cuisine").toggle();
+  });
+  $("#revealAllergy").click(() => {
+    $(".small-allergy").toggle();
+  });
+  $("#revealDiet").click(() => {
+    $(".small-diet").toggle();
   });
 
   $(".collapsible").collapsible();
@@ -54,9 +60,6 @@ $(document).ready(function() {
     }
   });
 
-  $(function() {
-    $("input[name = 'xyz']").css("border", "2px solid red");
-  });
 
   $(".collapsible-header button[name='decide']").click(() => {
     $("#lp-form").attr("action", "/yummly-api/decide/1");
