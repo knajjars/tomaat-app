@@ -86,7 +86,6 @@ router.post("/signup", (req, res, next) => {
 
 router.get("/confirm/:code", (req, res, next) => {
   code = req.params.code;
-  console.log("CODE", code);
 
   User.findOneAndUpdate(
     { confirmationCode: code },
@@ -95,9 +94,7 @@ router.get("/confirm/:code", (req, res, next) => {
     }
   )
     .then(user => {
-      console.log("USER", user);
-
-      res.render("index", { user });
+      res.render("index", { message: "E-mail active!" });
     })
     .catch(() => {});
 });
