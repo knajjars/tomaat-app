@@ -94,7 +94,7 @@ router.get("/confirm/:code", (req, res, next) => {
     }
   )
     .then(user => {
-      res.render("index", { message: "E-mail active!" });
+      res.render("index", { emailMessage: "E-mail active!" });
     })
     .catch(() => {});
 });
