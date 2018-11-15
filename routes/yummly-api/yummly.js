@@ -47,18 +47,28 @@ router.get("/discover", ensureAuthenticated, (req, res, next) => {
         .minRating(4)
         .get()
         .then(recipe => {
-          const recipeId = recipe.matches[0].id;
-          Yummly.getDetails(recipeId)
-            .then(recipe => {
-              const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
-
-              res.render("recipes/recipe-details", {
-                recipe: recipe[0],
-                recipeImage,
-                discover: true
+          UserFavorites.find({ _user: req.user._id })
+            .populate("_favorite")
+            .then(favorites => {
+              let userFavorites = [];
+              favorites.forEach(el => {
+                userFavorites.push(el._favorite.apiURL);
               });
-            })
-            .catch(err => console.log(err));
+              const recipeId = recipe.matches[0].id;
+              Yummly.getDetails(recipeId).then(recipe => {
+                const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
+                const item = {
+                  recipe: recipe[0],
+                  recipeImage,
+                  discover: true
+                };
+                const values = {
+                  item,
+                  userFavorites
+                };
+                res.render("recipes/recipe-details", values);
+              });
+            });
         });
     });
 });
@@ -79,11 +89,10 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
   const cuisineSearchValue = MetaData.getSearchValue(cuisines, "cuisine");
   const allergySearchValue = MetaData.getSearchValue(allergies, "allergy");
 
-  const userFavorites = [];
-
   const userFavPromise = UserFavorites.find({ _user: req.user._id })
     .populate("_favorite")
     .then(favorites => {
+      let userFavorites = [];
       favorites.forEach(el => {
         userFavorites.push(el._favorite.apiURL);
       });
@@ -107,7 +116,6 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
         el.recipeTime = ToolSet.secondsToHms(el.totalTimeInSeconds);
         el.imageURL = el.imageUrlsBySize["90"].replace("=s90-c", "");
       });
-      // Yummly.getDetails(recipe.id)
       return {
         matches: recipe.matches,
         totalMatchCount
@@ -128,7 +136,11 @@ router.get("/recipe/:id", ensureAuthenticated, (req, res) => {
   const userFavPromise = UserFavorites.find({ _user: req.user._id })
     .populate("_favorite")
     .then(favorites => {
-      return favorites;
+      let userFavorites = [];
+      favorites.forEach(el => {
+        userFavorites.push(el._favorite.apiURL);
+      });
+      return userFavorites;
     });
   const getDetailsPromise = Yummly.getDetails(recipeId)
     .then(recipe => {
@@ -142,7 +154,11 @@ router.get("/recipe/:id", ensureAuthenticated, (req, res) => {
     .catch(err => console.log(err));
   Promise.all([userFavPromise, getDetailsPromise])
     .then(responses => {
-      res.render("recipes/recipe-details", responses[1]);
+      const values = {
+        item: responses[1],
+        userFavorites: responses[0]
+      };
+      res.render("recipes/recipe-details", values);
     })
     .catch(err => console.log(err));
 });

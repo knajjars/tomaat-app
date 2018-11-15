@@ -1,35 +1,41 @@
 <div class="recipe-container ">
   <div class="recipe-card">
     <div class="card-image">
-      <img src={{recipeImage}}>
+      <img id="recipe-image" src={{item.recipeImage}}>
     </div>
     <div class="card-content">
       <div class="recipe-title">
         <div class="card-header">
           <p>
-            Recipe by: <a target="_blank" href="{{recipe.source.sourceSiteUrl}}">{{recipe.source.sourceDisplayName}}</a>
+            <a id="recipe-id" href="{{item.recipe.id}}"></a>
+            Recipe by: <a target="_blank" href="{{item.recipe.source.sourceSiteUrl}}">{{item.recipe.source.sourceDisplayName}}</a>
           </p>
           <a class="favorite-details btn-floating  btn-large waves-effect waves-light red">
+            {{#includes userFavorites item.recipe.id }}
             <i class="material-icons">favorite</i>
           </a>
+          {{else}}
+          <i class="material-icons">favorite_border</i>
+          </a>
+          {{/includes}}
         </div>
-        <h3 class="card-title">{{recipe.name}}</h3>
+        <h3 id="recipe-name" class="card-title">{{item.recipe.name}}</h3>
 
       </div>
       <div class="recipe-details">
-        <p>Serves: <span class="bold">{{recipe.numberOfServings}}</span></p>
+        <p>Serves: <span class="bold">{{item.recipe.numberOfServings}}</span></p>
         <h5>Ingredients:</h5>
         <div class="ingredientsContainer">
           <ul>
-            {{#each recipe.ingredientLines}}
+            {{#each item.recipe.ingredientLines}}
             <li class="capitalize">{{this}}</li>
             {{/each}}
           </ul>
         </div>
       </div>
       <div class="buttons-recipe">
-        <a class="btn waves-effect" target="_blank" href="{{recipe.source.sourceRecipeUrl}}">Read directions</a>
-        {{#if discover}}
+        <a class="btn waves-effect" target="_blank" href="{{item.recipe.source.sourceRecipeUrl}}">Read directions</a>
+        {{#if item.discover}}
         <a class="btn waves-effect try-again" href="/yummly-api/discover">Try
           again</a>
         {{/if}}
@@ -38,30 +44,30 @@
 
       <div class="attributes">
         <div class="time-to-cook">
-          {{#if recipe.prepTime}}
+          {{#if item.recipe.prepTime}}
           <div>
             <i class="material-icons right">timer</i>
-            <p>Prep: <span class="bold">{{recipe.prepTime}}</span></p>
+            <p>Prep: <span class="bold">{{item.recipe.prepTime}}</span></p>
           </div>
           {{/if}}
 
-          {{#if recipe.totalTime}}
+          {{#if item.recipe.totalTime}}
           <div>
             <i class="material-icons right">alarm_on</i>
-            <p>Total: <span class="bold">{{recipe.totalTime}}</span></p>
+            <p>Total: <span class="bold">{{item.recipe.totalTime}}</span></p>
           </div>
           {{/if}}
         </div>
-        {{#if recipe.attributes.course}}
+        {{#if item.recipe.attributes.course}}
         <div class="attribute">
           <i class="material-icons right">room_service</i>
-          <p>{{recipe.attributes.course}}</p>
+          <p>{{item.recipe.attributes.course}}</p>
         </div>
         {{/if}}
-        {{#if recipe.attributes.cuisine}}
+        {{#if item.recipe.attributes.cuisine}}
         <div class="attribute">
           <i class="material-icons right">restaurant</i>
-          <p>{{recipe.attributes.cuisine}}</p>
+          <p>{{item.recipe.attributes.cuisine}}</p>
         </div>
         {{/if}}
       </div>

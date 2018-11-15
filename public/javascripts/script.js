@@ -133,4 +133,40 @@ $(document).ready(function() {
         .catch(err => console.log("err"));
     }
   });
+  const $favoriteDetailRecipe = $(".favorite-details");
+
+  $favoriteDetailRecipe.click(function() {
+    const apiURL = $("#recipe-id").attr("href");
+    const recipeName = $("#recipe-name").text();
+    const thumbnail = $("#recipe-image").attr("src");
+    if ($("i", this).text() == "favorite") {
+      axios({
+        url: "/favorites/userFavoriteDelete",
+        method: "DELETE",
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+        data: {
+          apiURL: apiURL
+        }
+      });
+
+      $("i", this).text("favorite_border");
+    } else {
+      $("i", this).text("favorite");
+      axios({
+        method: "POST",
+        url: "/favorites/userfavorite",
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+        data: {
+          recipeName,
+          thumbnail,
+          apiURL
+        }
+      })
+        .then(() => {})
+        .catch(err => console.log("err"));
+    }
+  });
+  // recipeName: req.body.recipeName,
+  // thumbnail: req.body.thumbnail,
+  // apiURL: req.body.apiURL
 });

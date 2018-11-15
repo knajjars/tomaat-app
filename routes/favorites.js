@@ -8,7 +8,6 @@ const UserFavorites = require("../models/UserFavorites");
 router.post("/userfavorite", (req, res, next) => {
   Favorites.create({
     recipeName: req.body.recipeName,
-    cuisine: req.body.cuisine,
     thumbnail: req.body.thumbnail,
     apiURL: req.body.apiURL
   }).then(fav => {
