@@ -72,7 +72,7 @@ router.post("/signup", (req, res, next) => {
         subject: 'You need to authorise your account', 
         text: 'Click this',
         // html: email.templateExample
-        html: email.email(hashEmail)
+        html: mailTemplate.email(hashEmail)
       })
     })
  
