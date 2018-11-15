@@ -77,23 +77,6 @@ body {
   color: $main-color;
 }
 
-.login-page,
-.signup-page {
-  height: 100vh;
-  background: url("/images/speculative/login-background.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.login-form,
-.signup-form {
-  background-color: aliceblue;
-  border-radius: 8px;
-}
-
 .pt-5,
 .py-5 {
   padding-top: 6rem !important;
@@ -258,34 +241,28 @@ body {
   .card-image {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    
+    align-items: center;
+
     &img {
       max-width: 100%;
     }
   }
 
-
-  *{
-    margin: 5px 5px
+  * {
+    margin: 5px 5px;
   }
 
-.ingredientsContainer{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-
-}
+  .ingredientsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
   label {
     max-width: 50%;
-
   }
-  
+
   label * {
-
   }
-
-
 }
 
 .time-to-cook,
@@ -519,6 +496,34 @@ body {
       margin: 10px;
     }
   }
+  .login-page,
+  .signup-page {
+    height: calc(100vh - #{$sm-nav-height});
+    background: url("/images/speculative/login-background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      text-align: center;
+      @media only screen and (max-width: 460px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .login-form,
+  .signup-form {
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 30px 30px 0 30px;
+    width: 100vw;
+    // @media only screen and (max-width: 460px) {
+    //   width: 300px;
+    // }
+  }
 }
 
 // COMPUTER SECTION
@@ -543,6 +548,31 @@ body {
     width: 800px;
     @media only screen and (max-width: 950px) {
       width: 600px;
+    }
+  }
+  .login-page,
+  .signup-page {
+    height: calc(100vh - #{$bg-nav-height});
+    background: url("/images/speculative/login-background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      text-align: center;
+    }
+  }
+
+  .login-form,
+  .signup-form {
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 30px 30px 0 30px;
+    width: 800px;
+    @media only screen and (max-width: 910px) {
+      width: 650px;
     }
   }
 }

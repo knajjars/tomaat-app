@@ -52,21 +52,6 @@ body {
 .main-color {
   color: #26a69a; }
 
-.login-page,
-.signup-page {
-  height: 100vh;
-  background: url("/images/speculative/login-background.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
-
-.login-form,
-.signup-form {
-  background-color: aliceblue;
-  border-radius: 8px; }
-
 .pt-5,
 .py-5 {
   padding-top: 6rem !important; }
@@ -395,7 +380,32 @@ body {
     width: 100%;
     margin: 10px; }
   #account-preferences .account-settings-form {
-    margin: 10px; } }
+    margin: 10px; }
+  .login-page,
+  .signup-page {
+    height: calc(100vh - 56px);
+    background: url("/images/speculative/login-background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .login-page h3,
+    .signup-page h3 {
+      text-align: center; } }
+    @media only screen and (max-width: 670px) and (max-width: 460px) {
+      .login-page h3,
+      .signup-page h3 {
+        font-size: 2.5rem; } }
+
+@media only screen and (max-width: 670px) {
+  .login-form,
+  .signup-form {
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 30px 30px 0 30px;
+    width: 100vw; } }
 
 @media only screen and (min-width: 670px) {
   #lp {
@@ -415,6 +425,31 @@ body {
   @media only screen and (min-width: 670px) and (max-width: 950px) {
     .collapsible {
       width: 600px; } }
+
+@media only screen and (min-width: 670px) {
+  .login-page,
+  .signup-page {
+    height: calc(100vh - 64px);
+    background: url("/images/speculative/login-background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .login-page h3,
+    .signup-page h3 {
+      text-align: center; }
+  .login-form,
+  .signup-form {
+    background-color: aliceblue;
+    border-radius: 8px;
+    padding: 30px 30px 0 30px;
+    width: 800px; } }
+  @media only screen and (min-width: 670px) and (max-width: 910px) {
+    .login-form,
+    .signup-form {
+      width: 650px; } }
 
 .not-found {
   height: calc(100vh - 64px);
