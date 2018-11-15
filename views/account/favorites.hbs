@@ -1,19 +1,24 @@
 <div class="account-container">
   {{!-- account preferences --}}
-  <div class="router">
-    <a href="/account/preferences">Preferences</a>
-    <a href="/account/settings">Settings</a>
-  </div>
+  <ul class="tabs">
+    <li class="tab col s3">
+      <a class=" active" href="/account/favorites">Favorites</a>
+    </li>
+    <li class="tab col s3">
+      <a href="/account/preferences">Preferences</a>
+    </li>
+    <li class="tab col s3 ">
+      <a href="/account/settings">Settings</a>
+    </li>
+  </ul>
   <div id="account-preferences" class="col s12">
     <div class="favorites-container">
-
-
       {{#if isEmpty}}
       <div class="empty-collection">
         <h4><span class="capitalize underlined-special">{{loggedUser.name}},</span>your favorites collection is
-          empty,
-          you can discover
-          a new favorite recipe just one click away.</h4>
+          empty.</h4>
+        <p>You can discover
+          a new favorite recipe just one click away.</p>
         <img src="/images/speculative/error-routing.png" style="max-height: 20rem;" alt="">
         <form action="/yummly-api/discover" method="GET">
           <button type="submit" name="discover" id="discover" class="waves-effect waves-light btn-large">Discover</button>
@@ -21,34 +26,17 @@
       </div>
       {{else}}
       <h4><span class="capitalize">{{loggedUser.name}}</span>, this are your favorite recipes.</h4>
-      {{#each favorites}}
-      <div class="recipe-card">
-        <a href="#" class="btn-floating  btn-large waves-effect waves-light red">
-          <i class="material-icons">favorite</i></a>
-        <div class="decide-card-image">
-          <img src={{this.imageURL}}>
+      <div class="favorite-card-container">
+        {{#each favorites}}
+        <div class="favorite-card">
+          <img src="{{this._favorite.thumbnail}}" alt="Recipe photo">
+          <h5>{{this._favorite.recipeName}}</h5>
+          <a class="btn waves-effect" href="/yummly-api/recipe/{{this._favorite.apiURL}}">
+            Check out
+          </a>
         </div>
-        <div class="card-content">
-          <h5 class="card-title">{{this.recipeName}}</h5>
-          <a href="{{this.id}}"></a>
-          <div class="timer-course">
-            {{#if this.attributes.course}}
-            <div class="attribute-course">
-              <i class="material-icons right">restaurant</i>
-              <p>{{this.attributes.course}}</p>
-            </div>
-            {{/if}}
-
-            {{#if this.recipeTime}}
-            <div class="attribute-course">
-              <i class="material-icons right">timer</i>
-              <p>{{this.recipeTime}}</p>
-            </div>
-            {{/if}}
-          </div>
-        </div>
+        {{/each}}
       </div>
-      {{/each}}
       {{/if}}
     </div>
   </div>
@@ -56,3 +44,11 @@
 
 
 <script src="/javascripts/account.js"></script>
+
+
+{{!-- _favorite:
+{ _id: 5bed77e9ff0a1c1ec1c636c7,
+recipeName: 'Roasted Broccoli with Garlic',
+thumbnail:
+'https://lh3.googleusercontent.com/dQmVgZClGlTmtRQb0O1TRD4baEDU5O5ftg62CgacUfIAHtdGe6Cllo0BaK5cO_7ufvP-LuOvAQtk0n2U_uxE',
+apiURL: 'Roasted-Broccoli-with-Garlic-2209449', --}}
