@@ -357,6 +357,27 @@ body {
       margin: 10px; }
     #account-preferences .account-settings-form {
       margin: 10px; }
+    #account-preferences .favorite-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center; }
+      #account-preferences .favorite-card-container .favorite-card {
+        margin: 10px;
+        width: 300px;
+        background-color: white;
+        padding: 20px 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; }
+        #account-preferences .favorite-card-container .favorite-card img {
+          max-height: 12rem; }
+        #account-preferences .favorite-card-container .favorite-card a {
+          align-self: stretch; }
   .login-page,
   .signup-page {
     height: calc(100vh - 56px);
@@ -519,13 +540,27 @@ body {
             display: flex;
             align-items: center;
             justify-content: center; }
-  .favorite-card {
+  .favorite-card-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center; }
-    .favorite-card img {
-      max-height: 18rem; } }
+    align-items: center;
+    align-content: center; }
+    .favorite-card-container .favorite-card {
+      margin: 10px;
+      width: 400px;
+      background-color: white;
+      padding: 20px 10px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .favorite-card-container .favorite-card img {
+        max-height: 15rem; }
+      .favorite-card-container .favorite-card a {
+        align-self: stretch; } }
 
 .not-found {
   height: calc(100vh - 64px);

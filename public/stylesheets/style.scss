@@ -456,6 +456,31 @@ body {
     .account-settings-form {
       margin: 10px;
     }
+    .favorite-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      .favorite-card {
+        margin: 10px;
+        width: 300px;
+        background-color: white;
+        padding: 20px 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        img {
+          max-height: 12rem;
+        }
+        a {
+          align-self: stretch;
+        }
+      }
+    }
   }
   .login-page,
   .signup-page {
@@ -647,13 +672,29 @@ body {
       }
     }
   }
-  .favorite-card {
+  .favorite-card-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    img {
-      max-height: 18rem;
+    align-content: center;
+    .favorite-card {
+      margin: 10px;
+      width: 400px;
+      background-color: white;
+      padding: 20px 10px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      img {
+        max-height: 15rem;
+      }
+      a {
+        align-self: stretch;
+      }
     }
   }
 }
