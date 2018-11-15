@@ -1,0 +1,30 @@
+<div class="account-container">
+  <ul class="tabs">
+    <li class="tab col s3">
+      <a href="/account/favorites">Favorites</a>
+    </li>
+    <li class="tab col s3">
+      <a class="active" href="/account/preferences">Preferences</a>
+    </li>
+    <li class="tab col s3 ">
+      <a href="/account/settings">Settings</a>
+    </li>
+  </ul>
+  <div id="account-preferences" class="col s12">
+    <h4><span class="capitalize underlined-special">{{loggedUser.name}}</span>, this is your shopping cart.</h4>
+    {{#each shoppingCart}}
+    <h5>{{this.recipeName}}</h5>
+    {{#each this.ingredients}}
+    <label>
+      <input id="indeterminate-checkbox" type="checkbox" />
+      <span>{{this}}</span>
+    </label>
+    {{/each}}
+    <hr>
+    {{/each}}
+    <button id="submit-btn" class="waves-effect waves-light btn"><i class="material-icons right">cloud_done</i>Save</button>
+  </div>
+</div>
+
+
+<script src="/javascripts/account.js"></script>

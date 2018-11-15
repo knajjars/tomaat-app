@@ -1,8 +1,9 @@
 const express = require("express");
-const passport = require("passport");
 const router = express.Router();
 const User = require("../../models/User");
 const UserFavorites = require("../../models/UserFavorites");
+const ShoppingCart = require("../../models/ShoppingCart");
+
 const ensureAuthenticated = require("../Secuirty/ensureAuthenticated");
 const MetaData = require("../yummly-api/metadata");
 // Bcrypt to encrypt passwords
@@ -122,6 +123,14 @@ router.get("/favorites", ensureAuthenticated, (req, res) => {
       } else {
         res.render("account/favorites", { favorites });
       }
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/shopping-cart", ensureAuthenticated, (req, res) => {
+  ShoppingCart.find({ _user: req.user._id })
+    .then(shoppingCart => {
+      res.render("account/shopping-cart", { shoppingCart });
     })
     .catch(err => console.log(err));
 });

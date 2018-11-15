@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 const shoppingCartSchema = new Schema(
   {
     ingredients: [String],
+    recipeName: String,
+    recipeId: String,
     _user: { type: Schema.Types.ObjectId, ref: "User" }
   },
   {
