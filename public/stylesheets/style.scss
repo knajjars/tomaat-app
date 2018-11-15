@@ -261,13 +261,11 @@ body {
   label {
     max-width: 50%;
   }
-
-  label * {
-  }
 }
 
 .time-to-cook,
-.attribute-course {
+.attribute-course,
+.attribute-cuisine {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -413,19 +411,11 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
-    border-radius: 40px 5px 40px 5px;
+    border-radius: 15px;
     margin: 15px;
     width: 20rem;
     box-sizing: border-box;
     background-color: white;
-    &:hover {
-      cursor: pointer;
-      background-color: $main-color;
-      color: white;
-      .timer-course {
-        color: black;
-      }
-    }
     img {
       border-radius: 5px;
       height: 200px;
@@ -439,6 +429,15 @@ body {
       justify-content: space-evenly;
       font-size: 0.7em;
       color: #9c9c9c;
+    }
+    .go-btn {
+      align-self: stretch;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      * {
+        padding: 5px;
+      }
     }
   }
 }

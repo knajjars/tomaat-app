@@ -59,7 +59,6 @@ $(document).ready(function() {
   });
 
   $(".collapsible-header button[name='decide']").click(() => {
-    //  event.preventDefault()
     $("#lp-form").attr("action", "/yummly-api/decide/1");
     setTimeout(() => {
       $(".collapsible-header button[name='decide']").attr("type", "submit");
@@ -88,7 +87,6 @@ $(document).ready(function() {
   });
 
   $(".decide-recipes-container a").click(function(e) {
-    e.preventDefault();
     e.stopPropagation();
     let recipeName = $(this)
       .closest("div")
@@ -129,7 +127,7 @@ $(document).ready(function() {
           apiURL: apiURL
         }
       })
-        .then(() => console.log("success"))
+        .then(() => {})
         .catch(err => console.log("err"));
     }
   });

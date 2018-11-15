@@ -3,11 +3,11 @@
     <img src={{recipeImage}}>
   </div>
   <div class="card-content">
-    <h1 class="card-title">{{recipe.recipeName}}</h1>
+    <h1 class="card-title">{{recipe.name}}</h1>
     <h5>Ingredients:</h5>
     <div class="ingredientsContainer">
 
-      {{#each recipe.ingredients}}
+      {{#each recipe.ingredientLines}}
 
       <label id="cuisine-label">
         <input name="cuisine" id="cuisine-input" type="checkbox" class="filled-in" value="{{this}}" />
@@ -16,17 +16,30 @@
       {{/each}}
     </div>
 
-    <div class="time-to-cook">
-      <i class="material-icons right">timer</i>
-      <p>{{recipeTime}}</p>
-    </div>
-    <div class="attribute-course">
-      <i class="material-icons right">restaurant</i>
+    <div class="attribute-course attribute-cuisine">
+      <div class="time-to-cook">
+        <i class="material-icons right">timer</i>
+        <p>{{recipe.totalTime}}</p>
+      </div>
+      {{#if recipe.attributes.course}}
+      <i class="material-icons right">room_service</i>
       <p>{{recipe.attributes.course}}</p>
+      {{/if}}
+      {{#if recipe.attributes.cuisine}}
+      <i class="material-icons right">restaurant</i>
+      <p>{{recipe.attributes.cuisine}}</p>
+      {{/if}}
+      {{#if recipe.attributes.diet}}
+      <i class="material-icons right">spa</i>
+      <p>{{recipe.attributes.diet}}</p>
+      {{/if}}
+      {{#if recipe.attributes.allergy}}
+      <i class="material-icons right">warning</i>
+      <p>{{recipe.attributes.allergy}}</p>
+      {{/if}}
     </div>
   </div>
 </div>
-
 
 
 {{!-- prepTimeInSeconds: 600,

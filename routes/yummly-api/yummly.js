@@ -105,6 +105,7 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
         el.recipeTime = ToolSet.secondsToHms(el.totalTimeInSeconds);
         el.imageURL = el.imageUrlsBySize["90"].replace("=s90-c", "");
       });
+      // Yummly.getDetails(recipe.id)
       return {
         matches: recipe.matches,
         totalMatchCount
@@ -118,6 +119,19 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
       userFavorites: userFavorites
     });
   });
+});
+
+router.get("/recipe/:id", ensureAuthenticated, (req, res) => {
+  const recipeId = req.params.id;
+  Yummly.getDetails(recipeId)
+    .then(recipe => {
+      const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
+      res.render("recipes/recipe-details", {
+        recipe: recipe[0],
+        recipeImage
+      });
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

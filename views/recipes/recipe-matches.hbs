@@ -8,13 +8,14 @@
   <div class="recipes-cards">
     {{#each recipes.matches}}
     <div class="recipe-card">
-      <a href="#" class="btn-floating  btn-large waves-effect waves-light red">
+      <a class="btn-floating  btn-large waves-effect waves-light red">
         {{#includes ../userFavorites this.id }}
-        <i class="material-icons">favorite</i></a>
+        <i class="material-icons">favorite</i>
+      </a>
       {{else}}
-      <i class="material-icons">favorite_border</i></a>
+      <i class="material-icons">favorite_border</i>
+      </a>
       {{/includes}}
-
       <div class="decide-card-image">
         <img src={{this.imageURL}}>
       </div>
@@ -37,23 +38,20 @@
           {{/if}}
         </div>
       </div>
-    </div>
-    {{/each}}
-  </div>
-
-</div>
+      <a class="waves-effect btn go-btn" href="/yummly-api/recipe/{{this.id}}"><i class="material-icons">restaurant_menu</i>
+        Go</a>
+    </div> {{/each}} </div>
 </div>
 <ul class="pagination">
-
   <li class="waves-effect pagination-left"><i class="material-icons">chevron_left</i></li>
   <li class="waves-effect pagination-right"><i class="material-icons">chevron_right</i></li>
 </ul>
-
 <script src="/javascripts/pagination.js"></script>
 
 {{!-- { imageUrlsBySize:
 { '90':
-'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d5JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c' },
+'http://lh3.ggpht.com/UId9ZOkXYhrEw7gnMDO0b3d5JHX9rD-stBARdrmOdoi3qSdc5Jut9H5jkubC1jSdNwat-Rex8yU2-ERye2eOwA=s90-c'
+},
 sourceDisplayName: 'OMG Chocolate Desserts',
 ingredients:
 [ 'white chocolate',
@@ -64,7 +62,9 @@ ingredients:
 'powdered sugar' ],
 id: 'White-Chocolate-Lemon-Truffles-924470',
 smallImageUrls:
-[ 'http://lh4.ggpht.com/tiU2NYh47gAn6OdStWq4mL3kkwAezVDZYHtWo_dh7cdtxH0OY8_pOw-YpMiuT94hJxq-CyNRewTPAuc3TbMcnQ=s90' ],
+[
+'http://lh4.ggpht.com/tiU2NYh47gAn6OdStWq4mL3kkwAezVDZYHtWo_dh7cdtxH0OY8_pOw-YpMiuT94hJxq-CyNRewTPAuc3TbMcnQ=s90'
+],
 recipeName: 'White Chocolate Lemon Truffles',
 totalTimeInSeconds: 1800,
 attributes: { course: [ 'Desserts' ] },
