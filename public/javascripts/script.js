@@ -64,7 +64,7 @@ $(document).ready(function() {
     $("#lp-form").attr("action", "/yummly-api/decide/1");
     setTimeout(() => {
       $(".collapsible-header button[name='decide']").attr("type", "submit");
-    }, 1000);
+    }, 0);
     $(".collapsible-header button[name='decide']")[0].innerText = "GO!";
 
     $(".collapsible-header button[name='decide']").css(
