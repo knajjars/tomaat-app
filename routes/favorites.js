@@ -21,11 +21,25 @@ router.post("/userfavorite", (req, res, next) => {
 });
 
 router.delete("/userFavoriteDelete", (req, res, next) => {
-  Favorites.findOneAndDelete({ apiURL: req.body.apiURL }).then(deletedFav => {
-    UserFavorites.findOneAndDelete({ _favorite: deletedFav._id }).then(() =>
-      console.log("success")
-    );
-  });
+  Favorites.findOneAndDelete({ apiURL: req.body.apiURL })
+    .then(deletedFav => {
+      UserFavorites.findOneAndDelete({ _favorite: deletedFav._id })
+        .then(() => {})
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/:id", (req, res) => {
+  Favorites.findByIdAndRemove(req.params.id)
+    .then(deletedFav => {
+      UserFavorites.findOneAndDelete({ _favorite: deletedFav._id })
+        .then(() => {
+          res.redirect("/account/favorites");
+        })
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

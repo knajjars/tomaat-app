@@ -29,7 +29,7 @@
       <div class="favorite-card-container">
         {{#each favorites}}
         <div class="favorite-card">
-          <a class="relative-position btn btn-floating  btn-large waves-effect waves-light red">
+          <a href="/favorites/{{this._favorite._id}}" class="relative-position btn btn-floating  btn-large waves-effect waves-light red">
             <i class="material-icons">favorite</i>
           </a>
           <img src="{{this._favorite.thumbnail}}" alt="Recipe photo">

@@ -5,6 +5,14 @@
     </div>
     <div class="card-content">
       <div class="recipe-title">
+        <div class="card-header">
+          <p>
+            Recipe by: <a target="_blank" href="{{recipe.source.sourceSiteUrl}}">{{recipe.source.sourceDisplayName}}</a>
+          </p>
+          <a class="favorite-details btn-floating  btn-large waves-effect waves-light red">
+            <i class="material-icons">favorite</i>
+          </a>
+        </div>
         <h3 class="card-title">{{recipe.name}}</h3>
 
       </div>
