@@ -52,6 +52,7 @@ router.post("/signup", (req, res, next) => {
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
     const hashEmail = bcrypt.hashSync(email, salt);
+    hashEmail.replace('/','t')
     const image = "public/images/speculative/happy-tomaat.png";
 
     User.create({
@@ -78,7 +79,7 @@ router.post("/signup", (req, res, next) => {
         //   path: __dirname + '/happy-tomaat.png',
         //   cid: 'uniqueImage' //same cid value as in the html img src
         // }],
-        html: mailTemplate.mailTemplate('http://tomaat-app.herokuapp.com/confirm/'+hashEmail),
+        html: mailTemplate.mailTemplate('http://tomaat-app.herokuapp.com/auth/confirm/'+hashEmail),
       })
     })
  
