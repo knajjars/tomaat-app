@@ -48,10 +48,14 @@ router.post("/signup", (req, res, next) => {
       }
     });
 
+    String.prototype.replaceAll = function(search, replacement) {
+      var target = this;
+      return target.replace(new RegExp(search, "g"), replacement);
+    };
+
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
-    const hashEmail = bcrypt.hashSync(email, salt);
-    hashEmail.replace('/','t')
+    const hashEmail = bcrypt.hashSync(email, salt).replaceAll("/", email);
     const image = "public/images/speculative/happy-tomaat.png";
     const admin = 'info.tomaat@gmail.com'
     User.create({
