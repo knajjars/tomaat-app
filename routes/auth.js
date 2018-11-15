@@ -4,8 +4,8 @@ const router = express.Router();
 const User = require("../models/User");
 const ensureAuthenticated = require("./Secuirty/ensureAuthenticated");
 const metaData = require("./yummly-api/metadata");
-const nodemailer = require('nodemailer')
-const mailTemplate = require('../templates/template')
+const nodemailer = require("nodemailer");
+const mailTemplate = require("../templates/template");
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
@@ -35,14 +35,13 @@ router.post("/signup", (req, res, next) => {
     return;
   }
 
-
   User.findOne({ email }, "email", (err, user) => {
     if (user !== null) {
       res.render("auth/signup", { message: "The username already exists" });
       return;
     }
     let transporter = nodemailer.createTransport({
-      service: 'Gmail',
+      service: "Gmail",
       auth: {
         user: process.env.NODEMAIL_EMAIL,
         pass: process.env.NODEMAIL_PASS
@@ -59,57 +58,50 @@ router.post("/signup", (req, res, next) => {
       name,
       password: hashPass,
       email,
-      confirmationCode: hashEmail,
+      confirmationCode: hashEmail
     })
-    .then(user => {
-      req.login(user, function(err) {
-        console.log('WORKING');
-        return  res.redirect("/auth/preferences");
-      });
-    })
-    .then(() => {
-      transporter.sendMail({
-        from: '"Tomaat" 🍅 <no_reply@tomaat.com>',
-        to: email, 
-        subject: 'You need to authorise your account', 
-        text: 'Click this',
-        // html: email.templateExample
-        // attachments: [{
-        //   filename: 'happy-tomaat.png',
-        //   path: __dirname + '/happy-tomaat.png',
-        //   cid: 'uniqueImage' //same cid value as in the html img src
-        // }],
-        html: mailTemplate.mailTemplate('http://tomaat-app.herokuapp.com/auth/confirm/'+hashEmail),
+      .then(user => {
+        req.login(user, function(err) {
+          console.log("WORKING");
+          return res.redirect("/auth/preferences");
+        });
       })
-    })
- 
+      .then(() => {
+        transporter.sendMail({
+          from: '"Tomaat" 🍅 <no_reply@tomaat.com>',
+          to: email,
+          subject: "You need to authorise your account",
+          text: "Click this",
+          html: mailTemplate.mailTemplate(
+            "http://tomaat-app.herokuapp.com/auth/confirm/" + hashEmail
+          )
+        });
+      })
+
       .catch(err => {
-        console.log('WRONG',err);
-        res.json('Help')
-        // res.render("auth/signup", { message: "Something went wrong" });
+        console.log("WRONG", err);
+        res.json("Help");
       });
   });
 });
 
+router.get("/confirm/:code", (req, res, next) => {
+  code = req.params.code;
+  console.log("CODE", code);
 
-router.get('/confirm/:code', (req,res,next)=>{
-  
-  code = req.params.code
-  console.log('CODE', code);
-  
-  User.findOneAndUpdate({confirmationCode: code},{
-    accountStatus: 'Active'
-  })
-  .then((user)=>{
-    console.log('USER',user);
-    
-    res.render('index',{user})
-  })
-  .catch(()=>{
+  User.findOneAndUpdate(
+    { confirmationCode: code },
+    {
+      accountStatus: "Active"
+    }
+  )
+    .then(user => {
+      console.log("USER", user);
 
-  })
-})
-
+      res.render("index", { user });
+    })
+    .catch(() => {});
+});
 
 router.get("/preferences", ensureAuthenticated, (req, res) => {
   res.render("auth/preferences");
@@ -153,7 +145,6 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-
 router.patch("/accountPreferences", ensureAuthenticated, (req, res) => {
   const { cuisines } = req.body.preferences;
   const userCuisines = req.user.preferences.cuisines;
@@ -162,8 +153,7 @@ router.patch("/accountPreferences", ensureAuthenticated, (req, res) => {
       return el;
     }
   });
-  
-  
+
   const { allergies } = req.body.preferences;
   const userAllergies = req.user.preferences.allergies;
   let filteredAllergies = allergies.filter(el => {
@@ -171,7 +161,7 @@ router.patch("/accountPreferences", ensureAuthenticated, (req, res) => {
       return el;
     }
   });
-  
+
   const { diets } = req.body.preferences;
   const userDiets = req.user.preferences.diets;
   let filteredDiets = diets.filter(el => {
@@ -179,12 +169,10 @@ router.patch("/accountPreferences", ensureAuthenticated, (req, res) => {
       return el;
     }
   });
-  
-  filteredCuisines = [...cuisines,...userCuisines]
-  filteredAllergies = [...allergies,...userAllergies]
-  filteredDiets = [...diets,...userDiets]
 
-
+  filteredCuisines = [...cuisines, ...userCuisines];
+  filteredAllergies = [...allergies, ...userAllergies];
+  filteredDiets = [...diets, ...userDiets];
 
   User.findByIdAndUpdate(req.user._id, {
     preferences: {
@@ -193,7 +181,7 @@ router.patch("/accountPreferences", ensureAuthenticated, (req, res) => {
       allergies: filteredAllergies
     }
   }).then(user => {
-    console.log('Then Working');
+    console.log("Then Working");
     res.render("account");
   });
 });
