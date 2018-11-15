@@ -125,15 +125,24 @@ router.get("/decide/:page", ensureAuthenticated, (req, res, next) => {
 
 router.get("/recipe/:id", ensureAuthenticated, (req, res) => {
   const recipeId = req.params.id;
-  Yummly.getDetails(recipeId)
+  const userFavPromise = UserFavorites.find({ _user: req.user._id })
+    .populate("_favorite")
+    .then(favorites => {
+      return favorites;
+    });
+  const getDetailsPromise = Yummly.getDetails(recipeId)
     .then(recipe => {
       const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
-
-      res.render("recipes/recipe-details", {
+      return {
         recipe: recipe[0],
         recipeImage,
         discover: false
-      });
+      };
+    })
+    .catch(err => console.log(err));
+  Promise.all([userFavPromise, getDetailsPromise])
+    .then(responses => {
+      res.render("recipes/recipe-details", responses[1]);
     })
     .catch(err => console.log(err));
 });
