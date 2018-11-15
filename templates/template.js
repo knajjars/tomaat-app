@@ -154,7 +154,7 @@ module.exports = {
     <div
        style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#555;"
     >
-            <img style="width:250px;" src="cid:uniqueImage" alt="">
+            <img style="width:250px;" src="https://images-na.ssl-images-amazon.com/images/I/71qBu8N6EmL._SY450_.jpg" alt="">
     </div>
   
             </td>
