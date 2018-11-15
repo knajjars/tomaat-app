@@ -157,10 +157,6 @@ body {
   margin: 4px;
 }
 
-.btn-floating.btn-large {
-  align-self: flex-end;
-}
-
 .preferences-page {
   margin: 0;
   padding: 0;
@@ -368,7 +364,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         align-content: center;
         color: white;
         * {
@@ -396,9 +392,6 @@ body {
     align-self: flex-start;
     padding-left: 10px;
   }
-  a {
-    justify-self: flex-end;
-  }
   .recipes-cards {
     display: flex;
     flex-wrap: wrap;
@@ -412,7 +405,7 @@ body {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     border-radius: 15px;
     margin: 15px;
     width: 20rem;
@@ -506,13 +499,13 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       align-content: center;
       .favorite-card {
         margin: 10px;
         width: 300px;
         background-color: white;
-        padding: 20px 10px;
+        padding: 0 10px 20px 10px;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -613,6 +606,16 @@ body {
         }
       }
     }
+  }
+  .relative-position {
+    position: relative;
+    left: 240px;
+    top: -10px;
+  }
+  .relative-position-match {
+    position: relative;
+    left: 120px;
+    top: -10px;
   }
 }
 
@@ -722,13 +725,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     align-content: center;
     .favorite-card {
       margin: 10px;
       width: 400px;
       background-color: white;
-      padding: 20px 10px;
+      padding: 0 10px 20px 10px;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -742,6 +745,16 @@ body {
         align-self: stretch;
       }
     }
+  }
+  .relative-position {
+    position: relative;
+    left: 340px;
+    top: -10px;
+  }
+  .relative-position-match {
+    position: relative;
+    left: 120px;
+    top: -10px;
   }
 }
 

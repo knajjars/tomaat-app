@@ -120,9 +120,6 @@ body {
   border-radius: 5px;
   margin: 4px; }
 
-.btn-floating.btn-large {
-  align-self: flex-end; }
-
 .preferences-page {
   margin: 0;
   padding: 0;
@@ -292,7 +289,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       align-content: center;
       color: white; }
       .account-container #account-preferences .favorites-container .empty-collection * {
@@ -314,8 +311,6 @@ body {
   .decide-recipes-container .recipes-found {
     align-self: flex-start;
     padding-left: 10px; }
-  .decide-recipes-container a {
-    justify-self: flex-end; }
   .decide-recipes-container .recipes-cards {
     display: flex;
     flex-wrap: wrap;
@@ -328,7 +323,7 @@ body {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     border-radius: 15px;
     margin: 15px;
     width: 20rem;
@@ -398,13 +393,13 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       align-content: center; }
       #account-preferences .favorite-card-container .favorite-card {
         margin: 10px;
         width: 300px;
         background-color: white;
-        padding: 20px 10px;
+        padding: 0 10px 20px 10px;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -487,7 +482,15 @@ body {
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            flex-wrap: wrap; } }
+            flex-wrap: wrap; }
+  .relative-position {
+    position: relative;
+    left: 240px;
+    top: -10px; }
+  .relative-position-match {
+    position: relative;
+    left: 120px;
+    top: -10px; } }
 
 @media only screen and (min-width: 670px) {
   #lp {
@@ -581,13 +584,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     align-content: center; }
     .favorite-card-container .favorite-card {
       margin: 10px;
       width: 400px;
       background-color: white;
-      padding: 20px 10px;
+      padding: 0 10px 20px 10px;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -597,7 +600,15 @@ body {
       .favorite-card-container .favorite-card img {
         max-height: 15rem; }
       .favorite-card-container .favorite-card a {
-        align-self: stretch; } }
+        align-self: stretch; }
+  .relative-position {
+    position: relative;
+    left: 340px;
+    top: -10px; }
+  .relative-position-match {
+    position: relative;
+    left: 120px;
+    top: -10px; } }
 
 .not-found {
   height: calc(100vh - 64px);

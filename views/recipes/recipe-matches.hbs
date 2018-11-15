@@ -8,7 +8,7 @@
   <div class="recipes-cards">
     {{#each recipes.matches}}
     <div class="recipe-card">
-      <a class="btn-floating  btn-large waves-effect waves-light red">
+      <a class="relative-position-match btn-floating  btn-large waves-effect waves-light red">
         {{#includes ../userFavorites this.id }}
         <i class="material-icons">favorite</i>
       </a>

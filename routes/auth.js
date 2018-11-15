@@ -55,7 +55,9 @@ router.post("/signup", (req, res, next) => {
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
-    const hashEmail = bcrypt.hashSync(email, salt).replaceAll("/", email);
+    const hashEmail = bcrypt
+      .hashSync(email, salt)
+      .replaceAll("/", "powered_by_tomaat");
     const image = "public/images/speculative/happy-tomaat.png";
 
     User.create({

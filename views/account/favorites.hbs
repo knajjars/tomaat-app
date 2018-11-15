@@ -29,13 +29,13 @@
       <div class="favorite-card-container">
         {{#each favorites}}
         <div class="favorite-card">
+          <a class="relative-position btn btn-floating  btn-large waves-effect waves-light red">
+            <i class="material-icons">favorite</i>
+          </a>
           <img src="{{this._favorite.thumbnail}}" alt="Recipe photo">
           <h5>{{this._favorite.recipeName}}</h5>
           <a class="btn waves-effect" href="/yummly-api/recipe/{{this._favorite.apiURL}}">
             Check out
-          </a>
-          <a class="btn btn-floating  btn-large waves-effect waves-light red">
-            <i class="material-icons">favorite</i>
           </a>
         </div>
         {{/each}}
