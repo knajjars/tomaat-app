@@ -5,7 +5,7 @@ const User = require("../models/User");
 const ensureAuthenticated = require("./Secuirty/ensureAuthenticated");
 const metaData = require("./yummly-api/metadata");
 const nodemailer = require('nodemailer')
-const email = require('../templates/template')
+const mailTemplate = require('../templates/template')
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
@@ -52,6 +52,7 @@ router.post("/signup", (req, res, next) => {
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
     const hashEmail = bcrypt.hashSync(email, salt);
+    const image = "public/images/speculative/happy-tomaat.png";
 
     User.create({
       name,
@@ -72,7 +73,12 @@ router.post("/signup", (req, res, next) => {
         subject: 'You need to authorise your account', 
         text: 'Click this',
         // html: email.templateExample
-        html: mailTemplate.email(hashEmail)
+        // attachments: [{
+        //   filename: 'happy-tomaat.png',
+        //   path: __dirname + '/happy-tomaat.png',
+        //   cid: 'uniqueImage' //same cid value as in the html img src
+        // }],
+        html: mailTemplate.mailTemplate('http://tomaat-app.herokuapp.com/confirm/'+hashEmail),
       })
     })
  
