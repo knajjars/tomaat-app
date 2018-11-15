@@ -47,16 +47,18 @@ router.get("/discover", ensureAuthenticated, (req, res, next) => {
         .minRating(4)
         .get()
         .then(recipe => {
-          res.render("recipes/discover", {
-            recipe: recipe.matches[0],
-            recipeImage: recipe.matches[0].imageUrlsBySize["90"].replace(
-              "=s90-c",
-              ""
-            ),
-            recipeTime: ToolSet.secondsToHms(
-              recipe.matches[0].totalTimeInSeconds
-            )
-          });
+          const recipeId = recipe.matches[0].id;
+          Yummly.getDetails(recipeId)
+            .then(recipe => {
+              const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
+
+              res.render("recipes/recipe-details", {
+                recipe: recipe[0],
+                recipeImage,
+                discover: true
+              });
+            })
+            .catch(err => console.log(err));
         });
     });
 });
@@ -129,7 +131,8 @@ router.get("/recipe/:id", ensureAuthenticated, (req, res) => {
 
       res.render("recipes/recipe-details", {
         recipe: recipe[0],
-        recipeImage
+        recipeImage,
+        discover: false
       });
     })
     .catch(err => console.log(err));

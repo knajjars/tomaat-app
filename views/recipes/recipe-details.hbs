@@ -19,7 +19,13 @@
           </ul>
         </div>
       </div>
-      <a class="btn waves-effect" target="_blank" href="{{recipe.source.sourceRecipeUrl}}">Read directions</a>
+      <div class="buttons-recipe">
+        <a class="btn waves-effect" target="_blank" href="{{recipe.source.sourceRecipeUrl}}">Read directions</a>
+        {{#if discover}}
+        <a class="btn waves-effect try-again" href="/yummly-api/discover">Try
+          again</a>
+        {{/if}}
+      </div>
 
 
       <div class="attributes">
