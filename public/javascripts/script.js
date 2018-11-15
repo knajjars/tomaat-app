@@ -60,7 +60,6 @@ $(document).ready(function() {
     }
   });
 
-
   $(".collapsible-header button[name='decide']").click(() => {
     $("#lp-form").attr("action", "/yummly-api/decide/1");
     setTimeout(() => {

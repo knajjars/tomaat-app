@@ -102,6 +102,52 @@ body {
   border-radius: 5px;
   margin: 4px;
 }
+
+.email-notification {
+  -webkit-transform: translateY(-50px);
+  -webkit-animation: slideDown 2.5s 1s 1 ease forwards;
+  -moz-transform: translateY(-50px);
+  -moz-animation: slideDown 2.5s 1s 1 ease forwards;
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background: $success-color;
+  text-align: center;
+  line-height: 2.5;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
+  @-webkit-keyframes slideDown {
+    0%,
+    100% {
+      -webkit-transform: translateY(-50px);
+    }
+    10%,
+    90% {
+      -webkit-transform: translateY(0px);
+    }
+  }
+  @-moz-keyframes slideDown {
+    0%,
+    100% {
+      -moz-transform: translateY(-50px);
+    }
+    10%,
+    90% {
+      -moz-transform: translateY(0px);
+    }
+  }
+  #close {
+    .cssanimations.csstransforms {
+      display: none;
+    }
+  }
+}
+
 .success-message {
   background-color: $success-color;
   color: white;

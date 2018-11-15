@@ -50,8 +50,7 @@ router.post("/signup", (req, res, next) => {
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
-    const hashEmail = bcrypt.hashSync(email, salt);
-    hashEmail.replace('/','t')
+    const hashEmail = bcrypt.hashSync(email, salt).replace("/", email);
     const image = "public/images/speculative/happy-tomaat.png";
 
     User.create({
