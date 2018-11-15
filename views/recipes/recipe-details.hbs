@@ -1,42 +1,62 @@
-<div class="discover-recipe-container container">
-  <div class="card-image">
-    <img src={{recipeImage}}>
-  </div>
-  <div class="card-content">
-    <h1 class="card-title">{{recipe.name}}</h1>
-    <h5>Ingredients:</h5>
-    <div class="ingredientsContainer">
-
-      {{#each recipe.ingredientLines}}
-
-      <label id="cuisine-label">
-        <input name="cuisine" id="cuisine-input" type="checkbox" class="filled-in" value="{{this}}" />
-        <span>{{this}}</span>
-      </label>
-      {{/each}}
+<div class="recipe-container ">
+  <div class="recipe-card">
+    <div class="card-image">
+      <img src={{recipeImage}}>
     </div>
+    <div class="card-content">
+      <div class="recipe-title">
+        <h3 class="card-title">{{recipe.name}}</h3>
 
-    <div class="attribute-course attribute-cuisine">
-      <div class="time-to-cook">
-        <i class="material-icons right">timer</i>
-        <p>{{recipe.totalTime}}</p>
       </div>
-      {{#if recipe.attributes.course}}
-      <i class="material-icons right">room_service</i>
-      <p>{{recipe.attributes.course}}</p>
-      {{/if}}
-      {{#if recipe.attributes.cuisine}}
-      <i class="material-icons right">restaurant</i>
-      <p>{{recipe.attributes.cuisine}}</p>
-      {{/if}}
-      {{#if recipe.attributes.diet}}
-      <i class="material-icons right">spa</i>
-      <p>{{recipe.attributes.diet}}</p>
-      {{/if}}
-      {{#if recipe.attributes.allergy}}
-      <i class="material-icons right">warning</i>
-      <p>{{recipe.attributes.allergy}}</p>
-      {{/if}}
+      <div class="recipe-details">
+        <p>Serves: <span class="bold">{{recipe.numberOfServings}}</span></p>
+        <h5>Ingredients:</h5>
+        <div class="ingredientsContainer">
+          <ul>
+            {{#each recipe.ingredientLines}}
+            <li class="capitalize">{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="buttons-recipe">
+        <a class="btn waves-effect" target="_blank" href="{{recipe.source.sourceRecipeUrl}}">Read directions</a>
+        {{#if discover}}
+        <a class="btn waves-effect try-again" href="/yummly-api/discover">Try
+          again</a>
+        {{/if}}
+      </div>
+
+
+      <div class="attributes">
+        <div class="time-to-cook">
+          {{#if recipe.prepTime}}
+          <div>
+            <i class="material-icons right">timer</i>
+            <p>Prep: <span class="bold">{{recipe.prepTime}}</span></p>
+          </div>
+          {{/if}}
+
+          {{#if recipe.totalTime}}
+          <div>
+            <i class="material-icons right">alarm_on</i>
+            <p>Total: <span class="bold">{{recipe.totalTime}}</span></p>
+          </div>
+          {{/if}}
+        </div>
+        {{#if recipe.attributes.course}}
+        <div class="attribute">
+          <i class="material-icons right">room_service</i>
+          <p>{{recipe.attributes.course}}</p>
+        </div>
+        {{/if}}
+        {{#if recipe.attributes.cuisine}}
+        <div class="attribute">
+          <i class="material-icons right">restaurant</i>
+          <p>{{recipe.attributes.cuisine}}</p>
+        </div>
+        {{/if}}
+      </div>
     </div>
   </div>
 </div>

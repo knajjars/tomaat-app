@@ -231,46 +231,6 @@ body {
   }
 }
 
-.discover-recipe-container {
-  min-height: calc(100vh - #{$bg-nav-height});
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-
-  .card-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &img {
-      max-width: 100%;
-    }
-  }
-
-  * {
-    margin: 5px 5px;
-  }
-
-  .ingredientsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  label {
-    max-width: 50%;
-  }
-}
-
-.time-to-cook,
-.attribute-course,
-.attribute-cuisine {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .disabled {
   color: gainsboro;
   cursor: not-allowed;
@@ -387,7 +347,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  justify-content: center;
+  justify-content: space-between;
   align-items: stretch;
   min-height: calc(100vh - #{$sm-nav-height} - #{$pagination-height});
   .recipes-found {
@@ -429,6 +389,12 @@ body {
       justify-content: space-evenly;
       font-size: 0.7em;
       color: #9c9c9c;
+      * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 3px;
+      }
     }
     .go-btn {
       align-self: stretch;
@@ -464,9 +430,6 @@ body {
       width: 100%;
       margin: 10px;
     }
-  }
-  img {
-    max-width: 100px;
   }
 
   .preferences-page {
@@ -521,9 +484,67 @@ body {
     border-radius: 8px;
     padding: 30px 30px 0 30px;
     width: 100vw;
-    // @media only screen and (max-width: 460px) {
-    //   width: 300px;
-    // }
+  }
+  .recipe-container {
+    min-height: calc(100vh - #{$sm-nav-height});
+    background-color: white;
+    .recipe-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      * {
+        margin: 5px 5px;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+      h5 {
+        font-size: 1.5rem;
+      }
+      img {
+        max-width: 320px;
+      }
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul li {
+          list-style-type: disc;
+        }
+      }
+      .buttons-recipe {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: stretch;
+        .try-again {
+          background-color: $alternative-color;
+        }
+      }
+
+      .attributes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .time-to-cook,
+        .attribute {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -574,6 +595,59 @@ body {
     width: 800px;
     @media only screen and (max-width: 910px) {
       width: 650px;
+    }
+  }
+  .recipe-container {
+    min-height: calc(100vh - #{$bg-nav-height});
+    background-color: $alternative-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .recipe-card {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-radius: 10px;
+      * {
+        margin: 5px 5px;
+      }
+      .buttons-recipe {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        .try-again {
+          background-color: $alternative-color;
+        }
+      }
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul li {
+          list-style-type: disc;
+        }
+      }
+
+      .attributes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .time-to-cook,
+        .attribute {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 }
