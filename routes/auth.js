@@ -53,7 +53,7 @@ router.post("/signup", (req, res, next) => {
     const hashEmail = bcrypt.hashSync(email, salt);
     hashEmail.replace('/','t')
     const image = "public/images/speculative/happy-tomaat.png";
-
+    const admin = 'info.tomaat@gmail.com'
     User.create({
       name,
       password: hashPass,
@@ -75,6 +75,15 @@ router.post("/signup", (req, res, next) => {
           html: mailTemplate.mailTemplate(
             "http://tomaat-app.herokuapp.com/auth/confirm/" + hashEmail
           )
+        })
+      })
+      .then(() => {
+        transporter.sendMail({
+          from: '"Tomaat" 🍅 <no_reply@tomaat.com>',
+          to: admin,
+          subject: "Someone has signed up to Tomaat",
+          text: "Click this",
+          html: `${name} has signed up to Tomaat with the email address ${email}`
         });
       })
 
