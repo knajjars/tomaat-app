@@ -201,4 +201,89 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+// router.get('/newpassword', (req,res,next)=>{
+//   res.render('auth/newpassword')
+// })
+
+// router.post('/newpassword', (req,res,next)=>{
+//   let email = req.body.email;
+//   String.prototype.replaceAll = function(search, replacement) {
+//     var target = this;
+//     return target.replace(new RegExp(search, "g"), replacement);
+//   };
+//   const salt = bcrypt.genSaltSync(bcryptSalt);
+//   const hashEmail = bcrypt.hashSync(email, salt).replaceAll("/", email);
+//   let transporter = nodemailer.createTransport({
+//     service: "Gmail",
+//     auth: {
+//       user: process.env.NODEMAIL_EMAIL,
+//       pass: process.env.NODEMAIL_PASS
+//     }
+//   })
+
+//   User.findOne({ email }, (err, user) => {
+//     if (user !== null) {
+//         transporter.sendMail({
+//           from: '"Tomaat" 🍅 <no_reply@tomaat.com>',
+//           to: email,
+//           subject: "Forgotten Password Reset Link",
+//           text: "Click this",
+//           html: `<a href="https://localhost:3000/auth/passconfirm/"`
+//         });
+
+//     }
+//   })
+//   .findOneAndUpdate({email:email},
+//     {
+//       password: 'tomaat'
+//     })
+
+//     .then(()=>{
+//       res.render('auth/confirm')
+
+//     })
+//   .catch(()=>{
+//     res.render('auth/signup')
+//   })
+
+// })
+
+
+// router.post('/passconfirm/:code',(req,res,next)=>{
+//     const {newPassword } = req.body;
+//     if (oldPassword !== "" && newPassword !== "") {
+//       bcrypt.compare(oldPassword, req.user.password, (err, result) => {
+//         if (err || !result) {
+//           res.render("account/settings-password", {
+//             errorMessage: "Password is incorrect"
+//           });
+//         } else {
+//           const salt = bcrypt.genSaltSync(bcryptSalt);
+//           const hashPassNew = bcrypt.hashSync(newPassword, salt);
+//           User.findByIdAndUpdate(req.user.id, {
+//             password: hashPassNew
+//           }).then(() =>
+//             res.render("account/settings-password", {
+//               successMessage: "Password changed!"
+//             })
+//           );
+//         }
+//       });
+//     } else {
+//       res.render("account/settings-password", {
+//         errorMessage: "Please enter both fields."
+//       });
+//     }
+
+
+// })
+
+
+
+
+
+// User.findOneAndUpdate({email},
+//   {
+//     pass
+//   })
 module.exports = router;
