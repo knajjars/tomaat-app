@@ -126,6 +126,7 @@ router.get("/recipe/:id", ensureAuthenticated, (req, res) => {
   Yummly.getDetails(recipeId)
     .then(recipe => {
       const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
+
       res.render("recipes/recipe-details", {
         recipe: recipe[0],
         recipeImage
