@@ -113,15 +113,17 @@ router.post("/settings/password", ensureAuthenticated, (req, res, next) => {
   }
 });
 
-router.get("/favorites", (req, res) => {
-  UserFavorites.find({ _user: req.user._id }).then(favorites => {
-    console.log(favorites);
-    if (favorites.length === 0) {
-      res.render("account/favorites", { isEmpty: true });
-    } else {
-      res.render("account/favorites");
-    }
-  });
+router.get("/favorites", ensureAuthenticated, (req, res) => {
+  UserFavorites.find({ _user: req.user._id })
+    .populate("_favorite")
+    .then(favorites => {
+      if (favorites.length === 0) {
+        res.render("account/favorites", { isEmpty: true });
+      } else {
+        res.render("account/favorites", { favorites });
+      }
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

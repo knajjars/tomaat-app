@@ -1,9 +1,16 @@
 <div class="account-container">
   {{!-- account preferences --}}
-  <div class="router">
-    <a href="/account/favorites">Favorites</a>
-    <a href="/account/preferences">Preferences</a>
-  </div>
+  <ul class="tabs">
+    <li class="tab col s3">
+      <a href="/account/favorites">Favorites</a>
+    </li>
+    <li class="tab col s3">
+      <a href="/account/preferences">Preferences</a>
+    </li>
+    <li class="tab col s3 ">
+      <a class="active" href="/account/settings">Settings</a>
+    </li>
+  </ul>
   <div id="account-preferences" class="col s12">
     <h4>This are your account settings</h4>
     <form class="col s12 account-settings-form" method="POST" action="/account/settings">
