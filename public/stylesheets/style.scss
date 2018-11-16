@@ -643,6 +643,33 @@ body {
     left: 120px;
     top: -10px;
   }
+  .shopping-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .shopping-cart-container {
+      color: $main-color;
+      background-color: white;
+      margin-bottom: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: center;
+      .ingredients-container {
+        display: flex;
+        flex-direction: column;
+        label {
+          color: #7c7c7c !important;
+        }
+      }
+    }
+  }
 }
 
 // COMPUTER SECTION
@@ -792,6 +819,32 @@ body {
     left: 120px;
     top: -10px;
   }
+  .shopping-cart {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    .shopping-cart-container {
+      color: $main-color;
+      background-color: white;
+      margin: 40px;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: center;
+      .ingredients-container {
+        display: flex;
+        flex-direction: column;
+        label {
+          color: #7c7c7c !important;
+        }
+      }
+    }
+  }
 }
 
 // ERRORS
@@ -833,21 +886,21 @@ body {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   p {
     margin: 0;
     margin-right: 10px;
     margin-left: 5px;
   }
-  i{
+  i {
     margin-right: 15px;
   }
 }
