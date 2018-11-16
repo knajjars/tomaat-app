@@ -309,28 +309,6 @@ body {
         text-align: center; }
     .account-container #account-preferences .favorites-container button {
       background-color: #26a69a; }
-    .account-container #account-preferences .shopping-cart {
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      flex-wrap: wrap; }
-      .account-container #account-preferences .shopping-cart .shopping-cart-container {
-        color: #26a69a;
-        background-color: white;
-        margin: 40px;
-        padding: 20px;
-        box-sizing: border-box;
-        border-radius: 10px;
-        width: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
-        align-items: center; }
-        .account-container #account-preferences .shopping-cart .shopping-cart-container .ingredients-container {
-          display: flex;
-          flex-direction: column; }
-          .account-container #account-preferences .shopping-cart .shopping-cart-container .ingredients-container label {
-            color: #7c7c7c !important; }
 
 .decide-recipes-container {
   background-image: url("/images/speculative/whitechopboard-lp.jpg");
@@ -532,7 +510,30 @@ body {
   .relative-position-match {
     position: relative;
     left: 120px;
-    top: -10px; } }
+    top: -10px; }
+  .shopping-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; }
+    .shopping-cart .shopping-cart-container {
+      color: #26a69a;
+      background-color: white;
+      margin-bottom: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: center; }
+      .shopping-cart .shopping-cart-container .ingredients-container {
+        display: flex;
+        flex-direction: column; }
+        .shopping-cart .shopping-cart-container .ingredients-container label {
+          color: #7c7c7c !important; } }
 
 @media only screen and (min-width: 670px) {
   #lp {
@@ -658,7 +659,29 @@ body {
   .relative-position-match {
     position: relative;
     left: 120px;
-    top: -10px; } }
+    top: -10px; }
+  .shopping-cart {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap; }
+    .shopping-cart .shopping-cart-container {
+      color: #26a69a;
+      background-color: white;
+      margin: 40px;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: center; }
+      .shopping-cart .shopping-cart-container .ingredients-container {
+        display: flex;
+        flex-direction: column; }
+        .shopping-cart .shopping-cart-container .ingredients-container label {
+          color: #7c7c7c !important; } }
 
 .not-found {
   height: calc(100vh - 64px);
@@ -683,9 +706,18 @@ body {
   margin-bottom: 3rem; }
 
 .sidenav .ingredients-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between; }
 
 .sidenav p {

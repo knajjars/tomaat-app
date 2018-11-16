@@ -157,7 +157,12 @@ router.get("/shopping-cart/:recipeId", ensureAuthenticated, (req, res) => {
           _user: req.user._id
         })
           .then(cart => {
-            res.redirect("/account/shopping-cart");
+            ShoppingCart.find({ _user: req.user._id }).then(shoppingCart => {
+              res.render("account/shopping-cart", {
+                message: "Recipe added!",
+                shoppingCart
+              });
+            });
           })
           .catch(err => console.log(err));
       }
