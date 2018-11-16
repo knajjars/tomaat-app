@@ -78,9 +78,6 @@
 </div>
 
 <ul id="slide-out" class="sidenav right side2">
-  <a href="/account/shopping-cart/{{item.recipe.id}}" class="btn waves-effect flex-center  blue lighten-1 sidenav-trigger"><i
-      class="material-icons">shopping_cart</i>Add
-  </a>
 
   {{#each item.recipeIngredients }}
   <li class="ingredients-list">
@@ -90,6 +87,9 @@
     <div class="divider"></div>
   </li>
   {{/each}}
+  <a href="/account/shopping-cart/{{item.recipe.id}}" class="btn waves-effect flex-center  blue lighten-1 sidenav-trigger"><i
+      class="material-icons">shopping_cart</i>Add
+  </a>
 </ul>
 
 

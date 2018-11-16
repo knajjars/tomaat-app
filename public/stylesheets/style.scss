@@ -581,7 +581,7 @@ body {
         font-size: 1.5rem;
       }
       img {
-        max-width: 320px;
+        max-width: 300px;
       }
       .card-content {
         display: flex;
@@ -831,5 +831,15 @@ body {
   .ingredients-list {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  p {
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+  i{
+    margin-right: 15px;
   }
 }

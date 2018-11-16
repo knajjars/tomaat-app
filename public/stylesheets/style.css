@@ -463,7 +463,7 @@ body {
       .recipe-container .recipe-card h5 {
         font-size: 1.5rem; }
       .recipe-container .recipe-card img {
-        max-width: 320px; }
+        max-width: 300px; }
       .recipe-container .recipe-card .card-content {
         display: flex;
         flex-direction: column;
@@ -662,6 +662,16 @@ body {
 
 .sidenav .ingredients-list {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+.sidenav p {
+  margin: 0;
+  margin-right: 10px;
+  margin-left: 5px; }
+
+.sidenav i {
+  margin-right: 15px; }
 
 /*# sourceMappingURL=style.css.map */
