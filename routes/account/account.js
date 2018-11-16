@@ -138,33 +138,34 @@ router.get("/shopping-cart", ensureAuthenticated, (req, res) => {
 
 router.get("/shopping-cart/:recipeId", ensureAuthenticated, (req, res) => {
   Yummly.getDetails(req.params.recipeId).then(recipe => {
-    const ShoppingCartUser = ShoppingCart.find({ _user: req.user._id }).then(
-      currentShoppingCart => {
-        const currentRecipeIds = currentRecipeIds.map(el => {
-          return el.recipeId;
-        });
-        if (currentRecipeIds.includes(recipe[0].id)) {
-          res.redirect("/account/shopping-cart", {
-            message: "Recipe already in cart!"
+    ShoppingCart.find({ _user: req.user._id }).then(currentShoppingCart => {
+      const currentRecipeIds = currentShoppingCart.map(el => {
+        return el.recipeId;
+      });
+      if (currentRecipeIds.includes(recipe[0].id)) {
+        ShoppingCart.find({ _user: req.user._id }).then(shoppingCart => {
+          res.render("account/shopping-cart", {
+            message: "Recipe already in cart!",
+            shoppingCart
           });
-        } else {
-          ShoppingCart.create({
-            ingredients: [...new Set(recipe[0].ingredientLines)],
-            recipeName: recipe[0].name,
-            recipeId: recipe[0].id,
-            _user: req.user._id
+        });
+      } else {
+        ShoppingCart.create({
+          ingredients: [...new Set(recipe[0].ingredientLines)],
+          recipeName: recipe[0].name,
+          recipeId: recipe[0].id,
+          _user: req.user._id
+        })
+          .then(cart => {
+            res.redirect("/account/shopping-cart");
           })
-            .then(cart => {
-              res.redirect("/account/shopping-cart");
-            })
-            .catch(err => console.log(err));
-        }
+          .catch(err => console.log(err));
       }
-    );
+    });
   });
 });
 
-router.patch("/shopping-cart", ensureAuthenticated, (req, res) => {
+router.patch("/shopping-cart", ensureAuthenticated, (req, res, next) => {
   const { recipeId, ingredient } = req.body;
   ShoppingCart.find({ _user: req.user._id }).then(shoppingCart => {
     const targetCart = shoppingCart.filter(cart => {
@@ -182,7 +183,9 @@ router.patch("/shopping-cart", ensureAuthenticated, (req, res) => {
       ShoppingCart.findByIdAndUpdate(targetCart[0]._id, {
         ingredients: updatedIngredients
       })
-        .then(response => {})
+        .then(response => {
+          next();
+        })
         .catch(err => console.log(err));
     } else {
       ShoppingCart.findByIdAndDelete(targetCart[0].id)
