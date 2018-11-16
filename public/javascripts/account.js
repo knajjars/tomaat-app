@@ -88,3 +88,30 @@ $submit.click(function() {
     })
     .catch(err => console.log(err));
 });
+
+$(document).ready(function() {
+  let $ingredientsNode = $(".ingredient-cart");
+  let $ingredients = [...$ingredientsNode];
+  $ingredients.forEach(el => {
+    el.onclick = function() {
+      const recipeId = el.attributes["data-id"].nodeValue;
+      const ingredient = el.innerText;
+      data = {
+        recipeId,
+        ingredient
+      };
+      axios({
+        method: "PATCH",
+        url: "/account/shopping-cart",
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+        data: data
+      })
+        .then(response => {
+          if (response.status === 200) {
+            console.log("good");
+          }
+        })
+        .catch(err => console.log(err));
+    };
+  });
+});

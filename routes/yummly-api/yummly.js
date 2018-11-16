@@ -59,6 +59,7 @@ router.get("/discover", ensureAuthenticated, (req, res, next) => {
                 const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
                 const item = {
                   recipe: recipe[0],
+                  recipeIngredients: [...new Set(recipe[0].ingredientLines)],
                   recipeImage,
                   discover: true
                 };
@@ -147,6 +148,7 @@ router.get("/recipe/:id", ensureAuthenticated, (req, res) => {
       const recipeImage = recipe[0].images[0].imageUrlsBySize["360"];
       return {
         recipe: recipe[0],
+        recipeIngredients: [...new Set(recipe[0].ingredientLines)],
         recipeImage,
         discover: false
       };
