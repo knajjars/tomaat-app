@@ -4,6 +4,7 @@ const User = require("../../models/User");
 const UserFavorites = require("../../models/UserFavorites");
 const ShoppingCart = require("../../models/ShoppingCart");
 
+const Yummly = require("../yummly-api/ws-yummly");
 const ensureAuthenticated = require("../Secuirty/ensureAuthenticated");
 const MetaData = require("../yummly-api/metadata");
 // Bcrypt to encrypt passwords
@@ -133,6 +134,27 @@ router.get("/shopping-cart", ensureAuthenticated, (req, res) => {
       res.render("account/shopping-cart", { shoppingCart });
     })
     .catch(err => console.log(err));
+});
+
+router.get("/shopping-cart/:recipeId", ensureAuthenticated, (req, res) => {
+  Yummly.getDetails(req.params.recipeId).then(recipe => {
+    ShoppingCart.create({
+      ingredients: [...new Set(recipe[0].ingredientLines)],
+      recipeName: recipe[0].name,
+      recipeId: recipe[0].id,
+      _user: req.user._id
+    })
+      .then(cart => {
+        console.log(cart);
+        res.redirect("/account/shopping-cart");
+      })
+      .catch(err => console.log(err));
+  });
+});
+
+router.patch("/shopping-cart", ensureAuthenticated, (req, res) => {
+  const { recipeId, ingredient } = req.body;
+  console.log(recipeId, ingredient);
 });
 
 module.exports = router;

@@ -35,6 +35,9 @@
       </div>
       <div class="buttons-recipe">
         <a class="btn waves-effect" target="_blank" href="{{item.recipe.source.sourceRecipeUrl}}">Read directions</a>
+        <a class="btn waves-effect flex-center  blue lighten-1" href="/account/shopping-cart/{{item.recipe.id}}"><i
+            class="material-icons">shopping_cart</i>Add
+          ingredients</a>
         {{#if item.discover}}
         <a class="btn waves-effect try-again" href="/yummly-api/discover">Try
           again</a>

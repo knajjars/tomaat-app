@@ -165,6 +165,14 @@ body {
   }
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
 .preferences-page {
   margin: 0;
   padding: 0;
