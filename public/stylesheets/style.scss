@@ -661,9 +661,14 @@ body {
       flex-direction: column;
       justify-content: stretch;
       align-items: center;
+      a {
+        margin: 5px;
+      }
       .ingredients-container {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+        align-content: stretch;
         label {
           color: #7c7c7c !important;
         }
@@ -836,9 +841,14 @@ body {
       flex-direction: column;
       justify-content: stretch;
       align-items: center;
+      a {
+        margin: 5px;
+      }
       .ingredients-container {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+        align-content: stretch;
         label {
           color: #7c7c7c !important;
         }
