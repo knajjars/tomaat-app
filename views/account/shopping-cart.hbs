@@ -20,8 +20,9 @@
     <h5>{{this.recipeName}}</h5>
     <div class="container">
       {{#each this.ingredients}}
-      <label class="ingredient-cart" data-id="{{../this.recipeId}}">
-        <input id="indeterminate-checkbox" type="checkbox" />
+      <label>
+        <input class="ingredient-cart" data-id="{{../this.recipeId}}" data-ingredient="{{this}}" id="indeterminate-checkbox"
+          type="checkbox" />
         <span>{{this}}</span>
       </label>
       {{/each}}

@@ -145,7 +145,6 @@ router.get("/shopping-cart/:recipeId", ensureAuthenticated, (req, res) => {
       _user: req.user._id
     })
       .then(cart => {
-        console.log(cart);
         res.redirect("/account/shopping-cart");
       })
       .catch(err => console.log(err));
@@ -154,7 +153,30 @@ router.get("/shopping-cart/:recipeId", ensureAuthenticated, (req, res) => {
 
 router.patch("/shopping-cart", ensureAuthenticated, (req, res) => {
   const { recipeId, ingredient } = req.body;
-  console.log(recipeId, ingredient);
+  ShoppingCart.find({ _user: req.user._id }).then(shoppingCart => {
+    const targetCart = shoppingCart.filter(cart => {
+      if (cart.recipeId === recipeId) {
+        return cart;
+      }
+    });
+    let ingredientsList = targetCart[0].ingredients;
+    let updatedIngredients = ingredientsList.filter(item => {
+      if (item !== ingredient) {
+        return item;
+      }
+    });
+    if (updatedIngredients.length > 0) {
+      ShoppingCart.findByIdAndUpdate(targetCart[0]._id, {
+        ingredients: updatedIngredients
+      })
+        .then(response => {})
+        .catch(err => console.log(err));
+    } else {
+      ShoppingCart.findByIdAndDelete(targetCart[0].id)
+        .then(() => {})
+        .catch(err => console.log(err));
+    }
+  });
 });
 
 module.exports = router;
