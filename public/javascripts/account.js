@@ -95,7 +95,7 @@ $(document).ready(function() {
   $ingredients.forEach(el => {
     el.onclick = function() {
       const recipeId = el.attributes["data-id"].nodeValue;
-      const ingredient = el.innerText;
+      const ingredient = el.attributes["data-ingredient"].nodeValue;
       data = {
         recipeId,
         ingredient
