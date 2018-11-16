@@ -529,9 +529,13 @@ body {
       flex-direction: column;
       justify-content: stretch;
       align-items: center; }
+      .shopping-cart .shopping-cart-container a {
+        margin: 5px; }
       .shopping-cart .shopping-cart-container .ingredients-container {
         display: flex;
-        flex-direction: column; }
+        flex-direction: column;
+        align-items: stretch;
+        align-content: stretch; }
         .shopping-cart .shopping-cart-container .ingredients-container label {
           color: #7c7c7c !important; } }
 
@@ -677,9 +681,13 @@ body {
       flex-direction: column;
       justify-content: stretch;
       align-items: center; }
+      .shopping-cart .shopping-cart-container a {
+        margin: 5px; }
       .shopping-cart .shopping-cart-container .ingredients-container {
         display: flex;
-        flex-direction: column; }
+        flex-direction: column;
+        align-items: stretch;
+        align-content: stretch; }
         .shopping-cart .shopping-cart-container .ingredients-container label {
           color: #7c7c7c !important; } }
 
