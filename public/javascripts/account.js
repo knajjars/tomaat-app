@@ -93,7 +93,13 @@ $(document).ready(function() {
   let $ingredientsNode = $(".ingredient-cart");
   let $ingredients = [...$ingredientsNode];
   $ingredients.forEach(el => {
+    el.checked = false;
     el.onclick = function() {
+      // el.parentNode.parentNode.removeChild(el.parentNode);
+      let parentNode = el.parentNode;
+      setTimeout(function() {
+        $(parentNode).toggle();
+      }, 700);
       const recipeId = el.attributes["data-id"].nodeValue;
       const ingredient = el.attributes["data-ingredient"].nodeValue;
       data = {
@@ -106,12 +112,8 @@ $(document).ready(function() {
         headers: { "X-Requested-With": "XMLHttpRequest" },
         data: data
       })
-        .then(response => {
-          if (response.status === 200) {
-            console.log("good");
-          }
-        })
-        .catch(err => console.log(err));
+        .then(response => {})
+        .catch(err => {});
     };
   });
 });

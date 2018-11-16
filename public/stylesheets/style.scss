@@ -392,6 +392,32 @@ body {
         background-color: $main-color;
       }
     }
+    .shopping-cart {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+      .shopping-cart-container {
+        color: $main-color;
+        background-color: white;
+        margin: 40px;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+        .ingredients-container {
+          display: flex;
+          flex-direction: column;
+          label {
+            color: #7c7c7c !important;
+          }
+        }
+      }
+    }
   }
 }
 .decide-recipes-container {
@@ -839,7 +865,7 @@ body {
     margin-right: 10px;
     margin-left: 5px;
   }
-  i{
+  i {
     margin-right: 15px;
   }
 }

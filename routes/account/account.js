@@ -189,7 +189,9 @@ router.patch("/shopping-cart", ensureAuthenticated, (req, res, next) => {
         .catch(err => console.log(err));
     } else {
       ShoppingCart.findByIdAndDelete(targetCart[0].id)
-        .then(() => {})
+        .then(() => {
+          next();
+        })
         .catch(err => console.log(err));
     }
   });

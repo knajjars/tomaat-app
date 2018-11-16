@@ -21,19 +21,23 @@
   </ul>
   <div id="account-preferences" class="col s12">
     <h4><span class="capitalize underlined-special">{{loggedUser.name}}</span>, this is your shopping cart.</h4>
+    <div class="shopping-cart">
 
-    {{#each shoppingCart}}
-    <h5>{{this.recipeName}}</h5>
-    <div class="container">
-      {{#each this.ingredients}}
-      <label>
-        <input class="ingredient-cart" data-id="{{../this.recipeId}}" data-ingredient="{{this}}" id="indeterminate-checkbox"
-          type="checkbox" />
-        <span>{{this}}</span>
-      </label>
+      {{#each shoppingCart}}
+      <div class="shopping-cart-container">
+        <h5>{{this.recipeName}}</h5>
+        <div class="ingredients-container">
+          {{#each this.ingredients}}
+          <label>
+            <input class="ingredient-cart" data-id="{{../this.recipeId}}" data-ingredient="{{this}}" id="indeterminate-checkbox"
+              type="checkbox" />
+            <span>{{this}}</span>
+          </label>
+          {{/each}}
+        </div>
+      </div>
       {{/each}}
     </div>
-    {{/each}}
   </div>
 </div>
 

@@ -309,6 +309,28 @@ body {
         text-align: center; }
     .account-container #account-preferences .favorites-container button {
       background-color: #26a69a; }
+    .account-container #account-preferences .shopping-cart {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap; }
+      .account-container #account-preferences .shopping-cart .shopping-cart-container {
+        color: #26a69a;
+        background-color: white;
+        margin: 40px;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center; }
+        .account-container #account-preferences .shopping-cart .shopping-cart-container .ingredients-container {
+          display: flex;
+          flex-direction: column; }
+          .account-container #account-preferences .shopping-cart .shopping-cart-container .ingredients-container label {
+            color: #7c7c7c !important; }
 
 .decide-recipes-container {
   background-image: url("/images/speculative/whitechopboard-lp.jpg");
