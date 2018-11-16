@@ -81,7 +81,8 @@
 
   {{#each item.recipeIngredients }}
   <li class="ingredients-list">
-    <p class="capitalize">{{this}} </p> <i class="material-icons">close</i>
+    <p class="capitalize">{{this}} </p> 
+    {{!-- <i class="material-icons">close</i> --}}
   </li>
   <li>
     <div class="divider"></div>
@@ -90,6 +91,9 @@
   <a href="/account/shopping-cart/{{item.recipe.id}}" class="btn waves-effect flex-center  blue lighten-1 sidenav-trigger"><i
       class="material-icons">shopping_cart</i>Add
   </a>
+  {{!-- <a id="undo" class="btn waves-effect flex-center  red lighten-1 sidenav-trigger"><i
+      class="material-icons">undo</i>
+  </a> --}}
 </ul>
 
 

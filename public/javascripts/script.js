@@ -165,7 +165,22 @@ $(document).ready(function() {
         .catch(err => console.log("err"));
     }
   });
+
+
   // recipeName: req.body.recipeName,
   // thumbnail: req.body.thumbnail,
   // apiURL: req.body.apiURL
+
+  $(document).on('click','#slide-out li i', (e)=>{
+    console.log('CLICK');
+    $(e.target).parent().next('li').hide()
+      $(e.target).parent().hide()
+
+  })
+
+  
+  $('#undo').click(()=>{
+    $('#slide-out li').show()
+
+  })
 });
