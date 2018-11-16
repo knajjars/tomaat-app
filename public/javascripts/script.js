@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {}, false);
 $(document).ready(function() {
   $(".sidenav").sidenav();
 });
+$(document).ready(function() {
+  $(".sidenav.side2").sidenav({edge:'right'});
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".collapsible");
