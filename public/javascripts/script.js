@@ -87,7 +87,7 @@ $(document).ready(function() {
     // $(this).val('uncheck all');
   });
 
-  $(".decide-recipes-container a").click(function(e) {
+  $(".decide-recipes-container a:not(#go)").click(function(e) {
     e.stopPropagation();
     let recipeName = $(this)
       .closest("div")
