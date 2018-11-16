@@ -138,16 +138,29 @@ router.get("/shopping-cart", ensureAuthenticated, (req, res) => {
 
 router.get("/shopping-cart/:recipeId", ensureAuthenticated, (req, res) => {
   Yummly.getDetails(req.params.recipeId).then(recipe => {
-    ShoppingCart.create({
-      ingredients: [...new Set(recipe[0].ingredientLines)],
-      recipeName: recipe[0].name,
-      recipeId: recipe[0].id,
-      _user: req.user._id
-    })
-      .then(cart => {
-        res.redirect("/account/shopping-cart");
-      })
-      .catch(err => console.log(err));
+    const ShoppingCartUser = ShoppingCart.find({ _user: req.user._id }).then(
+      currentShoppingCart => {
+        const currentRecipeIds = currentRecipeIds.map(el => {
+          return el.recipeId;
+        });
+        if (currentRecipeIds.includes(recipe[0].id)) {
+          res.redirect("/account/shopping-cart", {
+            message: "Recipe already in cart!"
+          });
+        } else {
+          ShoppingCart.create({
+            ingredients: [...new Set(recipe[0].ingredientLines)],
+            recipeName: recipe[0].name,
+            recipeId: recipe[0].id,
+            _user: req.user._id
+          })
+            .then(cart => {
+              res.redirect("/account/shopping-cart");
+            })
+            .catch(err => console.log(err));
+        }
+      }
+    );
   });
 });
 

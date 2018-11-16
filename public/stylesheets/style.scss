@@ -827,30 +827,9 @@ body {
   margin-bottom: 3rem;
 }
 
-.sidenav{
- 
-.user-view {
-    position: relative;
-    /* padding: 32px 32px 0; */
-    margin-bottom: 8px;
+.sidenav {
+  .ingredients-list {
     display: flex;
-    justify-content: center;
-
-    .background {
-      overflow: hidden;
-      position: relative;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      img {
-          max-height: 200px
-        }
-    }
-}
-.ingredients-list{
-  display: flex;
-  flex-direction: row
-}
+    flex-direction: row;
+  }
 }

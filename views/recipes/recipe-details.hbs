@@ -35,8 +35,7 @@
       </div>
       <div class="buttons-recipe">
         <a class="btn waves-effect" target="_blank" href="{{item.recipe.source.sourceRecipeUrl}}">Read directions</a>
-        <a class="btn waves-effect flex-center  blue lighten-1 sidenav-trigger" data-target="slide-out" ><i
-            class="material-icons">shopping_cart</i>Add
+        <a class="btn waves-effect flex-center  blue lighten-1 sidenav-trigger" data-target="slide-out"><i class="material-icons">shopping_cart</i>Add
           ingredients</a>
         {{#if item.discover}}
         <a class="btn waves-effect try-again" href="/yummly-api/discover">Try
@@ -78,27 +77,20 @@
   </div>
 </div>
 
-  <ul id="slide-out" class="sidenav right side2">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="../../images/speculative/happy-tomaat.png">
-      </div>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+<ul id="slide-out" class="sidenav right side2">
+  <a href="/account/shopping-cart/{{item.recipe.id}}" class="btn waves-effect flex-center  blue lighten-1 sidenav-trigger"><i
+      class="material-icons">shopping_cart</i>Add
+  </a>
 
-{{#each item.recipeIngredients }}
-<li class="ingredients-list"> <p>{{this}} </p>  <i class="material-icons">close</i></li>
-
-<hr>
-{{/each}}
-
-
-
-  </ul>
+  {{#each item.recipeIngredients }}
+  <li class="ingredients-list">
+    <p class="capitalize">{{this}} </p> <i class="material-icons">close</i>
+  </li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  {{/each}}
+</ul>
 
 
 {{!-- prepTimeInSeconds: 600,
