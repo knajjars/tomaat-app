@@ -44,4 +44,4 @@ $ npm run dev
 
 ## Disclaimer
 
-We do not own any of the images used in this game. All material was sourced for personal use only.
+We do not own any of the images used in this app. All material was sourced for personal use only.
