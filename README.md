@@ -2,6 +2,9 @@
 
 My first paired project alongside Khalil Najjar. We designed and developed a **mobile-first** web app to help you find a recipe based on cusine preferences, diets and allergies.
 
+<img width="1666" alt="screenshot 2018-12-14 11 54 29" src="https://user-images.githubusercontent.com/39559415/49999403-05f6b900-ff97-11e8-9bd7-d6b86ed422c3.png">
+
+
 ## Getting Started
 
 To find your next favourite recipe simply head to...
@@ -34,9 +37,6 @@ The api credentials are of course not available. Run the following line to play 
 $ npm run dev
 ```
 
-## Diving In
-
-A feature we were particularly happy with is that you can add the ingredients of any recipe to your own personal shopping cart _(see below)_
 
 ## Acknowledgments
 
