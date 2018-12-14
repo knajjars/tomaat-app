@@ -2,7 +2,7 @@
 
 My first paired project alongside Khalil Najjar. We designed and developed a **mobile-first** web app to help you find a recipe based on cusine preferences, diets and allergies.
 
-<img width="1666" alt="screenshot 2018-12-14 11 54 29" src="https://user-images.githubusercontent.com/39559415/49999403-05f6b900-ff97-11e8-9bd7-d6b86ed422c3.png">
+<img width="1677" alt="screenshot 2018-12-14 12 41 45" src="https://user-images.githubusercontent.com/39559415/50001584-a059fb00-ff9d-11e8-8b76-f493be8fa36d.png">
 
 
 ## Getting Started
