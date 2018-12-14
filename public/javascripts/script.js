@@ -178,6 +178,34 @@ $(document).ready(function() {
 
   })
 
+  let ingredientLines = []
+  $('#slide-out li').toArray().forEach(el=>{
+    if (typeof el.text() === "string" ) {
+      ingredientLines.push(el.text)
+      
+    } else {
+      console.log('Hi');
+      
+    }
+  })
+  console.log(ingredientLines);
+  
+
+  // axios(
+  //   {
+  //     method:"GET",
+  //     url: "/account/shopping-cart/",
+  //     headers: { "X-Requested-With": "XMLHttpRequest" },
+  //     data: 
+  //     {
+  //       ingredients: [...new Set(recipe[0].ingredientLines)],
+  //       recipeName: recipe[0].name,
+  //       recipeId: recipe[0].id,
+  //     }
+
+  //   }
+  // )
+
   
   $('#undo').click(()=>{
     $('#slide-out li').show()

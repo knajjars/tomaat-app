@@ -914,3 +914,13 @@ body {
     margin-right: 15px;
   }
 }
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  background-color: #ee6e73;
+  border-bottom: 100px solid #ee6e73;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
